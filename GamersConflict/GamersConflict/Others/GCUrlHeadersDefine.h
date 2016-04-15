@@ -28,7 +28,7 @@
 #define GCCell(cellId) [NSString stringWithFormat:@"http://api.tuwan.com/app/?aid=%@&appid=7",cellid] 
 
 // 七.登陆 (POST loginmode=username&password=6251728&platform=mobile&t=login&userName=gyx364)
-#define GCLogin @"	http://user.tuwan.com/api/action.ashx"  
+#define GCLogin @"http://user.tuwan.com/api/action.ashx"
 
 // 八.注册 (POST code=tuwan&loginmode=username&password=6251728&t=register&userName=gyx365)
 #define GCRegister @"http://user.tuwan.com/api/action.ashx"

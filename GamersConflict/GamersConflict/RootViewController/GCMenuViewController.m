@@ -10,6 +10,8 @@
 #import "GCRootViewController.h"
 #import "GamersConflictDelegate.h"
 #import "TestViewController.h"
+
+#import "GCLoginViewController.h"
 @interface GCMenuViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *menuListTableView;
 // 菜单内容数组
@@ -33,6 +35,14 @@
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)loginAction:(id)sender {
+    NSLog(@"1");
+    // 跳转登陆页面
+    GCRootViewController *rootVC  = ((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
+    GCLoginViewController *loginVC = [[GCLoginViewController alloc]init];
+
+
+    [rootVC presentViewController:loginVC animated:YES completion:nil];
+//    [rootVC.navigationController pushViewController:loginVC animated:YES];
 }
 #pragma mark -- TableViewDelegate方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
