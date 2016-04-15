@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class GCBaseModel;
+
 @interface GCBaseModelFactory : NSObject
+
+/**
+ *  根据model的brand创建对应的model并赋值
+ *
+ *  @param brand   model类名
+ *  @param options model属性的值的字典
+ *
+ *  @return GCBaseModel类对象或其子类对象
+ */
++ (GCBaseModel *)modelProducedWithModelBrand:(NSString *)brand assignmentedWithOptions:(NSDictionary *)options;
 
 @end
