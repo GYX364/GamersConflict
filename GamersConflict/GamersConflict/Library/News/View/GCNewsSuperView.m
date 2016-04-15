@@ -77,15 +77,24 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSInteger index = [self indexWithScrollView:scrollView];
     NSLog(@"%ld", self.currentIndex);
+    NSLog(@"%ld", index);
     if (self.currentIndex != index) {
+        self.currentIndex = index;
         GCNewsModel *model = self.articlesList[index];
         if (model.isRequested == NO) {
-            [self.netManager GET:model.classUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                NSLog(@"%@", responseObject);
-            } failure:nil];
+//            [self.netManager GET:model.classUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//                NSLog(@"%@", responseObject);
+//                if ([responseObject isKindOfClass:[NSArray class]]) {
+//                    [model setValue:model.articlesList forKey:@"articlesList"];
+//                }
+//            } failure:nil];
+            [self.netManager GET:model.classUrl parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                NSLog(@"d");
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                NSLog(@"f")
+            }];
             model.isRequested = YES;
         }
-        self.currentIndex = index;
     }
 }
 
