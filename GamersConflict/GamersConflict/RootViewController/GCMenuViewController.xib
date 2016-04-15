@@ -67,7 +67,7 @@
                     </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="C93-Wu-DJE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="6ap-QS-8rw"/>
                 <constraint firstItem="ePO-Mf-AIs" firstAttribute="leading" secondItem="C93-Wu-DJE" secondAttribute="trailing" constant="10" id="GbP-hE-8yP"/>
@@ -85,14 +85,14 @@
                     <exclude reference="4F7-aj-iWi"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="6ap-QS-8rw"/>
-                    <exclude reference="TS5-fK-Ero"/>
                     <exclude reference="GbP-hE-8yP"/>
                     <exclude reference="b5s-Kj-7Zq"/>
                     <exclude reference="I1b-P3-8NI"/>
                     <exclude reference="PG4-da-Ia0"/>
                     <exclude reference="PqP-bR-F7g"/>
                     <exclude reference="QQK-Aj-Cr4"/>
+                    <exclude reference="6ap-QS-8rw"/>
+                    <exclude reference="TS5-fK-Ero"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -102,14 +102,14 @@
                     <include reference="4F7-aj-iWi"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="6ap-QS-8rw"/>
-                    <include reference="TS5-fK-Ero"/>
                     <include reference="GbP-hE-8yP"/>
                     <include reference="b5s-Kj-7Zq"/>
                     <include reference="I1b-P3-8NI"/>
                     <include reference="PG4-da-Ia0"/>
                     <include reference="PqP-bR-F7g"/>
                     <include reference="QQK-Aj-Cr4"/>
+                    <include reference="6ap-QS-8rw"/>
+                    <include reference="TS5-fK-Ero"/>
                 </mask>
             </variation>
         </view>

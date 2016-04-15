@@ -35,6 +35,8 @@
 		06EC9A571CC0E6C8001DD75F /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A561CC0E6C8001DD75F /* TestView.m */; };
 		06EC9A5A1CC0E9A7001DD75F /* GCBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A591CC0E9A7001DD75F /* GCBaseTableViewCell.m */; };
 		06EC9A5D1CC0E9F4001DD75F /* GCBaseModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A5C1CC0E9F4001DD75F /* GCBaseModelFactory.m */; };
+		06EC9A611CC0EAFD001DD75F /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A5F1CC0EAFD001DD75F /* TestViewController.m */; };
+		06EC9A621CC0EAFD001DD75F /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A601CC0EAFD001DD75F /* TestViewController.xib */; };
 		772135F56CCB8FFADF872379 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7E89B161E92C52CA08FC14 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,9 @@
 		06EC9A591CC0E9A7001DD75F /* GCBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCBaseTableViewCell.m; sourceTree = "<group>"; };
 		06EC9A5B1CC0E9F4001DD75F /* GCBaseModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCBaseModelFactory.h; sourceTree = "<group>"; };
 		06EC9A5C1CC0E9F4001DD75F /* GCBaseModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCBaseModelFactory.m; sourceTree = "<group>"; };
+		06EC9A5E1CC0EAFD001DD75F /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		06EC9A5F1CC0EAFD001DD75F /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		06EC9A601CC0EAFD001DD75F /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		6796ACF37EA669E6A71C51D5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9900D47BA6FCCE2BC4B98A68 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FB7E89B161E92C52CA08FC14 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -350,6 +355,9 @@
 				06EC9A461CC0E280001DD75F /* GCMenuViewController.h */,
 				06EC9A471CC0E280001DD75F /* GCMenuViewController.m */,
 				06EC9A481CC0E280001DD75F /* GCMenuViewController.xib */,
+				06EC9A5E1CC0EAFD001DD75F /* TestViewController.h */,
+				06EC9A5F1CC0EAFD001DD75F /* TestViewController.m */,
+				06EC9A601CC0EAFD001DD75F /* TestViewController.xib */,
 			);
 			path = RootViewController;
 			sourceTree = "<group>";
@@ -514,6 +522,7 @@
 				06EC99E41CC0D1DC001DD75F /* LaunchScreen.storyboard in Resources */,
 				06EC9A401CC0DC1E001DD75F /* 1.png in Resources */,
 				06EC99E11CC0D1DC001DD75F /* Assets.xcassets in Resources */,
+				06EC9A621CC0EAFD001DD75F /* TestViewController.xib in Resources */,
 				06EC99DF1CC0D1DC001DD75F /* Main.storyboard in Resources */,
 				06EC9A521CC0E470001DD75F /* GCNewsViewController.xib in Resources */,
 				06EC9A4A1CC0E280001DD75F /* GCMenuViewController.xib in Resources */,
@@ -595,6 +604,7 @@
 				06EC9A511CC0E470001DD75F /* GCNewsViewController.m in Sources */,
 				06EC99DC1CC0D1DC001DD75F /* ViewController.m in Sources */,
 				06EC9A491CC0E280001DD75F /* GCMenuViewController.m in Sources */,
+				06EC9A611CC0EAFD001DD75F /* TestViewController.m in Sources */,
 				06EC9A221CC0DA8B001DD75F /* GCBaseModel.m in Sources */,
 				06EC9A1F1CC0DA7E001DD75F /* GCBaseCellFactory.m in Sources */,
 				06EC9A441CC0E272001DD75F /* GCRootViewController.m in Sources */,
