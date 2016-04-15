@@ -7,13 +7,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="hgl-t1-6rN" customClass="GCNewsSuperView">
+        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iL1-ul-6um" customClass="GCNewsSubView">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="delegate" destination="-1" id="EUs-CU-tqs"/>
+                <outlet property="dataSource" destination="-1" id="ipW-Zp-PvU"/>
+                <outlet property="delegate" destination="-1" id="oi7-w5-mdd"/>
             </connections>
-            <point key="canvasLocation" x="381" y="381"/>
-        </scrollView>
+            <point key="canvasLocation" x="571" y="354"/>
+        </tableView>
     </objects>
 </document>

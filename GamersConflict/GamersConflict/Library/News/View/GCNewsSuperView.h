@@ -10,4 +10,8 @@
 
 @interface GCNewsSuperView : UIScrollView
 
+@property (nonatomic, assign) NSInteger currentIndex;
+
+- (instancetype)initWithFrame:(CGRect)frame classes:(NSMutableArray *)classes;
+
 @end
