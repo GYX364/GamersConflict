@@ -6,8 +6,10 @@
 //  Copyright © 2016年 com.gamersconflict.gc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#ifndef ConstantsDefine_h
+#define ConstantsDefine_h
 
-@interface ConstantsDefine : NSObject
+#define ScreenWidth [[UIScreen mainScreen] bounds].size.width
+#define ScreenHeight [[UIScreen mainScreen] bounds].size.height
 
-@end
+#endif /* ConstantsDefine_h */
