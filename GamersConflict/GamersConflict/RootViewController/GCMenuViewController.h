@@ -7,7 +7,7 @@
 //
 
 #import "GCBaseViewController.h"
-
+@class GCRootViewController;
 @interface GCMenuViewController : GCBaseViewController
 
 @end
