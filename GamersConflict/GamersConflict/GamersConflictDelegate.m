@@ -21,8 +21,8 @@
     self.window.rootViewController = rootController;
     
     self.window.backgroundColor = [UIColor whiteColor];
-    NSString *cellid = @"315360";
-    NSLog(@"%@", GCCell(cellid));
+//    NSString *cellid = @"315360";
+//    NSLog(@"%@", GCCell(cellid));
     
     
 }

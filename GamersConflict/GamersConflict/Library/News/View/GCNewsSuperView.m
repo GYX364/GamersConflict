@@ -8,10 +8,15 @@
 
 #import "GCNewsSuperView.h"
 #import "GCNewsSubView.h"
+#import "GCNewsModel.h"
+
+#import <AFNetworking.h>
 
 @interface GCNewsSuperView()<UIScrollViewDelegate>
 
-@property (nonatomic, strong) NSMutableDictionary *ArticleListDic;
+@property (nonatomic, strong) NSMutableArray *articlesList;
+
+@property (nonatomic, strong) AFHTTPSessionManager *netManager;
 
 @end
 
@@ -25,33 +30,40 @@
 }
 */
 
+- (NSMutableArray *)articlesList {
+    if (_articlesList == nil) {
+        _articlesList = [NSMutableArray array];
+    }
+    return _articlesList;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame classes:(NSMutableArray *)classes
 {
     self = [super initWithFrame:frame];
     if (self) {
         if (classes.count > 0) {
-            [self settingScrollViewWithClasses:classes];
-            [self addSubviewWithClasses:classes];
+            self.articlesList = classes;
+            self.currentIndex = -1;
+            self.netManager = [AFHTTPSessionManager manager];
+            [self settingScrollView];
+            [self addSubview];
         }
-        [self settingScrollViewWithClasses:classes];
-        [self addSubviewWithClasses:classes];
     }
     return self;
 }
 
-- (void)settingScrollViewWithClasses:(NSMutableArray *)classes {
+- (void)settingScrollView {
     self.delegate = self;
-    self.contentSize = CGSizeMake(ScreenWidth * 10, 0);
+    self.contentSize = CGSizeMake(ScreenWidth * self.articlesList.count, 0);
     self.contentOffset = CGPointMake(0, 0);
     self.pagingEnabled = YES;
     self.showsHorizontalScrollIndicator = NO;
     self.autoresizesSubviews = YES;
+    [self scrollViewDidEndDecelerating:self];
 }
 
-- (void)addSubviewWithClasses:(NSMutableArray *)classes {
-    for (NSInteger i = 0; i < 10; i ++) {
-//        GCNewsSubView *subView = [[GCNewsSubView alloc] initWithFrame:CGRectMake(ScreenWidth * i + 5, 44, ScreenWidth - 10, ScreenHeight - 64 - 80 - 5)];
-        //        subView.backgroundColor = [UIColor yellowColor];
+- (void)addSubview {
+    for (NSInteger i = 0; i < self.articlesList.count; i ++) {
         GCNewsSubView *subView = [[[NSBundle mainBundle] loadNibNamed:@"GCNewsSubView" owner:nil options:nil] firstObject];
         subView.frame = CGRectMake(ScreenWidth * i + 5, 44, ScreenWidth - 10, ScreenHeight - 64 - 80 - 5);
         [self addSubview:subView];
@@ -59,9 +71,22 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"%f", scrollView.contentOffset.x);
-    self.currentIndex = [self indexWithScrollView:self];
+    
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger index = [self indexWithScrollView:scrollView];
     NSLog(@"%ld", self.currentIndex);
+    if (self.currentIndex != index) {
+        GCNewsModel *model = self.articlesList[index];
+        if (model.isRequested == NO) {
+            [self.netManager GET:model.classUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                NSLog(@"%@", responseObject);
+            } failure:nil];
+            model.isRequested = YES;
+        }
+        self.currentIndex = index;
+    }
 }
 
 - (NSInteger)indexWithScrollView:(UIScrollView *)scrollView {

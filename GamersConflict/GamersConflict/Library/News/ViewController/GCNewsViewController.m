@@ -10,6 +10,7 @@
 
 #import "GCNewsSuperView.h"
 #import "GCNewsSubView.h"
+#import "GCNewsModel.h"
 
 @interface GCNewsViewController ()
 
@@ -19,11 +20,25 @@
 
 @implementation GCNewsViewController
 
+- (NSMutableArray *)classes {
+    if (_classes == nil) {
+        _classes = [NSMutableArray array];
+    }
+    return _classes;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    GCNewsSuperView *superView = [[GCNewsSuperView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - 80) classes:nil];
+    NSMutableArray *array = @[@{@"classUrl":GCRecommendURL}, @{@"classUrl":GCOnlineGameURL}, @{@"classUrl":GCMobileGameURL}, @{@"classUrl":GCPCGameURL}, @{@"classUrl":GCESportsURL}].mutableCopy;
+    for (NSDictionary *dic in array) {
+        GCNewsModel *model = [[GCNewsModel alloc] init];
+        [model setValuesForKeysWithDictionary:dic];
+        [self.classes addObject:model];
+    }
+    
+    GCNewsSuperView *superView = [[GCNewsSuperView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - 80) classes:self.classes];
     superView.backgroundColor = [UIColor cyanColor];
     [self.view addSubview:superView];
 }

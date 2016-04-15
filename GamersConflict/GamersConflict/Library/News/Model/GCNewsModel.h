@@ -10,7 +10,6 @@
 
 @interface GCNewsModel : GCBaseModel
 
-@property (nonatomic, assign) NSInteger index;
 @property (nonatomic, strong) NSString *classUrl;
 @property (nonatomic, assign) BOOL isRequested;
 @property (nonatomic, strong) NSMutableArray *articlesList;

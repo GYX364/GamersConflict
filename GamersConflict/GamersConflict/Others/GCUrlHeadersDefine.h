@@ -22,7 +22,7 @@
 #define GCPCGameURL @"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E5%8D%95%E6%9C%BA&id=317931&t=1460114761&appid=7&appver=2.1"
 
 // 五.电竞模块
-#define GCESports @"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E7%94%B5%E7%AB%9E&id=317719,317937&t=1460115045&appid=7&appver=2.1"
+#define GCESportsURL @"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E7%94%B5%E7%AB%9E&id=317719,317937&t=1460115045&appid=7&appver=2.1"
 
 // 六.cell
 #define GCCell(cellId) [NSString stringWithFormat:@"http://api.tuwan.com/app/?aid=%@&appid=7",cellid] 
