@@ -7,6 +7,7 @@
 //
 
 #import "GCNewsSubView.h"
+#import "GCNewsModel.h"
 
 @implementation GCNewsSubView
 
@@ -17,5 +18,8 @@
     // Drawing code
 }
 */
+- (void)setDataWithModel:(GCNewsModel *)model {
+    
+}
 
 @end

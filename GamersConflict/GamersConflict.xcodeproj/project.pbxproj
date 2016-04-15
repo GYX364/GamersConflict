@@ -40,7 +40,8 @@
 		AABF8AC51CC0F54C0005B109 /* GCNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABF8AC41CC0F54C0005B109 /* GCNewsViewController.xib */; };
 		AABF8ACD1CC0F9FA0005B109 /* GCNewsSuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF8ACC1CC0F9FA0005B109 /* GCNewsSuperView.m */; };
 		AABF8AD01CC0FA510005B109 /* GCNewsSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF8ACF1CC0FA510005B109 /* GCNewsSubView.m */; };
-		AABF8AD41CC0FA780005B109 /* GCNewsSuperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABF8AD31CC0FA780005B109 /* GCNewsSuperView.xib */; };
+		AABF8AD71CC0FCA20005B109 /* GCNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF8AD61CC0FCA20005B109 /* GCNewsModel.m */; };
+		AABF8AD91CC10FAD0005B109 /* GCNewsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABF8AD81CC10FAD0005B109 /* GCNewsSubView.xib */; };
 		AAC2B42E1CC0EC67003EE7E8 /* GCClassView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC2B42D1CC0EC67003EE7E8 /* GCClassView.m */; };
 		AAC2B4311CC0EC84003EE7E8 /* GCClassSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC2B4301CC0EC84003EE7E8 /* GCClassSubView.m */; };
 /* End PBXBuildFile section */
@@ -124,7 +125,9 @@
 		AABF8ACC1CC0F9FA0005B109 /* GCNewsSuperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSuperView.m; sourceTree = "<group>"; };
 		AABF8ACE1CC0FA510005B109 /* GCNewsSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsSubView.h; sourceTree = "<group>"; };
 		AABF8ACF1CC0FA510005B109 /* GCNewsSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSubView.m; sourceTree = "<group>"; };
-		AABF8AD31CC0FA780005B109 /* GCNewsSuperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsSuperView.xib; sourceTree = "<group>"; };
+		AABF8AD51CC0FCA20005B109 /* GCNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsModel.h; sourceTree = "<group>"; };
+		AABF8AD61CC0FCA20005B109 /* GCNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsModel.m; sourceTree = "<group>"; };
+		AABF8AD81CC10FAD0005B109 /* GCNewsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsSubView.xib; sourceTree = "<group>"; };
 		AAC2B42C1CC0EC67003EE7E8 /* GCClassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCClassView.h; sourceTree = "<group>"; };
 		AAC2B42D1CC0EC67003EE7E8 /* GCClassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCClassView.m; sourceTree = "<group>"; };
 		AAC2B42F1CC0EC84003EE7E8 /* GCClassSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCClassSubView.h; sourceTree = "<group>"; };
@@ -387,6 +390,8 @@
 		06EC9A2C1CC0DB49001DD75F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AABF8AD51CC0FCA20005B109 /* GCNewsModel.h */,
+				AABF8AD61CC0FCA20005B109 /* GCNewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -400,9 +405,9 @@
 				AAC2B4301CC0EC84003EE7E8 /* GCClassSubView.m */,
 				AABF8ACB1CC0F9FA0005B109 /* GCNewsSuperView.h */,
 				AABF8ACC1CC0F9FA0005B109 /* GCNewsSuperView.m */,
-				AABF8AD31CC0FA780005B109 /* GCNewsSuperView.xib */,
 				AABF8ACE1CC0FA510005B109 /* GCNewsSubView.h */,
 				AABF8ACF1CC0FA510005B109 /* GCNewsSubView.m */,
+				AABF8AD81CC10FAD0005B109 /* GCNewsSubView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -565,10 +570,11 @@
 			files = (
 				06EC9A451CC0E272001DD75F /* GCRootViewController.xib in Resources */,
 				06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */,
+				AABF8AD91CC10FAD0005B109 /* GCNewsSubView.xib in Resources */,
+				06EC9A3B1CC0DB9D001DD75F /* GCLoginViewController.xib in Resources */,
 				06EC99E41CC0D1DC001DD75F /* LaunchScreen.storyboard in Resources */,
 				06EC9A6D1CC0FE52001DD75F /* GCLoginViewController.xib in Resources */,
 				06EC9A401CC0DC1E001DD75F /* 1.png in Resources */,
-				AABF8AD41CC0FA780005B109 /* GCNewsSuperView.xib in Resources */,
 				06EC99E11CC0D1DC001DD75F /* Assets.xcassets in Resources */,
 				06EC9A621CC0EAFD001DD75F /* TestViewController.xib in Resources */,
 				06EC99DF1CC0D1DC001DD75F /* Main.storyboard in Resources */,
@@ -654,6 +660,7 @@
 				AAC2B4311CC0EC84003EE7E8 /* GCClassSubView.m in Sources */,
 				06EC9A6C1CC0FE52001DD75F /* GCLoginViewController.m in Sources */,
 				06EC9A321CC0DB5E001DD75F /* GCCollectionViewController.m in Sources */,
+				AABF8AD71CC0FCA20005B109 /* GCNewsModel.m in Sources */,
 				AAC2B42E1CC0EC67003EE7E8 /* GCClassView.m in Sources */,
 				06EC9A511CC0E470001DD75F /* GCNewsViewController.m in Sources */,
 				06EC99DC1CC0D1DC001DD75F /* ViewController.m in Sources */,
@@ -811,11 +818,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GamersConflict/Others/GamersConflict_Prefix.pch";
 				INFOPLIST_FILE = GamersConflict/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamezeroline.GamersConflict;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -825,11 +834,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GamersConflict/Others/GamersConflict_Prefix.pch";
 				INFOPLIST_FILE = GamersConflict/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamezeroline.GamersConflict;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

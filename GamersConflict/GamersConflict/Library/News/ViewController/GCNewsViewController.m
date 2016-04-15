@@ -8,7 +8,12 @@
 
 #import "GCNewsViewController.h"
 
+#import "GCNewsSuperView.h"
+#import "GCNewsSubView.h"
+
 @interface GCNewsViewController ()
+
+@property (nonatomic, strong) NSMutableArray *classes;
 
 @end
 
@@ -17,6 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    GCNewsSuperView *superView = [[GCNewsSuperView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - 80) classes:nil];
+    superView.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:superView];
 }
 
 - (void)didReceiveMemoryWarning {

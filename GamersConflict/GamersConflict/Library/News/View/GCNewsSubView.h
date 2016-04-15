@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class GCNewsModel;
+
 @interface GCNewsSubView : UITableView
+
+- (void)setDataWithModel:(GCNewsModel *)model;
 
 @end
