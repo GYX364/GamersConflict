@@ -9,6 +9,9 @@
 #import "GCLoginViewController.h"
 
 @interface GCLoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *userNameText;
+@property (weak, nonatomic) IBOutlet UITextField *passwordText;
+@property (weak, nonatomic) IBOutlet UIImageView *topImageView;
 
 @end
 
@@ -17,6 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+
+- (IBAction)loginAction:(id)sender {
+}
+
+- (IBAction)registerAction:(id)sender {
+}
+
+- (IBAction)backAction:(id)sender {
 }
 
 - (void)didReceiveMemoryWarning {

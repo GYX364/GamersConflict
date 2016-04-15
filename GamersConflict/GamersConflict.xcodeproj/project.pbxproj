@@ -18,11 +18,8 @@
 		06EC9A1F1CC0DA7E001DD75F /* GCBaseCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A1E1CC0DA7E001DD75F /* GCBaseCellFactory.m */; };
 		06EC9A221CC0DA8B001DD75F /* GCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A211CC0DA8B001DD75F /* GCBaseModel.m */; };
 		06EC9A281CC0DAD5001DD75F /* GCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A271CC0DAD5001DD75F /* GCBaseViewController.m */; };
-		06EC9A2B1CC0DB26001DD75F /* GCUrlHeadersDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A2A1CC0DB26001DD75F /* GCUrlHeadersDefine.m */; };
 		06EC9A321CC0DB5E001DD75F /* GCCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A301CC0DB5E001DD75F /* GCCollectionViewController.m */; };
 		06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A311CC0DB5E001DD75F /* GCCollectionViewController.xib */; };
-		06EC9A3A1CC0DB9D001DD75F /* GCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A381CC0DB9D001DD75F /* GCLoginViewController.m */; };
-		06EC9A3B1CC0DB9D001DD75F /* GCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A391CC0DB9D001DD75F /* GCLoginViewController.xib */; };
 		06EC9A401CC0DC1E001DD75F /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A3F1CC0DC1E001DD75F /* 1.png */; };
 		06EC9A441CC0E272001DD75F /* GCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A421CC0E272001DD75F /* GCRootViewController.m */; };
 		06EC9A451CC0E272001DD75F /* GCRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A431CC0E272001DD75F /* GCRootViewController.xib */; };
@@ -34,6 +31,11 @@
 		06EC9A5D1CC0E9F4001DD75F /* GCBaseModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A5C1CC0E9F4001DD75F /* GCBaseModelFactory.m */; };
 		06EC9A611CC0EAFD001DD75F /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A5F1CC0EAFD001DD75F /* TestViewController.m */; };
 		06EC9A621CC0EAFD001DD75F /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A601CC0EAFD001DD75F /* TestViewController.xib */; };
+		06EC9A681CC0FE19001DD75F /* GCLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A671CC0FE19001DD75F /* GCLoginModel.m */; };
+		06EC9A6C1CC0FE52001DD75F /* GCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A6A1CC0FE52001DD75F /* GCLoginViewController.m */; };
+		06EC9A6D1CC0FE52001DD75F /* GCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A6B1CC0FE52001DD75F /* GCLoginViewController.xib */; };
+		06EC9A721CC1156E001DD75F /* GCRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A701CC1156E001DD75F /* GCRegisterViewController.m */; };
+		06EC9A731CC1156E001DD75F /* GCRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A711CC1156E001DD75F /* GCRegisterViewController.xib */; };
 		772135F56CCB8FFADF872379 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7E89B161E92C52CA08FC14 /* libPods.a */; };
 		AAC2B42E1CC0EC67003EE7E8 /* GCClassView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC2B42D1CC0EC67003EE7E8 /* GCClassView.m */; };
 		AAC2B4311CC0EC84003EE7E8 /* GCClassSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC2B4301CC0EC84003EE7E8 /* GCClassSubView.m */; };
@@ -79,14 +81,9 @@
 		06EC9A211CC0DA8B001DD75F /* GCBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCBaseModel.m; sourceTree = "<group>"; };
 		06EC9A261CC0DAD5001DD75F /* GCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCBaseViewController.h; sourceTree = "<group>"; };
 		06EC9A271CC0DAD5001DD75F /* GCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCBaseViewController.m; sourceTree = "<group>"; };
-		06EC9A291CC0DB26001DD75F /* GCUrlHeadersDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCUrlHeadersDefine.h; sourceTree = "<group>"; };
-		06EC9A2A1CC0DB26001DD75F /* GCUrlHeadersDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCUrlHeadersDefine.m; sourceTree = "<group>"; };
 		06EC9A2F1CC0DB5E001DD75F /* GCCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCCollectionViewController.h; sourceTree = "<group>"; };
 		06EC9A301CC0DB5E001DD75F /* GCCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCCollectionViewController.m; sourceTree = "<group>"; };
 		06EC9A311CC0DB5E001DD75F /* GCCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCCollectionViewController.xib; sourceTree = "<group>"; };
-		06EC9A371CC0DB9D001DD75F /* GCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCLoginViewController.h; sourceTree = "<group>"; };
-		06EC9A381CC0DB9D001DD75F /* GCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCLoginViewController.m; sourceTree = "<group>"; };
-		06EC9A391CC0DB9D001DD75F /* GCLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCLoginViewController.xib; sourceTree = "<group>"; };
 		06EC9A3F1CC0DC1E001DD75F /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		06EC9A411CC0E272001DD75F /* GCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCRootViewController.h; sourceTree = "<group>"; };
 		06EC9A421CC0E272001DD75F /* GCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRootViewController.m; sourceTree = "<group>"; };
@@ -107,6 +104,15 @@
 		06EC9A5E1CC0EAFD001DD75F /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		06EC9A5F1CC0EAFD001DD75F /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		06EC9A601CC0EAFD001DD75F /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		06EC9A661CC0FE19001DD75F /* GCLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCLoginModel.h; sourceTree = "<group>"; };
+		06EC9A671CC0FE19001DD75F /* GCLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCLoginModel.m; sourceTree = "<group>"; };
+		06EC9A691CC0FE52001DD75F /* GCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCLoginViewController.h; sourceTree = "<group>"; };
+		06EC9A6A1CC0FE52001DD75F /* GCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCLoginViewController.m; sourceTree = "<group>"; };
+		06EC9A6B1CC0FE52001DD75F /* GCLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCLoginViewController.xib; sourceTree = "<group>"; };
+		06EC9A6E1CC10C0F001DD75F /* GCUrlHeadersDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCUrlHeadersDefine.h; sourceTree = "<group>"; };
+		06EC9A6F1CC1156E001DD75F /* GCRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCRegisterViewController.h; sourceTree = "<group>"; };
+		06EC9A701CC1156E001DD75F /* GCRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRegisterViewController.m; sourceTree = "<group>"; };
+		06EC9A711CC1156E001DD75F /* GCRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCRegisterViewController.xib; sourceTree = "<group>"; };
 		6796ACF37EA669E6A71C51D5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9900D47BA6FCCE2BC4B98A68 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AAC2B42C1CC0EC67003EE7E8 /* GCClassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCClassView.h; sourceTree = "<group>"; };
@@ -312,9 +318,9 @@
 		06EC9A101CC0D7FE001DD75F /* User */ = {
 			isa = PBXGroup;
 			children = (
-				06EC9A371CC0DB9D001DD75F /* GCLoginViewController.h */,
-				06EC9A381CC0DB9D001DD75F /* GCLoginViewController.m */,
-				06EC9A391CC0DB9D001DD75F /* GCLoginViewController.xib */,
+				06EC9A631CC0FE06001DD75F /* Model */,
+				06EC9A641CC0FE06001DD75F /* View */,
+				06EC9A651CC0FE06001DD75F /* ViewController */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			children = (
 				06EC9A531CC0E533001DD75F /* ConstantsDefine.h */,
 				06EC9A541CC0E576001DD75F /* GamersConflict_Prefix.pch */,
+				06EC9A6E1CC10C0F001DD75F /* GCUrlHeadersDefine.h */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -363,8 +370,6 @@
 		06EC9A161CC0D7FE001DD75F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				06EC9A291CC0DB26001DD75F /* GCUrlHeadersDefine.h */,
-				06EC9A2A1CC0DB26001DD75F /* GCUrlHeadersDefine.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -392,6 +397,35 @@
 			children = (
 				06EC9A4E1CC0E470001DD75F /* GCNewsViewController.h */,
 				06EC9A4F1CC0E470001DD75F /* GCNewsViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		06EC9A631CC0FE06001DD75F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				06EC9A661CC0FE19001DD75F /* GCLoginModel.h */,
+				06EC9A671CC0FE19001DD75F /* GCLoginModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		06EC9A641CC0FE06001DD75F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		06EC9A651CC0FE06001DD75F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				06EC9A691CC0FE52001DD75F /* GCLoginViewController.h */,
+				06EC9A6A1CC0FE52001DD75F /* GCLoginViewController.m */,
+				06EC9A6B1CC0FE52001DD75F /* GCLoginViewController.xib */,
+				06EC9A6F1CC1156E001DD75F /* GCRegisterViewController.h */,
+				06EC9A701CC1156E001DD75F /* GCRegisterViewController.m */,
+				06EC9A711CC1156E001DD75F /* GCRegisterViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -515,13 +549,14 @@
 			files = (
 				06EC9A451CC0E272001DD75F /* GCRootViewController.xib in Resources */,
 				06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */,
-				06EC9A3B1CC0DB9D001DD75F /* GCLoginViewController.xib in Resources */,
 				06EC99E41CC0D1DC001DD75F /* LaunchScreen.storyboard in Resources */,
+				06EC9A6D1CC0FE52001DD75F /* GCLoginViewController.xib in Resources */,
 				06EC9A401CC0DC1E001DD75F /* 1.png in Resources */,
 				06EC99E11CC0D1DC001DD75F /* Assets.xcassets in Resources */,
 				06EC9A621CC0EAFD001DD75F /* TestViewController.xib in Resources */,
 				06EC99DF1CC0D1DC001DD75F /* Main.storyboard in Resources */,
 				06EC9A4A1CC0E280001DD75F /* GCMenuViewController.xib in Resources */,
+				06EC9A731CC1156E001DD75F /* GCRegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,8 +630,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				06EC9A5A1CC0E9A7001DD75F /* GCBaseTableViewCell.m in Sources */,
-				06EC9A3A1CC0DB9D001DD75F /* GCLoginViewController.m in Sources */,
+				06EC9A721CC1156E001DD75F /* GCRegisterViewController.m in Sources */,
 				AAC2B4311CC0EC84003EE7E8 /* GCClassSubView.m in Sources */,
+				06EC9A6C1CC0FE52001DD75F /* GCLoginViewController.m in Sources */,
 				06EC9A321CC0DB5E001DD75F /* GCCollectionViewController.m in Sources */,
 				AAC2B42E1CC0EC67003EE7E8 /* GCClassView.m in Sources */,
 				06EC9A511CC0E470001DD75F /* GCNewsViewController.m in Sources */,
@@ -606,8 +642,8 @@
 				06EC9A221CC0DA8B001DD75F /* GCBaseModel.m in Sources */,
 				06EC9A1F1CC0DA7E001DD75F /* GCBaseCellFactory.m in Sources */,
 				06EC9A441CC0E272001DD75F /* GCRootViewController.m in Sources */,
+				06EC9A681CC0FE19001DD75F /* GCLoginModel.m in Sources */,
 				06EC9A281CC0DAD5001DD75F /* GCBaseViewController.m in Sources */,
-				06EC9A2B1CC0DB26001DD75F /* GCUrlHeadersDefine.m in Sources */,
 				06EC99D91CC0D1DC001DD75F /* AppDelegate.m in Sources */,
 				06EC9A5D1CC0E9F4001DD75F /* GCBaseModelFactory.m in Sources */,
 				06EC99D61CC0D1DC001DD75F /* main.m in Sources */,
