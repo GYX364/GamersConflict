@@ -30,7 +30,6 @@
 		06EC9A4A1CC0E280001DD75F /* GCMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A481CC0E280001DD75F /* GCMenuViewController.xib */; };
 		06EC9A4D1CC0E3E9001DD75F /* GamersConflictDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A4C1CC0E3E9001DD75F /* GamersConflictDelegate.m */; };
 		06EC9A511CC0E470001DD75F /* GCNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A4F1CC0E470001DD75F /* GCNewsViewController.m */; };
-		06EC9A521CC0E470001DD75F /* GCNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A501CC0E470001DD75F /* GCNewsViewController.xib */; };
 		06EC9A5A1CC0E9A7001DD75F /* GCBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A591CC0E9A7001DD75F /* GCBaseTableViewCell.m */; };
 		06EC9A5D1CC0E9F4001DD75F /* GCBaseModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A5C1CC0E9F4001DD75F /* GCBaseModelFactory.m */; };
 		06EC9A611CC0EAFD001DD75F /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A5F1CC0EAFD001DD75F /* TestViewController.m */; };
@@ -99,7 +98,6 @@
 		06EC9A4C1CC0E3E9001DD75F /* GamersConflictDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamersConflictDelegate.m; sourceTree = "<group>"; };
 		06EC9A4E1CC0E470001DD75F /* GCNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsViewController.h; sourceTree = "<group>"; };
 		06EC9A4F1CC0E470001DD75F /* GCNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsViewController.m; sourceTree = "<group>"; };
-		06EC9A501CC0E470001DD75F /* GCNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsViewController.xib; sourceTree = "<group>"; };
 		06EC9A531CC0E533001DD75F /* ConstantsDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsDefine.h; sourceTree = "<group>"; };
 		06EC9A541CC0E576001DD75F /* GamersConflict_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamersConflict_Prefix.pch; sourceTree = "<group>"; };
 		06EC9A581CC0E9A7001DD75F /* GCBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCBaseTableViewCell.h; sourceTree = "<group>"; };
@@ -394,7 +392,6 @@
 			children = (
 				06EC9A4E1CC0E470001DD75F /* GCNewsViewController.h */,
 				06EC9A4F1CC0E470001DD75F /* GCNewsViewController.m */,
-				06EC9A501CC0E470001DD75F /* GCNewsViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -524,7 +521,6 @@
 				06EC99E11CC0D1DC001DD75F /* Assets.xcassets in Resources */,
 				06EC9A621CC0EAFD001DD75F /* TestViewController.xib in Resources */,
 				06EC99DF1CC0D1DC001DD75F /* Main.storyboard in Resources */,
-				06EC9A521CC0E470001DD75F /* GCNewsViewController.xib in Resources */,
 				06EC9A4A1CC0E280001DD75F /* GCMenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
