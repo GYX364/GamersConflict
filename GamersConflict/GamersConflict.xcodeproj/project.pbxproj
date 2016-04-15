@@ -37,6 +37,10 @@
 		06EC9A721CC1156E001DD75F /* GCRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A701CC1156E001DD75F /* GCRegisterViewController.m */; };
 		06EC9A731CC1156E001DD75F /* GCRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A711CC1156E001DD75F /* GCRegisterViewController.xib */; };
 		772135F56CCB8FFADF872379 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7E89B161E92C52CA08FC14 /* libPods.a */; };
+		AABF8AC51CC0F54C0005B109 /* GCNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABF8AC41CC0F54C0005B109 /* GCNewsViewController.xib */; };
+		AABF8ACD1CC0F9FA0005B109 /* GCNewsSuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF8ACC1CC0F9FA0005B109 /* GCNewsSuperView.m */; };
+		AABF8AD01CC0FA510005B109 /* GCNewsSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF8ACF1CC0FA510005B109 /* GCNewsSubView.m */; };
+		AABF8AD41CC0FA780005B109 /* GCNewsSuperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABF8AD31CC0FA780005B109 /* GCNewsSuperView.xib */; };
 		AAC2B42E1CC0EC67003EE7E8 /* GCClassView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC2B42D1CC0EC67003EE7E8 /* GCClassView.m */; };
 		AAC2B4311CC0EC84003EE7E8 /* GCClassSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC2B4301CC0EC84003EE7E8 /* GCClassSubView.m */; };
 /* End PBXBuildFile section */
@@ -115,6 +119,12 @@
 		06EC9A711CC1156E001DD75F /* GCRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCRegisterViewController.xib; sourceTree = "<group>"; };
 		6796ACF37EA669E6A71C51D5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9900D47BA6FCCE2BC4B98A68 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		AABF8AC41CC0F54C0005B109 /* GCNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsViewController.xib; sourceTree = "<group>"; };
+		AABF8ACB1CC0F9FA0005B109 /* GCNewsSuperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsSuperView.h; sourceTree = "<group>"; };
+		AABF8ACC1CC0F9FA0005B109 /* GCNewsSuperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSuperView.m; sourceTree = "<group>"; };
+		AABF8ACE1CC0FA510005B109 /* GCNewsSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsSubView.h; sourceTree = "<group>"; };
+		AABF8ACF1CC0FA510005B109 /* GCNewsSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSubView.m; sourceTree = "<group>"; };
+		AABF8AD31CC0FA780005B109 /* GCNewsSuperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsSuperView.xib; sourceTree = "<group>"; };
 		AAC2B42C1CC0EC67003EE7E8 /* GCClassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCClassView.h; sourceTree = "<group>"; };
 		AAC2B42D1CC0EC67003EE7E8 /* GCClassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCClassView.m; sourceTree = "<group>"; };
 		AAC2B42F1CC0EC84003EE7E8 /* GCClassSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCClassSubView.h; sourceTree = "<group>"; };
@@ -388,6 +398,11 @@
 				AAC2B42D1CC0EC67003EE7E8 /* GCClassView.m */,
 				AAC2B42F1CC0EC84003EE7E8 /* GCClassSubView.h */,
 				AAC2B4301CC0EC84003EE7E8 /* GCClassSubView.m */,
+				AABF8ACB1CC0F9FA0005B109 /* GCNewsSuperView.h */,
+				AABF8ACC1CC0F9FA0005B109 /* GCNewsSuperView.m */,
+				AABF8AD31CC0FA780005B109 /* GCNewsSuperView.xib */,
+				AABF8ACE1CC0FA510005B109 /* GCNewsSubView.h */,
+				AABF8ACF1CC0FA510005B109 /* GCNewsSubView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -397,6 +412,7 @@
 			children = (
 				06EC9A4E1CC0E470001DD75F /* GCNewsViewController.h */,
 				06EC9A4F1CC0E470001DD75F /* GCNewsViewController.m */,
+				AABF8AC41CC0F54C0005B109 /* GCNewsViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -552,11 +568,13 @@
 				06EC99E41CC0D1DC001DD75F /* LaunchScreen.storyboard in Resources */,
 				06EC9A6D1CC0FE52001DD75F /* GCLoginViewController.xib in Resources */,
 				06EC9A401CC0DC1E001DD75F /* 1.png in Resources */,
+				AABF8AD41CC0FA780005B109 /* GCNewsSuperView.xib in Resources */,
 				06EC99E11CC0D1DC001DD75F /* Assets.xcassets in Resources */,
 				06EC9A621CC0EAFD001DD75F /* TestViewController.xib in Resources */,
 				06EC99DF1CC0D1DC001DD75F /* Main.storyboard in Resources */,
 				06EC9A4A1CC0E280001DD75F /* GCMenuViewController.xib in Resources */,
 				06EC9A731CC1156E001DD75F /* GCRegisterViewController.xib in Resources */,
+				AABF8AC51CC0F54C0005B109 /* GCNewsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,6 +649,8 @@
 			files = (
 				06EC9A5A1CC0E9A7001DD75F /* GCBaseTableViewCell.m in Sources */,
 				06EC9A721CC1156E001DD75F /* GCRegisterViewController.m in Sources */,
+				AABF8ACD1CC0F9FA0005B109 /* GCNewsSuperView.m in Sources */,
+				06EC9A3A1CC0DB9D001DD75F /* GCLoginViewController.m in Sources */,
 				AAC2B4311CC0EC84003EE7E8 /* GCClassSubView.m in Sources */,
 				06EC9A6C1CC0FE52001DD75F /* GCLoginViewController.m in Sources */,
 				06EC9A321CC0DB5E001DD75F /* GCCollectionViewController.m in Sources */,
@@ -639,6 +659,7 @@
 				06EC99DC1CC0D1DC001DD75F /* ViewController.m in Sources */,
 				06EC9A491CC0E280001DD75F /* GCMenuViewController.m in Sources */,
 				06EC9A611CC0EAFD001DD75F /* TestViewController.m in Sources */,
+				AABF8AD01CC0FA510005B109 /* GCNewsSubView.m in Sources */,
 				06EC9A221CC0DA8B001DD75F /* GCBaseModel.m in Sources */,
 				06EC9A1F1CC0DA7E001DD75F /* GCBaseCellFactory.m in Sources */,
 				06EC9A441CC0E272001DD75F /* GCRootViewController.m in Sources */,
