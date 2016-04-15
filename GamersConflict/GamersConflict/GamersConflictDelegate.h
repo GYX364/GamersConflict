@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @class GCRootViewController;
+
 @interface GamersConflictDelegate : UIResponder<UIApplicationDelegate>
 @property (nonatomic, strong) UIWindow *window;
 
