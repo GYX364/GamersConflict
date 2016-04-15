@@ -10,4 +10,14 @@
 
 @implementation GCBaseModel
 
+/**
+ *  重写undefinedKey方法
+ *
+ *  @param value undefinedKey对应的value
+ *  @param key   undefinedKey
+ */
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
+}
+
 @end
