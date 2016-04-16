@@ -8,6 +8,8 @@
 
 #import "GCLoginViewController.h"
 #import <AFNetworking.h>
+#import "GCRegisterViewController.h"
+#import "GCRegisterViewController.h"
 // 用于开启状态栏动画
 //#import "AFNetworkActivityIndicatorManager.h"
 // 状态栏小菊花
@@ -54,9 +56,16 @@
 }
 
 - (IBAction)registerAction:(id)sender {
+    GCRegisterViewController *registerVC = [[GCRegisterViewController alloc]init];
+    [self showViewController:registerVC sender:nil];
+    
+//    [self.navigationController pushViewController:registerVC animated:YES];
 }
 
 - (IBAction)backAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

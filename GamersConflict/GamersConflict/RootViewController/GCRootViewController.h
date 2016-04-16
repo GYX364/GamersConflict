@@ -28,4 +28,5 @@
 // 切换根视图 (在Menu视图上点击不同VC来切换)
 - (void)changeRootView:(UIViewController*)viewController;
 
+- (void)backAction:(UITapGestureRecognizer*)tap;
 @end

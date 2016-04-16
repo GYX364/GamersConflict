@@ -140,6 +140,7 @@
     } completion:^(BOOL finished) {
         [self.tap setEnabled:YES];
         isShowingMenu = YES;
+        self.rootController.view.userInteractionEnabled = NO;
     }];
     
 }

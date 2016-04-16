@@ -7,8 +7,14 @@
 //
 
 #import "GCRegisterViewController.h"
-
+#import <AFNetworking.h>
 @interface GCRegisterViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *userNameText;
+@property (weak, nonatomic) IBOutlet UITextField *passwordText;
+@property (weak, nonatomic) IBOutlet UITextField *rePasswordText;
+
+// AFHTTPSession 网络请求对象
+@property (nonatomic, strong)AFHTTPSessionManager *session;
 
 @end
 
@@ -16,7 +22,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // 初始化网络请求对象
+    self.session = [AFHTTPSessionManager manager];
+    self.session.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"application/x-json",@"text/html", nil];
+}
+
+// 注册
+- (IBAction)registerAction:(id)sender {
+    // 请求注册
+    // POSTBody
+// code=tuwan&loginmode=username&password=6251728&t=register&userName=gyx365
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setValue:@"tuwan" forKey:@"code"];
+    [dic setValue:@"username" forKey:@"loginmode"];
+    [dic setValue:self.passwordText.text forKey:@"password"];
+    [dic setValue:@"register" forKey:@"t"];
+    [dic setValue:self.userNameText.text forKey:@"userName"];
+    
+    if (self.rePasswordText.text != self.passwordText.text) {
+        UILabel *alertLabel = [[UILabel alloc]initWithFrame:CGRectMake(160, 300, 100, 60)];
+        alertLabel.text = @"密码不匹配";
+        alertLabel.tag = 10001;
+        alertLabel.backgroundColor = [UIColor lightGrayColor];
+        [self.view addSubview:alertLabel];
+        [UIView animateWithDuration:0.5 animations:^{
+            alertLabel.alpha = 0.0;
+        } completion:^(BOOL finished) {
+            for (UIView *subViews in [self.view subviews]) {
+                if (subViews.tag == 10001) {
+                    [subViews removeFromSuperview];
+                }
+            }
+        }];
+    }else{
+        [self.session POST:GCRegister parameters:dic success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"%@",responseObject);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"error -- %@",error);
+        }];
+    }
+    
+   
+    
+//    self.session POS
+}
+
+// 返回
+- (IBAction)backAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

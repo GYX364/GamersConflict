@@ -66,6 +66,13 @@
                         <outlet property="delegate" destination="-1" id="KId-tv-ZWu"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2W-zh-8D8">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="170" y="30" width="46" height="30"/>
+                    </variation>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -83,6 +90,7 @@
                     <exclude reference="C93-Wu-DJE"/>
                     <exclude reference="ePO-Mf-AIs"/>
                     <exclude reference="4F7-aj-iWi"/>
+                    <exclude reference="g2W-zh-8D8"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="GbP-hE-8yP"/>
@@ -100,6 +108,7 @@
                     <include reference="C93-Wu-DJE"/>
                     <include reference="ePO-Mf-AIs"/>
                     <include reference="4F7-aj-iWi"/>
+                    <include reference="g2W-zh-8D8"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="GbP-hE-8yP"/>

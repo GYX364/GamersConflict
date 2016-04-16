@@ -10,6 +10,7 @@
 #import "GCRootViewController.h"
 #import "GamersConflictDelegate.h"
 #import "TestViewController.h"
+#import "GCNewsViewController.h"
 
 #import "GCLoginViewController.h"
 @interface GCMenuViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -41,8 +42,9 @@
     GCLoginViewController *loginVC = [[GCLoginViewController alloc]init];
 
 
-    [rootVC presentViewController:loginVC animated:YES completion:nil];
-//    [rootVC.navigationController pushViewController:loginVC animated:YES];
+//    [rootVC presentViewController:loginVC animated:YES completion:nil];
+    [rootVC.navigationController pushViewController:loginVC animated:YES];
+    
 }
 #pragma mark -- TableViewDelegate方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -67,7 +69,10 @@
         TestViewController *tVC = [[TestViewController alloc]init];
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:tVC];
         [rootVC changeRootView:nav];
-        
+    } else if (indexPath.row == 1) {
+        GCNewsViewController *newsVC = [[GCNewsViewController alloc] init];
+        UINavigationController *newsNC = [[UINavigationController alloc] initWithRootViewController:newsVC];
+        [rootVC changeRootView:newsNC];
     }
     
     
