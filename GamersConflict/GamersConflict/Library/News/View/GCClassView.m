@@ -81,7 +81,7 @@
     CGPoint offset = scrollView.contentOffset;
     float x = offset.x;
     NSInteger index = [self indexOfViewWillStopWithScrollView:scrollView];
-    NSLog(@"index = %ld x = %f", index, x);
+//    NSLog(@"index = %ld x = %f", index, x);
     NSInteger headViewIndex = [self calculatindex:index - 5];
     NSInteger footViewIndex = [self calculatindex:index + 6];
     for (NSInteger i = headViewIndex; i < footViewIndex; i ++) {

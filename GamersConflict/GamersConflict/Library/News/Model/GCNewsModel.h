@@ -12,6 +12,6 @@
 
 @property (nonatomic, strong) NSString *classUrl;
 @property (nonatomic, assign) BOOL isRequested;
-@property (nonatomic, strong) NSMutableArray *articlesList;
+@property (nonatomic, strong) NSMutableDictionary *newsDictioary;
 
 @end

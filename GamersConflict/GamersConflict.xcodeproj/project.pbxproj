@@ -37,11 +37,14 @@
 		06EC9A721CC1156E001DD75F /* GCRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A701CC1156E001DD75F /* GCRegisterViewController.m */; };
 		06EC9A731CC1156E001DD75F /* GCRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A711CC1156E001DD75F /* GCRegisterViewController.xib */; };
 		772135F56CCB8FFADF872379 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7E89B161E92C52CA08FC14 /* libPods.a */; };
+		AA5CCAF81CC1EB1E00FF79AB /* GCNewsSubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CCAF71CC1EB1E00FF79AB /* GCNewsSubModel.m */; };
+		AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5CCAF91CC20B4B00FF79AB /* GCNewsSubView.xib */; };
+		AA5CCAFD1CC2265900FF79AB /* GCNewsSubViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CCAFC1CC2265900FF79AB /* GCNewsSubViewCell.m */; };
+		AA5CCAFF1CC2266F00FF79AB /* GCNewsSubViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5CCAFE1CC2266F00FF79AB /* GCNewsSubViewCell.xib */; };
 		AABF8AC51CC0F54C0005B109 /* GCNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABF8AC41CC0F54C0005B109 /* GCNewsViewController.xib */; };
 		AABF8ACD1CC0F9FA0005B109 /* GCNewsSuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF8ACC1CC0F9FA0005B109 /* GCNewsSuperView.m */; };
 		AABF8AD01CC0FA510005B109 /* GCNewsSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF8ACF1CC0FA510005B109 /* GCNewsSubView.m */; };
 		AABF8AD71CC0FCA20005B109 /* GCNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF8AD61CC0FCA20005B109 /* GCNewsModel.m */; };
-		AABF8AD91CC10FAD0005B109 /* GCNewsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABF8AD81CC10FAD0005B109 /* GCNewsSubView.xib */; };
 		AAC2B42E1CC0EC67003EE7E8 /* GCClassView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC2B42D1CC0EC67003EE7E8 /* GCClassView.m */; };
 		AAC2B4311CC0EC84003EE7E8 /* GCClassSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC2B4301CC0EC84003EE7E8 /* GCClassSubView.m */; };
 /* End PBXBuildFile section */
@@ -120,6 +123,12 @@
 		06EC9A711CC1156E001DD75F /* GCRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCRegisterViewController.xib; sourceTree = "<group>"; };
 		6796ACF37EA669E6A71C51D5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9900D47BA6FCCE2BC4B98A68 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		AA5CCAF61CC1EB1E00FF79AB /* GCNewsSubModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsSubModel.h; sourceTree = "<group>"; };
+		AA5CCAF71CC1EB1E00FF79AB /* GCNewsSubModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSubModel.m; sourceTree = "<group>"; };
+		AA5CCAF91CC20B4B00FF79AB /* GCNewsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsSubView.xib; sourceTree = "<group>"; };
+		AA5CCAFB1CC2265900FF79AB /* GCNewsSubViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsSubViewCell.h; sourceTree = "<group>"; };
+		AA5CCAFC1CC2265900FF79AB /* GCNewsSubViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSubViewCell.m; sourceTree = "<group>"; };
+		AA5CCAFE1CC2266F00FF79AB /* GCNewsSubViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsSubViewCell.xib; sourceTree = "<group>"; };
 		AABF8AC41CC0F54C0005B109 /* GCNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsViewController.xib; sourceTree = "<group>"; };
 		AABF8ACB1CC0F9FA0005B109 /* GCNewsSuperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsSuperView.h; sourceTree = "<group>"; };
 		AABF8ACC1CC0F9FA0005B109 /* GCNewsSuperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSuperView.m; sourceTree = "<group>"; };
@@ -127,7 +136,6 @@
 		AABF8ACF1CC0FA510005B109 /* GCNewsSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSubView.m; sourceTree = "<group>"; };
 		AABF8AD51CC0FCA20005B109 /* GCNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsModel.h; sourceTree = "<group>"; };
 		AABF8AD61CC0FCA20005B109 /* GCNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsModel.m; sourceTree = "<group>"; };
-		AABF8AD81CC10FAD0005B109 /* GCNewsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsSubView.xib; sourceTree = "<group>"; };
 		AAC2B42C1CC0EC67003EE7E8 /* GCClassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCClassView.h; sourceTree = "<group>"; };
 		AAC2B42D1CC0EC67003EE7E8 /* GCClassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCClassView.m; sourceTree = "<group>"; };
 		AAC2B42F1CC0EC84003EE7E8 /* GCClassSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCClassSubView.h; sourceTree = "<group>"; };
@@ -392,6 +400,8 @@
 			children = (
 				AABF8AD51CC0FCA20005B109 /* GCNewsModel.h */,
 				AABF8AD61CC0FCA20005B109 /* GCNewsModel.m */,
+				AA5CCAF61CC1EB1E00FF79AB /* GCNewsSubModel.h */,
+				AA5CCAF71CC1EB1E00FF79AB /* GCNewsSubModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -407,7 +417,10 @@
 				AABF8ACC1CC0F9FA0005B109 /* GCNewsSuperView.m */,
 				AABF8ACE1CC0FA510005B109 /* GCNewsSubView.h */,
 				AABF8ACF1CC0FA510005B109 /* GCNewsSubView.m */,
-				AABF8AD81CC10FAD0005B109 /* GCNewsSubView.xib */,
+				AA5CCAF91CC20B4B00FF79AB /* GCNewsSubView.xib */,
+				AA5CCAFB1CC2265900FF79AB /* GCNewsSubViewCell.h */,
+				AA5CCAFC1CC2265900FF79AB /* GCNewsSubViewCell.m */,
+				AA5CCAFE1CC2266F00FF79AB /* GCNewsSubViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -569,9 +582,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				06EC9A451CC0E272001DD75F /* GCRootViewController.xib in Resources */,
+				AA5CCAFF1CC2266F00FF79AB /* GCNewsSubViewCell.xib in Resources */,
 				06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */,
-				AABF8AD91CC10FAD0005B109 /* GCNewsSubView.xib in Resources */,
-				06EC9A3B1CC0DB9D001DD75F /* GCLoginViewController.xib in Resources */,
+				AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */,
 				06EC99E41CC0D1DC001DD75F /* LaunchScreen.storyboard in Resources */,
 				06EC9A6D1CC0FE52001DD75F /* GCLoginViewController.xib in Resources */,
 				06EC9A401CC0DC1E001DD75F /* 1.png in Resources */,
@@ -655,8 +668,8 @@
 			files = (
 				06EC9A5A1CC0E9A7001DD75F /* GCBaseTableViewCell.m in Sources */,
 				06EC9A721CC1156E001DD75F /* GCRegisterViewController.m in Sources */,
+				AA5CCAFD1CC2265900FF79AB /* GCNewsSubViewCell.m in Sources */,
 				AABF8ACD1CC0F9FA0005B109 /* GCNewsSuperView.m in Sources */,
-				06EC9A3A1CC0DB9D001DD75F /* GCLoginViewController.m in Sources */,
 				AAC2B4311CC0EC84003EE7E8 /* GCClassSubView.m in Sources */,
 				06EC9A6C1CC0FE52001DD75F /* GCLoginViewController.m in Sources */,
 				06EC9A321CC0DB5E001DD75F /* GCCollectionViewController.m in Sources */,
@@ -676,6 +689,7 @@
 				06EC9A5D1CC0E9F4001DD75F /* GCBaseModelFactory.m in Sources */,
 				06EC99D61CC0D1DC001DD75F /* main.m in Sources */,
 				06EC9A4D1CC0E3E9001DD75F /* GamersConflictDelegate.m in Sources */,
+				AA5CCAF81CC1EB1E00FF79AB /* GCNewsSubModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

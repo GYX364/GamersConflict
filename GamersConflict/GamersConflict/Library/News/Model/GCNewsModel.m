@@ -10,4 +10,10 @@
 
 @implementation GCNewsModel
 
+- (NSMutableDictionary *)newsDictioary {
+    if (_newsDictioary == nil) {
+        _newsDictioary = [NSMutableDictionary dictionary];
+    }
+    return _newsDictioary;
+}
 @end

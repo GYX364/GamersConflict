@@ -5,17 +5,17 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GCNewsSubView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iL1-ul-6um" customClass="GCNewsSubView">
+        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="AYz-e1-tUX" customClass="GCNewsSubView">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="dataSource" destination="-1" id="ipW-Zp-PvU"/>
-                <outlet property="delegate" destination="-1" id="oi7-w5-mdd"/>
+                <outlet property="dataSource" destination="-1" id="U8R-he-zxJ"/>
+                <outlet property="delegate" destination="-1" id="DWi-hA-u2r"/>
             </connections>
-            <point key="canvasLocation" x="571" y="354"/>
+            <point key="canvasLocation" x="594" y="90"/>
         </tableView>
     </objects>
 </document>
