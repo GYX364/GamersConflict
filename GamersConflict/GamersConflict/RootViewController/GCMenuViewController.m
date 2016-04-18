@@ -64,15 +64,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // 获取GCRootViewController 通过GCDelegate
-    GCRootViewController *rootVC  = ((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
+    UIViewController *rootVC  = ((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
     if (indexPath.row == 0) {
         TestViewController *tVC = [[TestViewController alloc]init];
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:tVC];
-        [rootVC changeRootView:nav];
+//        [rootVC changeRootView:nav];
+        [(GCRootViewController*)([((UINavigationController *)rootVC).viewControllers firstObject]) changeRootView:nav];
+        
+        
     } else if (indexPath.row == 1) {
         GCNewsViewController *newsVC = [[GCNewsViewController alloc] init];
         UINavigationController *newsNC = [[UINavigationController alloc] initWithRootViewController:newsVC];
-        [rootVC changeRootView:newsNC];
+//        [rootVC changeRootView:newsNC];
+        [(GCRootViewController*)([((UINavigationController *)rootVC).viewControllers firstObject]) changeRootView:newsNC];
     }
     
     
