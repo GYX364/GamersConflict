@@ -58,6 +58,7 @@
         self.currentIndex = viewIndex;
         [UIView animateWithDuration:0.5 animations:^{
             self.classesView.contentOffset = CGPointMake(viewIndex * kCellWidth, 0);
+            self.superview.backgroundColor = [UIColor colorWithRed:arc4random() % 256 / 256.0 green:arc4random() % 256 / 256.0  blue:arc4random() % 256 / 256.0  alpha:1];
         }];
         [self setClassWithIndex:self.currentIndex forScrollView:self.classesView];
     }

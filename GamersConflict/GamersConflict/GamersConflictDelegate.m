@@ -16,9 +16,11 @@
     UINavigationController *newsNC = [[UINavigationController alloc] initWithRootViewController:newsVC];
     
     GCRootViewController *rootController = [[GCRootViewController alloc] initWithRootViewController:newsNC];
-    self.rootViewController = rootController;
+    UINavigationController *rootNC = [[UINavigationController alloc] initWithRootViewController:rootController];
     
-    self.window.rootViewController = rootController;
+    self.rootViewController = rootNC;
+    
+    self.window.rootViewController = rootNC;
     
     self.window.backgroundColor = [UIColor whiteColor];
 //    NSString *cellid = @"315360";
