@@ -12,6 +12,10 @@
 
 @interface GCNewsSubViewCell : GCBaseTableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *litpicImgView;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
 - (void)setCellWithModel:(GCNewsSubModel *)model;
 
 @end

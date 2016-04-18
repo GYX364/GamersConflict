@@ -10,7 +10,15 @@
 
 @class GCNewsModel;
 
+@protocol refreshModel <NSObject>
+
+- (void)refreshModel;
+
+@end
+
 @interface GCNewsSubView : UITableView
+
+@property (nonatomic, assign) id<refreshModel> refreshDelegate;
 
 - (void)setDataWithModel:(GCNewsModel *)model;
 

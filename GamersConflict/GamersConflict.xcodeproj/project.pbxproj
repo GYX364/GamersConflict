@@ -49,6 +49,8 @@
 		AABF8AD71CC0FCA20005B109 /* GCNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF8AD61CC0FCA20005B109 /* GCNewsModel.m */; };
 		AAC2B42E1CC0EC67003EE7E8 /* GCClassView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC2B42D1CC0EC67003EE7E8 /* GCClassView.m */; };
 		AAC2B4311CC0EC84003EE7E8 /* GCClassSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC2B4301CC0EC84003EE7E8 /* GCClassSubView.m */; };
+		AAFFC5A61CC498A300B3324B /* GCClassSuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFFC5A51CC498A300B3324B /* GCClassSuperView.m */; };
+		AAFFC5A81CC498BA00B3324B /* GCClassSuperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFFC5A71CC498BA00B3324B /* GCClassSuperView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +148,9 @@
 		AAC2B42D1CC0EC67003EE7E8 /* GCClassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCClassView.m; sourceTree = "<group>"; };
 		AAC2B42F1CC0EC84003EE7E8 /* GCClassSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCClassSubView.h; sourceTree = "<group>"; };
 		AAC2B4301CC0EC84003EE7E8 /* GCClassSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCClassSubView.m; sourceTree = "<group>"; };
+		AAFFC5A41CC498A300B3324B /* GCClassSuperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCClassSuperView.h; sourceTree = "<group>"; };
+		AAFFC5A51CC498A300B3324B /* GCClassSuperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCClassSuperView.m; sourceTree = "<group>"; };
+		AAFFC5A71CC498BA00B3324B /* GCClassSuperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCClassSuperView.xib; sourceTree = "<group>"; };
 		FB7E89B161E92C52CA08FC14 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -214,10 +219,10 @@
 				06EC9A121CC0D7FE001DD75F /* Resouces */,
 				06EC9A111CC0D7FE001DD75F /* Others */,
 				06EC9A141CC0D7FE001DD75F /* RootViewController */,
-				06EC99D71CC0D1DC001DD75F /* AppDelegate.h */,
-				06EC99D81CC0D1DC001DD75F /* AppDelegate.m */,
 				06EC9A4B1CC0E3E9001DD75F /* GamersConflictDelegate.h */,
 				06EC9A4C1CC0E3E9001DD75F /* GamersConflictDelegate.m */,
+				06EC99D71CC0D1DC001DD75F /* AppDelegate.h */,
+				06EC99D81CC0D1DC001DD75F /* AppDelegate.m */,
 				06EC99DA1CC0D1DC001DD75F /* ViewController.h */,
 				06EC99DB1CC0D1DC001DD75F /* ViewController.m */,
 				06EC99DD1CC0D1DC001DD75F /* Main.storyboard */,
@@ -419,6 +424,9 @@
 		06EC9A2D1CC0DB49001DD75F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AAFFC5A41CC498A300B3324B /* GCClassSuperView.h */,
+				AAFFC5A51CC498A300B3324B /* GCClassSuperView.m */,
+				AAFFC5A71CC498BA00B3324B /* GCClassSuperView.xib */,
 				AAC2B42C1CC0EC67003EE7E8 /* GCClassView.h */,
 				AAC2B42D1CC0EC67003EE7E8 /* GCClassView.m */,
 				AAC2B42F1CC0EC84003EE7E8 /* GCClassSubView.h */,
@@ -596,6 +604,7 @@
 				06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */,
 				AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */,
 				06EC99E41CC0D1DC001DD75F /* LaunchScreen.storyboard in Resources */,
+				AAFFC5A81CC498BA00B3324B /* GCClassSuperView.xib in Resources */,
 				06EC9A6D1CC0FE52001DD75F /* GCLoginViewController.xib in Resources */,
 				06EC9A401CC0DC1E001DD75F /* 1.png in Resources */,
 				06EC99E11CC0D1DC001DD75F /* Assets.xcassets in Resources */,
@@ -700,6 +709,7 @@
 				06EC99D91CC0D1DC001DD75F /* AppDelegate.m in Sources */,
 				06EC9A5D1CC0E9F4001DD75F /* GCBaseModelFactory.m in Sources */,
 				06EC99D61CC0D1DC001DD75F /* main.m in Sources */,
+				AAFFC5A61CC498A300B3324B /* GCClassSuperView.m in Sources */,
 				06EC9A4D1CC0E3E9001DD75F /* GamersConflictDelegate.m in Sources */,
 				AA5CCAF81CC1EB1E00FF79AB /* GCNewsSubModel.m in Sources */,
 			);

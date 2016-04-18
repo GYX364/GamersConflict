@@ -53,19 +53,29 @@
     return self;
 }
 
+- (void)setClassWithViewIndex:(NSInteger)viewIndex {
+    if (viewIndex != self.currentIndex) {
+        self.currentIndex = viewIndex;
+        [UIView animateWithDuration:0.5 animations:^{
+            self.classesView.contentOffset = CGPointMake(viewIndex * kCellWidth, 0);
+        }];
+        [self setClassWithIndex:self.currentIndex forScrollView:self.classesView];
+    }
+}
+
 - (void)addSubviewWithClasses:(NSArray *)classes {
     
     if (classes.count > 0) {
         self.classesCount = classes.count;
         for (NSInteger i = 0; i < classes.count; i ++) {
-            GCClassSubView *subView = [[GCClassSubView alloc] initWithFrame:CGRectMake(kScreenWidth / 2 - kCellWidth / 2 + kCellWidth * i + kCellInset, 40, kCellWidth - kCellInset * 2, kCellHeight) classIcon:nil];
+            GCClassSubView *subView = [[GCClassSubView alloc] initWithFrame:CGRectMake(kScreenWidth / 2 - kCellWidth / 2 + kCellWidth * i + kCellInset, 60, kCellWidth - kCellInset * 2, kCellHeight) classIcon:nil];
             subView.backgroundColor = [UIColor grayColor];
             [self.classesView addSubview:subView];
         }
     } else {
         for (NSInteger i = 0; i < 29; i ++) {
             self.classesCount = 29;
-            GCClassSubView *subView = [[GCClassSubView alloc] initWithFrame:CGRectMake(kScreenWidth / 2 - kCellWidth / 2 + kCellWidth * i + kCellInset, 40, kCellWidth - kCellInset * 2, kCellHeight) classIcon:nil];
+            GCClassSubView *subView = [[GCClassSubView alloc] initWithFrame:CGRectMake(kScreenWidth / 2 - kCellWidth / 2 + kCellWidth * i + kCellInset, 60, kCellWidth - kCellInset * 2, kCellHeight) classIcon:nil];
             subView.backgroundColor = [UIColor grayColor];
             [self.classesView addSubview:subView];
         }
@@ -81,14 +91,15 @@
     CGPoint offset = scrollView.contentOffset;
     float x = offset.x;
     NSInteger index = [self indexOfViewWillStopWithScrollView:scrollView];
-//    NSLog(@"index = %ld x = %f", index, x);
+    self.currentIndex = index;
+    //    NSLog(@"index = %ld x = %f", index, x);
     NSInteger headViewIndex = [self calculatindex:index - 5];
     NSInteger footViewIndex = [self calculatindex:index + 6];
     for (NSInteger i = headViewIndex; i < footViewIndex; i ++) {
         float subViewOffsetX = (i * kCellWidth - x) > 0 ? (i * kCellWidth - x) : (x - kCellWidth * i);
         GCClassSubView *subView = subViews[i];
         CGRect frame = subView.frame;
-        subView.frame = CGRectMake(frame.origin.x, 40 - kCellHeight * (1 - subViewOffsetX / ScreenWidth * 2), frame.size.width, frame.size.height);
+        subView.frame = CGRectMake(frame.origin.x, 60 - kCellHeight * (1 - subViewOffsetX / ScreenWidth * 2), frame.size.width, frame.size.height);
     }
     if (x == self.memoryIndex) {
         [self scrollViewDidEndDecelerating:self.classesView];
@@ -96,8 +107,15 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSArray *subViews = scrollView.subviews;
     NSInteger index = [self indexOfViewWillStopWithScrollView:scrollView];
+    if (self.classIndex) {
+        self.classIndex(index);
+    }
+    [self setClassWithIndex:index forScrollView:scrollView];
+}
+
+- (void)setClassWithIndex:(NSInteger)index forScrollView:(UIScrollView *)scrollView {
+    NSArray *subViews = scrollView.subviews;
     NSInteger headViewIndex = [self calculatindex:index - 5];
     NSInteger footViewIndex = [self calculatindex:index + 6];
     for (NSInteger i = headViewIndex; i < footViewIndex; i ++) {
@@ -105,7 +123,13 @@
             GCClassSubView *subView = subViews[i];
             CGRect frame = subView.frame;
             [UIView animateWithDuration:0.4 animations:^{
-                scrollView.contentOffset = CGPointMake(kCellWidth * index, -20);
+                scrollView.contentOffset = CGPointMake(kCellWidth * index, 0);
+                subView.frame = CGRectMake(frame.origin.x, 100, frame.size.width, frame.size.height);
+            }];
+        } else {
+            GCClassSubView *subView = subViews[i];
+            CGRect frame = subView.frame;
+            [UIView animateWithDuration:0.4 animations:^{
                 subView.frame = CGRectMake(frame.origin.x, 40, frame.size.width, frame.size.height);
             }];
         }
