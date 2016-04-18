@@ -16,6 +16,8 @@
 #import "GamersConflictDelegate.h"
 #import "GCRootViewController.h"
 
+#import "MJRefresh.h"
+
 #define kNewsSubModel @"GCNewsSubModel"
 #define kNewsSubViewCell @"GCNewsSubViewCell"
 
@@ -53,7 +55,6 @@ static NSString * const reUesId = @"subViewCell";
     self.delegate = self;
     self.rowHeight = 300;
     self.showsVerticalScrollIndicator = NO;
-//    [self registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self registerNib:[UINib nibWithNibName:kNewsSubViewCell bundle:nil] forCellReuseIdentifier:reUesId];
 }
 
@@ -81,6 +82,7 @@ static NSString * const reUesId = @"subViewCell";
             }
 //            NSLog(@"%@", self.articlesList);
         }
+        [self.mj_header endRefreshing];
         [self reloadData];
         self.contentOffset = CGPointMake(0, 0);
     }

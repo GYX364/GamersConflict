@@ -15,8 +15,6 @@
 #import "GCClassView.h"
 #import "GCClassSubView.h"
 
-#import "GCClassSuperView.h"
-
 @interface GCNewsViewController ()
 
 @property (nonatomic, strong) NSMutableArray *classes;
