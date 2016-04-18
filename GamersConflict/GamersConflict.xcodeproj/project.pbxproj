@@ -42,13 +42,12 @@
 		772135F56CCB8FFADF872379 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7E89B161E92C52CA08FC14 /* libPods.a */; };
 		AA3AF5211CC503F9000BDD04 /* GCNewsContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3AF51F1CC503F9000BDD04 /* GCNewsContentViewController.m */; };
 		AA3AF5221CC503F9000BDD04 /* GCNewsContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3AF5201CC503F9000BDD04 /* GCNewsContentViewController.xib */; };
-		AA3AF5291CC50917000BDD04 /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3AF5261CC50917000BDD04 /* NSString+Html.m */; };
-		AA3AF52A1CC50917000BDD04 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA3AF5271CC50917000BDD04 /* ReadMe.txt */; };
-		AA3AF52B1CC50917000BDD04 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = AA3AF5281CC50917000BDD04 /* style.css */; };
 		AA5CCAF81CC1EB1E00FF79AB /* GCNewsSubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CCAF71CC1EB1E00FF79AB /* GCNewsSubModel.m */; };
 		AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5CCAF91CC20B4B00FF79AB /* GCNewsSubView.xib */; };
 		AA5CCAFD1CC2265900FF79AB /* GCNewsSubViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CCAFC1CC2265900FF79AB /* GCNewsSubViewCell.m */; };
 		AA5CCAFF1CC2266F00FF79AB /* GCNewsSubViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5CCAFE1CC2266F00FF79AB /* GCNewsSubViewCell.xib */; };
+		AA906F7F1CC51943000CD8B9 /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = AA906F7D1CC51943000CD8B9 /* NSString+Html.m */; };
+		AA906F801CC51943000CD8B9 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = AA906F7E1CC51943000CD8B9 /* style.css */; };
 		AABF8AC51CC0F54C0005B109 /* GCNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AABF8AC41CC0F54C0005B109 /* GCNewsViewController.xib */; };
 		AABF8ACD1CC0F9FA0005B109 /* GCNewsSuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF8ACC1CC0F9FA0005B109 /* GCNewsSuperView.m */; };
 		AABF8AD01CC0FA510005B109 /* GCNewsSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF8ACF1CC0FA510005B109 /* GCNewsSubView.m */; };
@@ -142,17 +141,16 @@
 		AA3AF51E1CC503F9000BDD04 /* GCNewsContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsContentViewController.h; sourceTree = "<group>"; };
 		AA3AF51F1CC503F9000BDD04 /* GCNewsContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsContentViewController.m; sourceTree = "<group>"; };
 		AA3AF5201CC503F9000BDD04 /* GCNewsContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsContentViewController.xib; sourceTree = "<group>"; };
-		AA3AF5241CC50917000BDD04 /* EfficientDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfficientDefine.h; sourceTree = "<group>"; };
-		AA3AF5251CC50917000BDD04 /* NSString+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
-		AA3AF5261CC50917000BDD04 /* NSString+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
-		AA3AF5271CC50917000BDD04 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
-		AA3AF5281CC50917000BDD04 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		AA5CCAF61CC1EB1E00FF79AB /* GCNewsSubModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsSubModel.h; sourceTree = "<group>"; };
 		AA5CCAF71CC1EB1E00FF79AB /* GCNewsSubModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSubModel.m; sourceTree = "<group>"; };
 		AA5CCAF91CC20B4B00FF79AB /* GCNewsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsSubView.xib; sourceTree = "<group>"; };
 		AA5CCAFB1CC2265900FF79AB /* GCNewsSubViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsSubViewCell.h; sourceTree = "<group>"; };
 		AA5CCAFC1CC2265900FF79AB /* GCNewsSubViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSubViewCell.m; sourceTree = "<group>"; };
 		AA5CCAFE1CC2266F00FF79AB /* GCNewsSubViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsSubViewCell.xib; sourceTree = "<group>"; };
+		AA906F7B1CC51943000CD8B9 /* EfficientDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfficientDefine.h; sourceTree = "<group>"; };
+		AA906F7C1CC51943000CD8B9 /* NSString+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
+		AA906F7D1CC51943000CD8B9 /* NSString+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
+		AA906F7E1CC51943000CD8B9 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		AABF8AC41CC0F54C0005B109 /* GCNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsViewController.xib; sourceTree = "<group>"; };
 		AABF8ACB1CC0F9FA0005B109 /* GCNewsSuperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsSuperView.h; sourceTree = "<group>"; };
 		AABF8ACC1CC0F9FA0005B109 /* GCNewsSuperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSuperView.m; sourceTree = "<group>"; };
@@ -418,7 +416,7 @@
 		06EC9A161CC0D7FE001DD75F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				AA3AF5231CC50917000BDD04 /* HTML */,
+				AA906F7A1CC51943000CD8B9 /* HTML */,
 				061E17331CC47B270022EBCC /* GCUserInfoManager.h */,
 				061E17341CC47B270022EBCC /* GCUserInfoManager.m */,
 				061E17361CC488EC0022EBCC /* GCDatabaseManager.h */,
@@ -513,17 +511,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		AA3AF5231CC50917000BDD04 /* HTML */ = {
+		AA906F7A1CC51943000CD8B9 /* HTML */ = {
 			isa = PBXGroup;
 			children = (
-				AA3AF5241CC50917000BDD04 /* EfficientDefine.h */,
-				AA3AF5251CC50917000BDD04 /* NSString+Html.h */,
-				AA3AF5261CC50917000BDD04 /* NSString+Html.m */,
-				AA3AF5271CC50917000BDD04 /* ReadMe.txt */,
-				AA3AF5281CC50917000BDD04 /* style.css */,
+				AA906F7B1CC51943000CD8B9 /* EfficientDefine.h */,
+				AA906F7C1CC51943000CD8B9 /* NSString+Html.h */,
+				AA906F7D1CC51943000CD8B9 /* NSString+Html.m */,
+				AA906F7E1CC51943000CD8B9 /* style.css */,
 			);
-			name = HTML;
-			path = ../../../../../Resources/Tools/HTML;
+			path = HTML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -635,19 +631,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				06EC9A451CC0E272001DD75F /* GCRootViewController.xib in Resources */,
+				AA906F801CC51943000CD8B9 /* style.css in Resources */,
 				AA5CCAFF1CC2266F00FF79AB /* GCNewsSubViewCell.xib in Resources */,
 				06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */,
 				AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */,
 				06EC99E41CC0D1DC001DD75F /* LaunchScreen.storyboard in Resources */,
 				AAFFC5A81CC498BA00B3324B /* GCClassSuperView.xib in Resources */,
-				AA3AF52A1CC50917000BDD04 /* ReadMe.txt in Resources */,
 				06EC9A6D1CC0FE52001DD75F /* GCLoginViewController.xib in Resources */,
 				06EC9A401CC0DC1E001DD75F /* 1.png in Resources */,
 				AA3AF5221CC503F9000BDD04 /* GCNewsContentViewController.xib in Resources */,
 				06EC99E11CC0D1DC001DD75F /* Assets.xcassets in Resources */,
 				06EC9A621CC0EAFD001DD75F /* TestViewController.xib in Resources */,
 				06EC99DF1CC0D1DC001DD75F /* Main.storyboard in Resources */,
-				AA3AF52B1CC50917000BDD04 /* style.css in Resources */,
 				06EC9A4A1CC0E280001DD75F /* GCMenuViewController.xib in Resources */,
 				06EC9A731CC1156E001DD75F /* GCRegisterViewController.xib in Resources */,
 				AABF8AC51CC0F54C0005B109 /* GCNewsViewController.xib in Resources */,
@@ -727,7 +722,6 @@
 				06EC9A721CC1156E001DD75F /* GCRegisterViewController.m in Sources */,
 				AA5CCAFD1CC2265900FF79AB /* GCNewsSubViewCell.m in Sources */,
 				AABF8ACD1CC0F9FA0005B109 /* GCNewsSuperView.m in Sources */,
-				AA3AF5291CC50917000BDD04 /* NSString+Html.m in Sources */,
 				AAC2B4311CC0EC84003EE7E8 /* GCClassSubView.m in Sources */,
 				06EC9A6C1CC0FE52001DD75F /* GCLoginViewController.m in Sources */,
 				06EC9A321CC0DB5E001DD75F /* GCCollectionViewController.m in Sources */,
@@ -740,6 +734,7 @@
 				AA3AF5211CC503F9000BDD04 /* GCNewsContentViewController.m in Sources */,
 				AABF8AD01CC0FA510005B109 /* GCNewsSubView.m in Sources */,
 				061E17381CC488EC0022EBCC /* GCDatabaseManager.m in Sources */,
+				AA906F7F1CC51943000CD8B9 /* NSString+Html.m in Sources */,
 				06EC9A221CC0DA8B001DD75F /* GCBaseModel.m in Sources */,
 				061E173B1CC4FF430022EBCC /* GCCircularButton.m in Sources */,
 				061E17351CC47B270022EBCC /* GCUserInfoManager.m in Sources */,
