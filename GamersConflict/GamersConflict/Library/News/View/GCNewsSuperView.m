@@ -12,7 +12,7 @@
 
 #import <AFNetworking.h>
 
-@interface GCNewsSuperView()<UIScrollViewDelegate>
+@interface GCNewsSuperView()<UIScrollViewDelegate, refreshModel>
 
 @property (nonatomic, strong) NSMutableArray *articlesList;
 
@@ -67,54 +67,65 @@
     for (NSInteger i = 0; i < self.articlesList.count; i ++) {
         GCNewsSubView *subView = [[[NSBundle mainBundle] loadNibNamed:@"GCNewsSubView" owner:nil options:nil] firstObject];
         subView.frame = CGRectMake(ScreenWidth * i + 5, 44, ScreenWidth - 10, ScreenHeight - 64 - 80 - 5);
-        
+        subView.refreshDelegate = self;
 //        GCNewsSubView *subView = [[GCNewsSubView alloc] initWithFrame:CGRectMake(ScreenWidth * i + 5, 44, ScreenWidth - 10, ScreenHeight - 64 - 80 - 5)];
         
         [self addSubview:subView];
     }
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
+- (void)setViewWithClassIndex:(NSInteger)classIndex {
+    if (classIndex != self.currentIndex) {
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            self.contentOffset =CGPointMake(classIndex * ScreenWidth, 0);
+        }];
+        
+        [self requestDataWithIndex:classIndex];
+    }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSInteger index = [self indexWithScrollView:scrollView];
-//    NSLog(@"%ld", self.currentIndex);
-//    NSLog(@"%ld", index);
+    if (self.viewIndex) {
+        self.viewIndex(index);
+    }
+    [self requestDataWithIndex:index];
+}
+
+- (void)requestDataWithIndex:(NSInteger)index {
     if (self.currentIndex != index) {
         self.currentIndex = index;
-        GCNewsModel *model = self.articlesList[index];
-        if (model.isRequested == NO || model.newsDictioary.allKeys.count == 0) {
-            
-            [self.netManager GET:model.classUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                id newsDic = responseObject;
-                if ([newsDic isKindOfClass:[NSDictionary class]] && newsDic != nil) {
-                    model.newsDictioary = (NSMutableDictionary *)newsDic;
-                    GCNewsSubView *subView = self.subviews[self.currentIndex];
-                    [subView setDataWithModel:model];
-                }
-//                NSLog(@"%@", responseObject);
-            } failure:nil];
-            
-//            NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:model.classUrl]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//                id newsDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-//                if ([newsDic isKindOfClass:[NSDictionary class]] && newsDic != nil) {
-//                    model.newsDictioary = (NSMutableDictionary *)newsDic;
-//                    GCNewsSubView *subView = self.subviews[self.currentIndex];
-//                    [subView setDataWithModel:model];
-//                }
-////                NSLog(@"%@", newsDic);
-//            }];
-//            [task resume];
-            
-            model.isRequested = YES;
-        }
+        [self requestDataForModelWithIndex:index];
     }
+}
+
+- (void)requestDataForModelWithIndex:(NSInteger)index {
+    GCNewsModel *model = self.articlesList[index];
+    if (model.isRequested == NO || model.newsDictioary.allKeys.count == 0) {
+        
+        [self.netManager GET:model.classUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            id newsDic = responseObject;
+            if ([newsDic isKindOfClass:[NSDictionary class]] && newsDic != nil) {
+                model.newsDictioary = (NSMutableDictionary *)newsDic;
+                GCNewsSubView *subView = self.subviews[self.currentIndex];
+                [subView setDataWithModel:model];
+            }
+            //                NSLog(@"%@", responseObject);
+        } failure:nil];
+        model.isRequested = YES;
+    }
+
 }
 
 - (NSInteger)indexWithScrollView:(UIScrollView *)scrollView {
     return scrollView.contentOffset.x / ScreenWidth;
 }
 
+- (void)refreshModel {
+    GCNewsModel *model = self.articlesList[self.currentIndex];
+    model.isRequested = NO;
+    model.newsDictioary = nil;
+    [self requestDataForModelWithIndex:self.currentIndex];
+}
 @end

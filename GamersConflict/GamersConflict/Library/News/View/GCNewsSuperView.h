@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^viewIndex)(NSInteger currentIndex);
+
 @interface GCNewsSuperView : UIScrollView
 
 @property (nonatomic, assign) NSInteger currentIndex;
 
+@property (nonatomic, copy) viewIndex viewIndex;
+
 - (instancetype)initWithFrame:(CGRect)frame classes:(NSMutableArray *)classes;
+
+- (void)setViewWithClassIndex:(NSInteger)classIndex;
 
 @end

@@ -59,6 +59,10 @@ static NSString * const reUesId = @"subViewCell";
     return _articlesList;
 }
 
+- (void)refresh {
+    [self.refreshDelegate refreshModel];
+}
+
 - (void)setDataWithModel:(GCNewsModel *)model {
     if (model.newsDictioary.allKeys.count != 0) {
 //        NSLog(@"%@", model.newsDictioary[@"data"][@"list"]);
@@ -67,12 +71,13 @@ static NSString * const reUesId = @"subViewCell";
             for (NSDictionary *dic in list) {
                 GCNewsSubModel *model = [[GCNewsSubModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
-                NSLog(@"%@", model.litpic);
+//                NSLog(@"%@", model.litpic);
                 [self.articlesList addObject:model];
             }
 //            NSLog(@"%@", self.articlesList);
         }
         [self reloadData];
+        self.contentOffset = CGPointMake(0, 0);
     }
 }
 
@@ -96,6 +101,38 @@ static NSString * const reUesId = @"subViewCell";
         [cell setCellWithModel:model];
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self refresh];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    CATransform3D rotation;
+//    rotation = CATransform3DMakeRotation( (90.0*M_PI)/180, 0.0, 0.7, 0.4);
+//    rotation.m34 = 1.0/ -600;
+//    
+//    cell.layer.shadowColor = [[UIColor blackColor]CGColor];
+//    cell.layer.shadowOffset = CGSizeMake(10, 10);
+//    cell.alpha = 0;
+//    cell.layer.transform = rotation;
+//    cell.layer.anchorPoint = CGPointMake(0, 0.5);
+//    
+//    
+//    [UIView beginAnimations:@"rotation" context:NULL];
+//    [UIView setAnimationDuration:0.8];
+//    cell.layer.transform = CATransform3DIdentity;
+//    cell.alpha = 1;
+//    cell.layer.shadowOffset = CGSizeMake(0, 0);
+//    [UIView commitAnimations];
+    
+//    GCNewsSubViewCell *newsCell = (GCNewsSubViewCell *)cell;
+//    
+//    newsCell.titleLabel.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1);
+//    
+//    [UIView animateWithDuration:1 animations:^{
+//        newsCell.titleLabel.layer.transform = CATransform3DIdentity;
+//    }];
 }
 
 @end

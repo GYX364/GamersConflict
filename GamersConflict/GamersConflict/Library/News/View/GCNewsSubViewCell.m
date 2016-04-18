@@ -13,10 +13,6 @@
 
 @interface GCNewsSubViewCell()
 
-@property (weak, nonatomic) IBOutlet UIImageView *litpicImgView;
-
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
 @end
 
 @implementation GCNewsSubViewCell
