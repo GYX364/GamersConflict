@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		061E17351CC47B270022EBCC /* GCUserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 061E17341CC47B270022EBCC /* GCUserInfoManager.m */; };
 		061E17381CC488EC0022EBCC /* GCDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 061E17371CC488EC0022EBCC /* GCDatabaseManager.m */; };
+		061E173B1CC4FF430022EBCC /* GCCircularButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 061E173A1CC4FF430022EBCC /* GCCircularButton.m */; };
 		06EC99D61CC0D1DC001DD75F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC99D51CC0D1DC001DD75F /* main.m */; };
 		06EC99D91CC0D1DC001DD75F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC99D81CC0D1DC001DD75F /* AppDelegate.m */; };
 		06EC99DC1CC0D1DC001DD75F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC99DB1CC0D1DC001DD75F /* ViewController.m */; };
@@ -75,6 +76,8 @@
 		061E17341CC47B270022EBCC /* GCUserInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCUserInfoManager.m; sourceTree = "<group>"; };
 		061E17361CC488EC0022EBCC /* GCDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDatabaseManager.h; sourceTree = "<group>"; };
 		061E17371CC488EC0022EBCC /* GCDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDatabaseManager.m; sourceTree = "<group>"; };
+		061E17391CC4FF430022EBCC /* GCCircularButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCCircularButton.h; sourceTree = "<group>"; };
+		061E173A1CC4FF430022EBCC /* GCCircularButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCCircularButton.m; sourceTree = "<group>"; };
 		06EC99D11CC0D1DC001DD75F /* GamersConflict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamersConflict.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EC99D51CC0D1DC001DD75F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		06EC99D71CC0D1DC001DD75F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -406,6 +409,8 @@
 				061E17341CC47B270022EBCC /* GCUserInfoManager.m */,
 				061E17361CC488EC0022EBCC /* GCDatabaseManager.h */,
 				061E17371CC488EC0022EBCC /* GCDatabaseManager.m */,
+				061E17391CC4FF430022EBCC /* GCCircularButton.h */,
+				061E173A1CC4FF430022EBCC /* GCCircularButton.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -701,6 +706,7 @@
 				AABF8AD01CC0FA510005B109 /* GCNewsSubView.m in Sources */,
 				061E17381CC488EC0022EBCC /* GCDatabaseManager.m in Sources */,
 				06EC9A221CC0DA8B001DD75F /* GCBaseModel.m in Sources */,
+				061E173B1CC4FF430022EBCC /* GCCircularButton.m in Sources */,
 				061E17351CC47B270022EBCC /* GCUserInfoManager.m in Sources */,
 				06EC9A1F1CC0DA7E001DD75F /* GCBaseCellFactory.m in Sources */,
 				06EC9A441CC0E272001DD75F /* GCRootViewController.m in Sources */,
