@@ -66,7 +66,7 @@
 - (void)addSubview {
     for (NSInteger i = 0; i < self.articlesList.count; i ++) {
         GCNewsSubView *subView = [[[NSBundle mainBundle] loadNibNamed:@"GCNewsSubView" owner:nil options:nil] firstObject];
-        subView.frame = CGRectMake(ScreenWidth * i + 5, 44, ScreenWidth - 10, ScreenHeight - 64 - 80 - 5);
+        subView.frame = CGRectMake(ScreenWidth * i + 5, 20, ScreenWidth - 10, ScreenHeight - 20 - 80 - 5);
         subView.refreshDelegate = self;
 //        GCNewsSubView *subView = [[GCNewsSubView alloc] initWithFrame:CGRectMake(ScreenWidth * i + 5, 44, ScreenWidth - 10, ScreenHeight - 64 - 80 - 5)];
         
@@ -79,6 +79,7 @@
         
         [UIView animateWithDuration:0.5 animations:^{
             self.contentOffset =CGPointMake(classIndex * ScreenWidth, 0);
+            self.superview.backgroundColor = [UIColor colorWithRed:arc4random() % 256 / 256.0 green:arc4random() % 256 / 256.0  blue:arc4random() % 256 / 256.0  alpha:1];
         }];
         
         [self requestDataWithIndex:classIndex];

@@ -11,6 +11,11 @@
 #import "GCNewsSubModel.h"
 #import "GCNewsSubViewCell.h"
 
+#import "GCNewsContentViewController.h"
+
+#import "GamersConflictDelegate.h"
+#import "GCRootViewController.h"
+
 #define kNewsSubModel @"GCNewsSubModel"
 #define kNewsSubViewCell @"GCNewsSubViewCell"
 
@@ -104,7 +109,12 @@ static NSString * const reUesId = @"subViewCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self refresh];
+    GCNewsSubModel *model = self.articlesList[indexPath.row];
+    GCNewsContentViewController *newsContentVC = [[GCNewsContentViewController alloc] init];
+    newsContentVC.html5 = model.html5;
+    UINavigationController *rootViewController = (UINavigationController *)((GamersConflictDelegate *)[UIApplication sharedApplication].delegate).rootViewController;
+    [rootViewController pushViewController:newsContentVC animated:YES];
+    
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
