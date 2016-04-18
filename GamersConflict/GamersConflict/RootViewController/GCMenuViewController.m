@@ -42,8 +42,8 @@
     GCLoginViewController *loginVC = [[GCLoginViewController alloc]init];
 
 
-//    [rootVC presentViewController:loginVC animated:YES completion:nil];
-    [rootVC.navigationController pushViewController:loginVC animated:YES];
+    [rootVC presentViewController:loginVC animated:YES completion:nil];
+//    [rootVC.navigationController pushViewController:loginVC animated:YES];
     
 }
 #pragma mark -- TableViewDelegate方法

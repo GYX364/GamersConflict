@@ -10,6 +10,8 @@
 #import <AFNetworking.h>
 #import "GCRegisterViewController.h"
 #import "GCRegisterViewController.h"
+#import "GCUserInfoManager.h"
+
 // 用于开启状态栏动画
 //#import "AFNetworkActivityIndicatorManager.h"
 // 状态栏小菊花
@@ -32,9 +34,6 @@
     self.session = [AFHTTPSessionManager manager];
     // 设置支持内容类型  接口返回的数据类型
     self.session.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"application/x-json",@"text/html", nil];
-    
-    
-
 }
 
 
@@ -49,7 +48,16 @@
     [dic setValue:@"login" forKey:@"t"];
     [dic setValue:self.userNameText.text forKey:@"userName"];
     [self.session POST:GCLogin parameters:dic success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"登陆成功");
+        if ([responseObject objectForKey:@"code"] == 0) {
+            NSLog(@"%@",responseObject);
+            // 通过UserDefaults 保存用户ID等信息
+            [GCUserInfoManager conserveUserid:[[responseObject objectForKey:@"data"] objectForKey:@"userid"]];
+            [GCUserInfoManager conserveUsername:[[responseObject objectForKey:@"data"] objectForKey:@"username"]];
+            
+        }else{
+            NSLog(@"登陆失败:%@",[responseObject objectForKey:@"msg"]);
+        }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"登陆失败:%@",error);
     }];
