@@ -7,9 +7,10 @@
 //
 
 #import "GCBaseViewController.h"
+#import "GCNewsSubModel.h"
 
 @interface GCNewsContentViewController : GCBaseViewController
 
-@property (nonatomic, strong) NSString *html5;
+@property (nonatomic, strong) GCNewsSubModel *model;
 
 @end

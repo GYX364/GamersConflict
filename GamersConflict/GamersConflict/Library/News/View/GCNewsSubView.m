@@ -113,7 +113,7 @@ static NSString * const reUesId = @"subViewCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     GCNewsSubModel *model = self.articlesList[indexPath.row];
     GCNewsContentViewController *newsContentVC = [[GCNewsContentViewController alloc] init];
-    newsContentVC.html5 = model.html5;
+    newsContentVC.model = model;
     UINavigationController *rootViewController = (UINavigationController *)((GamersConflictDelegate *)[UIApplication sharedApplication].delegate).rootViewController;
     [rootViewController pushViewController:newsContentVC animated:YES];
     
