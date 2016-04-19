@@ -8,6 +8,7 @@
 #import "GCRootViewController.h"
 #import "GCNewsViewController.h"
 #import "GCMenuViewController.h"
+#import "GCUserInfoManager.h"
 #define kSCREENWIDTH self.view.bounds.width
 
 
@@ -94,6 +95,12 @@
     menuView.frame = self.view.bounds;
     // 放到底层
     [self.view insertSubview:menuView atIndex:0];
+    // 判断是否已经登录
+    if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
+        [_menuController.loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
+    }else{
+        [_menuController.loginButton setTitle:@"退出登录" forState:(UIControlStateNormal)];
+    }
     
 }
 

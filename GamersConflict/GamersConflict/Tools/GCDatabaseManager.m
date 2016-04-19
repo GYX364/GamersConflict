@@ -95,9 +95,13 @@
 }
 
 // cell 表操作
-- (void)insertCellWithModel:(GCBaseModel *)model userid:(NSString *)userid cellId:(NSString *)cellid{
+- (void)insertCellWithModel:(GCNewsSubModel *)model userid:(NSString *)userid cellId:(NSString *)cellid{
 //    NSString *insert = @"insert into collection (cellid,userid,cellModel) values (?,?,?);";
-    [self.database executeUpdateWithFormat:@"nsert into collection (cellid,userid,cellModel) values (%@,%@,%@);",cellid,userid,model];
+    NSMutableData *data = [NSMutableData data];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
+    [archiver encodeObject:model forKey:@"cellModel"];
+    [archiver finishEncoding];
+    [self.database executeUpdateWithFormat:@"nsert into collection (cellid,userid,cellModel) values (%@,%@,%@);",cellid,userid,data];
 //    self.database executeUpdate:<#(NSString *)#> withArgumentsInArray:<#(NSArray *)#>
 }
 
@@ -114,8 +118,9 @@
     while ([result next]) {
         NSData *data = [result dataForColumn:@"cellModel"];
         // 反归档
-        
-//        [array addObject:model];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc]initForReadingWithData:data];
+        GCNewsSubModel *model = [unarchiver decodeObjectForKey:@"cellModel"];
+        [array addObject:model];
     }
     return  array;
 }

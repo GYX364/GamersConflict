@@ -10,6 +10,7 @@
 #import "GCRootViewController.h"
 #import "GCNewsViewController.h"
 #import "GCDatabaseManager.h"
+#import "GCUserInfoManager.h"
 @implementation GamersConflictDelegate
 - (void)applicationDidFinishLaunching:(UIApplication *)application{
     GCNewsViewController *newsVC = [[GCNewsViewController alloc] init];
@@ -30,5 +31,10 @@
     [manager createCollectionTable];
     [manager createTypeTable];
     
+}
+
+
+- (void)applicationWillTerminate:(UIApplication *)application{
+    [GCUserInfoManager cancelUserid];
 }
 @end

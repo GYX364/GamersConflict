@@ -9,5 +9,6 @@
 #import "GCBaseViewController.h"
 @class GCRootViewController;
 @interface GCMenuViewController : GCBaseViewController
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @end

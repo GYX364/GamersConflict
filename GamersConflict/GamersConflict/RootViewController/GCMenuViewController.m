@@ -11,10 +11,11 @@
 #import "GamersConflictDelegate.h"
 #import "TestViewController.h"
 #import "GCNewsViewController.h"
-
+#import "GCUserInfoManager.h"
 #import "GCLoginViewController.h"
 @interface GCMenuViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *menuListTableView;
+
 // 菜单内容数组
 @property (nonnull, strong)NSMutableArray *menuListArray;
 @end
@@ -28,6 +29,15 @@
     }
     return _menuListArray;
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
+        [self.loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
+    }else{
+        [self.loginButton setTitle:@"退出登录" forState:(UIControlStateNormal)];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.menuListArray = [[NSMutableArray alloc]initWithObjects:@"第一个",@"第二个", nil];
@@ -37,12 +47,32 @@
 }
 - (IBAction)loginAction:(id)sender {
     NSLog(@"1");
-    // 跳转登陆页面
-    GCRootViewController *rootVC  = ((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
-    GCLoginViewController *loginVC = [[GCLoginViewController alloc]init];
-
-
-    [rootVC presentViewController:loginVC animated:YES completion:nil];
+    if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
+        // 跳转登陆页面
+        GCRootViewController *rootVC  = ((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
+        GCLoginViewController *loginVC = [[GCLoginViewController alloc]init];
+        
+        
+        [rootVC presentViewController:loginVC animated:YES completion:nil];
+    }else{
+        // 退出登录
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"退出登录" message:@"您确定要退出登录吗" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            // 确定退出, 删除Userid
+             [GCUserInfoManager cancelUserid];
+            // 改变button 显示
+            [self.loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
+        }];
+        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+            //
+        }];
+        [alertVC addAction:action1];
+        [alertVC addAction:action2];
+        [self showViewController:alertVC sender:nil];
+       
+        
+    }
+   
 //    [rootVC.navigationController pushViewController:loginVC animated:YES];
     
 }

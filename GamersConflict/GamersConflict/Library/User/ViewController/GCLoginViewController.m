@@ -48,11 +48,15 @@
     [dic setValue:@"login" forKey:@"t"];
     [dic setValue:self.userNameText.text forKey:@"userName"];
     [self.session POST:GCLogin parameters:dic success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if ([responseObject objectForKey:@"code"] == 0) {
+        if ([[responseObject objectForKey:@"code"] intValue] == 0) {
             NSLog(@"%@",responseObject);
             // 通过UserDefaults 保存用户ID等信息
             [GCUserInfoManager conserveUserid:[[responseObject objectForKey:@"data"] objectForKey:@"userid"]];
             [GCUserInfoManager conserveUsername:[[responseObject objectForKey:@"data"] objectForKey:@"username"]];
+            // 完成登录.返回上一页面
+            [self dismissViewControllerAnimated:YES completion:^{
+                
+            }];
             
         }else{
             NSLog(@"登陆失败:%@",[responseObject objectForKey:@"msg"]);

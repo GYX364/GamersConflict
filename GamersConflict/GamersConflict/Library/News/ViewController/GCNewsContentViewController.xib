@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -47,11 +47,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="r6u-2f-E0Z" secondAttribute="bottom" id="Mo6-mI-Vea"/>
-                <constraint firstAttribute="trailing" secondItem="r6u-2f-E0Z" secondAttribute="trailing" id="ZsL-d4-WEy"/>
+                <constraint firstItem="r6u-2f-E0Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="F6E-3G-hCR"/>
+                <constraint firstAttribute="bottom" secondItem="r6u-2f-E0Z" secondAttribute="bottom" id="QQb-YI-iLD"/>
                 <constraint firstItem="CeR-f4-BCl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="bfX-wk-HVX"/>
-                <constraint firstItem="r6u-2f-E0Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="sSe-em-jtl"/>
-                <constraint firstItem="r6u-2f-E0Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uMv-da-wH0"/>
+                <constraint firstItem="r6u-2f-E0Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="jhH-Vx-PkY"/>
+                <constraint firstAttribute="trailing" secondItem="r6u-2f-E0Z" secondAttribute="trailing" id="rzb-Hy-4iq"/>
                 <constraint firstItem="CeR-f4-BCl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="v0c-O8-KNY"/>
             </constraints>
             <variation key="default">
@@ -62,10 +62,10 @@
                 <mask key="constraints">
                     <exclude reference="bfX-wk-HVX"/>
                     <exclude reference="v0c-O8-KNY"/>
-                    <exclude reference="Mo6-mI-Vea"/>
-                    <exclude reference="ZsL-d4-WEy"/>
-                    <exclude reference="sSe-em-jtl"/>
-                    <exclude reference="uMv-da-wH0"/>
+                    <exclude reference="F6E-3G-hCR"/>
+                    <exclude reference="QQb-YI-iLD"/>
+                    <exclude reference="jhH-Vx-PkY"/>
+                    <exclude reference="rzb-Hy-4iq"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -76,15 +76,16 @@
                 <mask key="constraints">
                     <include reference="bfX-wk-HVX"/>
                     <include reference="v0c-O8-KNY"/>
-                    <include reference="Mo6-mI-Vea"/>
-                    <include reference="ZsL-d4-WEy"/>
-                    <include reference="sSe-em-jtl"/>
-                    <include reference="uMv-da-wH0"/>
+                    <include reference="F6E-3G-hCR"/>
+                    <include reference="QQb-YI-iLD"/>
+                    <include reference="jhH-Vx-PkY"/>
+                    <include reference="rzb-Hy-4iq"/>
                 </mask>
             </variation>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="aCv-1I-rZ2" appends="YES" id="Lfi-KN-OrX"/>
             </connections>
+            <point key="canvasLocation" x="415" y="310"/>
         </view>
         <swipeGestureRecognizer direction="right" id="aCv-1I-rZ2">
             <connections>
