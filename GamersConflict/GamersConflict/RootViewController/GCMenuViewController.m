@@ -11,8 +11,29 @@
 #import "GamersConflictDelegate.h"
 #import "TestViewController.h"
 #import "GCNewsViewController.h"
+#import "KYCircleMenu.h"
 
 #import "GCLoginViewController.h"
+
+// Button Size
+#define kKYButtonInMiniSize   16.f
+#define kKYButtonInSmallSize  32.f
+#define kKYButtonInNormalSize 64.f
+
+#pragma mark - KYCircleMenu Configuration
+
+// Number of buttons around the circle menu
+#define kKYCCircleMenuButtonsCount 6
+// Circle Menu
+// Basic constants
+#define kKYCircleMenuSize             280.f
+#define kKYCircleMenuButtonSize       kKYButtonInNormalSize
+#define kKYCircleMenuCenterButtonSize kKYButtonInNormalSize
+// Image
+#define kKYICircleMenuCenterButton           @"KYICircleMenuCenterButton.png"
+#define kKYICircleMenuCenterButtonBackground @"KYICircleMenuCenterButtonBackground.png"
+#define kKYICircleMenuButtonImageNameFormat  @"KYICircleMenuButton%.2d.png" // %.2d: 1 - 6
+
 @interface GCMenuViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *menuListTableView;
 // 菜单内容数组
@@ -30,7 +51,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.menuListArray = [[NSMutableArray alloc]initWithObjects:@"第一个",@"第二个", nil];
+    self.menuListArray = [[NSMutableArray alloc]initWithObjects:@"第一个",@"第二个", @"第三个", nil];
     [self.menuListTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 
     // Do any additional setup after loading the view from its nib.
@@ -77,9 +98,11 @@
         UINavigationController *newsNC = [[UINavigationController alloc] initWithRootViewController:newsVC];
 //        [rootVC changeRootView:newsNC];
         [(GCRootViewController*)([((UINavigationController *)rootVC).viewControllers firstObject]) changeRootView:newsNC];
+    } else if (indexPath.row == 2) {
+        KYCircleMenu *menuVC = [[KYCircleMenu alloc] initWithButtonCount:kKYCCircleMenuButtonsCount menuSize:kKYCircleMenuSize buttonSize:kKYCircleMenuButtonSize buttonImageNameFormat:kKYICircleMenuButtonImageNameFormat centerButtonSize:kKYCircleMenuCenterButtonSize centerButtonImageName:kKYICircleMenuCenterButton centerButtonBackgroundImageName:kKYICircleMenuCenterButtonBackground];
+        menuVC.view.backgroundColor = [UIColor blackColor];
+        [rootVC presentViewController:menuVC animated:YES completion:nil];
     }
-    
-    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
