@@ -38,8 +38,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    if (self.html5 != nil) {
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.html5]]];
+    if (self.model.html5 != nil) {
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.model.html5]]];
     }
    
     NSLog(@"%@",NSStringFromCGRect(self.view.frame));

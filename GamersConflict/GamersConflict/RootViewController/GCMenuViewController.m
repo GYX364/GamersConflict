@@ -12,7 +12,10 @@
 #import "TestViewController.h"
 #import "GCNewsViewController.h"
 #import "GCUserInfoManager.h"
+#import "KYCircleMenu.h"
+
 #import "GCLoginViewController.h"
+
 @interface GCMenuViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *menuListTableView;
 
@@ -107,10 +110,7 @@
         UINavigationController *newsNC = [[UINavigationController alloc] initWithRootViewController:newsVC];
 //        [rootVC changeRootView:newsNC];
         [(GCRootViewController*)([((UINavigationController *)rootVC).viewControllers firstObject]) changeRootView:newsNC];
-    }
-    
-    
-}
+    }}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

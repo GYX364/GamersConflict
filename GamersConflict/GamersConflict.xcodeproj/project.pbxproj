@@ -42,6 +42,24 @@
 		772135F56CCB8FFADF872379 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7E89B161E92C52CA08FC14 /* libPods.a */; };
 		AA3AF5211CC503F9000BDD04 /* GCNewsContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3AF51F1CC503F9000BDD04 /* GCNewsContentViewController.m */; };
 		AA3AF5221CC503F9000BDD04 /* GCNewsContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3AF5201CC503F9000BDD04 /* GCNewsContentViewController.xib */; };
+		AA52B5811CC5F471007884D9 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = AA52B57E1CC5F471007884D9 /* Constants.m */; };
+		AA52B5821CC5F471007884D9 /* KYCircleMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = AA52B5801CC5F471007884D9 /* KYCircleMenu.m */; };
+		AA52B5931CC5F48B007884D9 /* KYICircleMenuButton01.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5831CC5F48B007884D9 /* KYICircleMenuButton01.png */; };
+		AA52B5941CC5F48B007884D9 /* KYICircleMenuButton01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5841CC5F48B007884D9 /* KYICircleMenuButton01@2x.png */; };
+		AA52B5951CC5F48B007884D9 /* KYICircleMenuButton02.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5851CC5F48B007884D9 /* KYICircleMenuButton02.png */; };
+		AA52B5961CC5F48B007884D9 /* KYICircleMenuButton02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5861CC5F48B007884D9 /* KYICircleMenuButton02@2x.png */; };
+		AA52B5971CC5F48B007884D9 /* KYICircleMenuButton03.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5871CC5F48B007884D9 /* KYICircleMenuButton03.png */; };
+		AA52B5981CC5F48B007884D9 /* KYICircleMenuButton03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5881CC5F48B007884D9 /* KYICircleMenuButton03@2x.png */; };
+		AA52B5991CC5F48B007884D9 /* KYICircleMenuButton04.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5891CC5F48B007884D9 /* KYICircleMenuButton04.png */; };
+		AA52B59A1CC5F48B007884D9 /* KYICircleMenuButton04@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B58A1CC5F48B007884D9 /* KYICircleMenuButton04@2x.png */; };
+		AA52B59B1CC5F48B007884D9 /* KYICircleMenuButton05.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B58B1CC5F48B007884D9 /* KYICircleMenuButton05.png */; };
+		AA52B59C1CC5F48B007884D9 /* KYICircleMenuButton05@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B58C1CC5F48B007884D9 /* KYICircleMenuButton05@2x.png */; };
+		AA52B59D1CC5F48B007884D9 /* KYICircleMenuButton06.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B58D1CC5F48B007884D9 /* KYICircleMenuButton06.png */; };
+		AA52B59E1CC5F48B007884D9 /* KYICircleMenuButton06@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B58E1CC5F48B007884D9 /* KYICircleMenuButton06@2x.png */; };
+		AA52B59F1CC5F48B007884D9 /* KYICircleMenuCenterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B58F1CC5F48B007884D9 /* KYICircleMenuCenterButton.png */; };
+		AA52B5A01CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5901CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png */; };
+		AA52B5A11CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5911CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png */; };
+		AA52B5A21CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5921CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png */; };
 		AA5CCAF81CC1EB1E00FF79AB /* GCNewsSubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CCAF71CC1EB1E00FF79AB /* GCNewsSubModel.m */; };
 		AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5CCAF91CC20B4B00FF79AB /* GCNewsSubView.xib */; };
 		AA5CCAFD1CC2265900FF79AB /* GCNewsSubViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CCAFC1CC2265900FF79AB /* GCNewsSubViewCell.m */; };
@@ -138,6 +156,26 @@
 		AA3AF51E1CC503F9000BDD04 /* GCNewsContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsContentViewController.h; sourceTree = "<group>"; };
 		AA3AF51F1CC503F9000BDD04 /* GCNewsContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsContentViewController.m; sourceTree = "<group>"; };
 		AA3AF5201CC503F9000BDD04 /* GCNewsContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsContentViewController.xib; sourceTree = "<group>"; };
+		AA52B57D1CC5F471007884D9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		AA52B57E1CC5F471007884D9 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		AA52B57F1CC5F471007884D9 /* KYCircleMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYCircleMenu.h; sourceTree = "<group>"; };
+		AA52B5801CC5F471007884D9 /* KYCircleMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYCircleMenu.m; sourceTree = "<group>"; };
+		AA52B5831CC5F48B007884D9 /* KYICircleMenuButton01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuButton01.png; sourceTree = "<group>"; };
+		AA52B5841CC5F48B007884D9 /* KYICircleMenuButton01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuButton01@2x.png"; sourceTree = "<group>"; };
+		AA52B5851CC5F48B007884D9 /* KYICircleMenuButton02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuButton02.png; sourceTree = "<group>"; };
+		AA52B5861CC5F48B007884D9 /* KYICircleMenuButton02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuButton02@2x.png"; sourceTree = "<group>"; };
+		AA52B5871CC5F48B007884D9 /* KYICircleMenuButton03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuButton03.png; sourceTree = "<group>"; };
+		AA52B5881CC5F48B007884D9 /* KYICircleMenuButton03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuButton03@2x.png"; sourceTree = "<group>"; };
+		AA52B5891CC5F48B007884D9 /* KYICircleMenuButton04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuButton04.png; sourceTree = "<group>"; };
+		AA52B58A1CC5F48B007884D9 /* KYICircleMenuButton04@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuButton04@2x.png"; sourceTree = "<group>"; };
+		AA52B58B1CC5F48B007884D9 /* KYICircleMenuButton05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuButton05.png; sourceTree = "<group>"; };
+		AA52B58C1CC5F48B007884D9 /* KYICircleMenuButton05@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuButton05@2x.png"; sourceTree = "<group>"; };
+		AA52B58D1CC5F48B007884D9 /* KYICircleMenuButton06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuButton06.png; sourceTree = "<group>"; };
+		AA52B58E1CC5F48B007884D9 /* KYICircleMenuButton06@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuButton06@2x.png"; sourceTree = "<group>"; };
+		AA52B58F1CC5F48B007884D9 /* KYICircleMenuCenterButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuCenterButton.png; sourceTree = "<group>"; };
+		AA52B5901CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuCenterButton@2x.png"; sourceTree = "<group>"; };
+		AA52B5911CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuCenterButtonBackground.png; sourceTree = "<group>"; };
+		AA52B5921CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuCenterButtonBackground@2x.png"; sourceTree = "<group>"; };
 		AA5CCAF61CC1EB1E00FF79AB /* GCNewsSubModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsSubModel.h; sourceTree = "<group>"; };
 		AA5CCAF71CC1EB1E00FF79AB /* GCNewsSubModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSubModel.m; sourceTree = "<group>"; };
 		AA5CCAF91CC20B4B00FF79AB /* GCNewsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsSubView.xib; sourceTree = "<group>"; };
@@ -385,6 +423,22 @@
 		06EC9A131CC0D7FE001DD75F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA52B5831CC5F48B007884D9 /* KYICircleMenuButton01.png */,
+				AA52B5841CC5F48B007884D9 /* KYICircleMenuButton01@2x.png */,
+				AA52B5851CC5F48B007884D9 /* KYICircleMenuButton02.png */,
+				AA52B5861CC5F48B007884D9 /* KYICircleMenuButton02@2x.png */,
+				AA52B5871CC5F48B007884D9 /* KYICircleMenuButton03.png */,
+				AA52B5881CC5F48B007884D9 /* KYICircleMenuButton03@2x.png */,
+				AA52B5891CC5F48B007884D9 /* KYICircleMenuButton04.png */,
+				AA52B58A1CC5F48B007884D9 /* KYICircleMenuButton04@2x.png */,
+				AA52B58B1CC5F48B007884D9 /* KYICircleMenuButton05.png */,
+				AA52B58C1CC5F48B007884D9 /* KYICircleMenuButton05@2x.png */,
+				AA52B58D1CC5F48B007884D9 /* KYICircleMenuButton06.png */,
+				AA52B58E1CC5F48B007884D9 /* KYICircleMenuButton06@2x.png */,
+				AA52B58F1CC5F48B007884D9 /* KYICircleMenuCenterButton.png */,
+				AA52B5901CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png */,
+				AA52B5911CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png */,
+				AA52B5921CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png */,
 				06EC9A3F1CC0DC1E001DD75F /* 1.png */,
 			);
 			path = Images;
@@ -409,6 +463,7 @@
 		06EC9A161CC0D7FE001DD75F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				AA52B57C1CC5F471007884D9 /* KYCircleMenu */,
 				AA906F7A1CC51943000CD8B9 /* HTML */,
 				061E17331CC47B270022EBCC /* GCUserInfoManager.h */,
 				061E17341CC47B270022EBCC /* GCUserInfoManager.m */,
@@ -498,6 +553,17 @@
 				9900D47BA6FCCE2BC4B98A68 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA52B57C1CC5F471007884D9 /* KYCircleMenu */ = {
+			isa = PBXGroup;
+			children = (
+				AA52B57D1CC5F471007884D9 /* Constants.h */,
+				AA52B57E1CC5F471007884D9 /* Constants.m */,
+				AA52B57F1CC5F471007884D9 /* KYCircleMenu.h */,
+				AA52B5801CC5F471007884D9 /* KYCircleMenu.m */,
+			);
+			path = KYCircleMenu;
 			sourceTree = "<group>";
 		};
 		AA906F7A1CC51943000CD8B9 /* HTML */ = {
@@ -619,16 +685,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA52B59F1CC5F48B007884D9 /* KYICircleMenuCenterButton.png in Resources */,
 				06EC9A451CC0E272001DD75F /* GCRootViewController.xib in Resources */,
+				AA52B5A21CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png in Resources */,
+				AA52B59E1CC5F48B007884D9 /* KYICircleMenuButton06@2x.png in Resources */,
 				AA906F801CC51943000CD8B9 /* style.css in Resources */,
 				AA5CCAFF1CC2266F00FF79AB /* GCNewsSubViewCell.xib in Resources */,
+				AA52B59B1CC5F48B007884D9 /* KYICircleMenuButton05.png in Resources */,
+				AA52B5A11CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png in Resources */,
+				AA52B5931CC5F48B007884D9 /* KYICircleMenuButton01.png in Resources */,
 				06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */,
+				AA52B59C1CC5F48B007884D9 /* KYICircleMenuButton05@2x.png in Resources */,
 				AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */,
 				06EC99E41CC0D1DC001DD75F /* LaunchScreen.storyboard in Resources */,
+				AA52B5961CC5F48B007884D9 /* KYICircleMenuButton02@2x.png in Resources */,
+				AA52B5A01CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png in Resources */,
+				AA52B5981CC5F48B007884D9 /* KYICircleMenuButton03@2x.png in Resources */,
 				06EC9A6D1CC0FE52001DD75F /* GCLoginViewController.xib in Resources */,
 				06EC9A401CC0DC1E001DD75F /* 1.png in Resources */,
 				AA3AF5221CC503F9000BDD04 /* GCNewsContentViewController.xib in Resources */,
+				AA52B5951CC5F48B007884D9 /* KYICircleMenuButton02.png in Resources */,
+				AA52B5941CC5F48B007884D9 /* KYICircleMenuButton01@2x.png in Resources */,
 				06EC99E11CC0D1DC001DD75F /* Assets.xcassets in Resources */,
+				AA52B59A1CC5F48B007884D9 /* KYICircleMenuButton04@2x.png in Resources */,
+				AA52B59D1CC5F48B007884D9 /* KYICircleMenuButton06.png in Resources */,
+				AA52B5991CC5F48B007884D9 /* KYICircleMenuButton04.png in Resources */,
+				AA52B5971CC5F48B007884D9 /* KYICircleMenuButton03.png in Resources */,
 				06EC9A621CC0EAFD001DD75F /* TestViewController.xib in Resources */,
 				06EC99DF1CC0D1DC001DD75F /* Main.storyboard in Resources */,
 				06EC9A4A1CC0E280001DD75F /* GCMenuViewController.xib in Resources */,
@@ -710,6 +792,7 @@
 				AA5CCAFD1CC2265900FF79AB /* GCNewsSubViewCell.m in Sources */,
 				AABF8ACD1CC0F9FA0005B109 /* GCNewsSuperView.m in Sources */,
 				AAC2B4311CC0EC84003EE7E8 /* GCClassSubView.m in Sources */,
+				AA52B5811CC5F471007884D9 /* Constants.m in Sources */,
 				06EC9A6C1CC0FE52001DD75F /* GCLoginViewController.m in Sources */,
 				06EC9A321CC0DB5E001DD75F /* GCCollectionViewController.m in Sources */,
 				AABF8AD71CC0FCA20005B109 /* GCNewsModel.m in Sources */,
@@ -722,6 +805,7 @@
 				AABF8AD01CC0FA510005B109 /* GCNewsSubView.m in Sources */,
 				061E17381CC488EC0022EBCC /* GCDatabaseManager.m in Sources */,
 				AA906F7F1CC51943000CD8B9 /* NSString+Html.m in Sources */,
+				AA52B5821CC5F471007884D9 /* KYCircleMenu.m in Sources */,
 				06EC9A221CC0DA8B001DD75F /* GCBaseModel.m in Sources */,
 				061E173B1CC4FF430022EBCC /* GCCircularButton.m in Sources */,
 				061E17351CC47B270022EBCC /* GCUserInfoManager.m in Sources */,
