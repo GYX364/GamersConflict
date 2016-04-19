@@ -50,7 +50,7 @@
 
 #pragma mark -- 创建表
 - (void)createCollectionTable{
-    NSString *sql = @"create table if not exists collection (userid text,cellModel BLOB);";
+    NSString *sql = @"create table if not exists collection (cellid text primary key,userid text,cellModel BLOB);";
     BOOL isCreate = [self.database executeUpdate:sql];
     if (isCreate != NO) {
         NSLog(@"create collectionTable suaccess");
@@ -92,5 +92,31 @@
         [array addObject:mod];
     }
     return array;
+}
+
+// cell 表操作
+- (void)insertCellWithModel:(GCBaseModel *)model userid:(NSString *)userid cellId:(NSString *)cellid{
+//    NSString *insert = @"insert into collection (cellid,userid,cellModel) values (?,?,?);";
+    [self.database executeUpdateWithFormat:@"nsert into collection (cellid,userid,cellModel) values (%@,%@,%@);",cellid,userid,model];
+//    self.database executeUpdate:<#(NSString *)#> withArgumentsInArray:<#(NSArray *)#>
+}
+
+- (void)deleteCellModelWithCellId:(NSString *)cellID{
+    NSString *delete = [NSString stringWithFormat:@"delete * from collection where cellid = %@",cellID];
+    [self.database executeUpdate:delete];
+}
+
+- (NSArray *)selectCellModelWithUserId:(NSString *)userid{
+    // 返回cellModel数组
+    NSMutableArray *array = [NSMutableArray array];
+    NSString *select = [NSString stringWithFormat:@"select * from collection where userid = %@",userid];
+    FMResultSet *result = [self.database executeQuery:select];
+    while ([result next]) {
+        NSData *data = [result dataForColumn:@"cellModel"];
+        // 反归档
+        
+//        [array addObject:model];
+    }
+    return  array;
 }
 @end
