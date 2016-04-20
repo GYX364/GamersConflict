@@ -111,16 +111,15 @@
         } else {
             url = model.moreUrl;
         }
-        
+        NSLog(@"%@", url);
         if (url != nil) {
-            [self.netManager GET:model.classUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [self.netManager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 id newsDic = responseObject;
                 if ([newsDic isKindOfClass:[NSDictionary class]] && newsDic != nil) {
                     [model.newsArray addObject:(NSMutableDictionary *)newsDic];
                     GCNewsSubView *subView = self.subviews[self.currentIndex];
-                    [subView setDataWithModel:model];
+                    [subView setDataWithModel:model];   
                 }
-//                                NSLog(@"%@", responseObject);
             } failure:nil];
             model.isRequested = YES;
         }
@@ -134,6 +133,7 @@
 
 - (void)refreshModel {
     GCNewsModel *model = self.articlesList[self.currentIndex];
+    NSLog(@"%ld", self.currentIndex);
     model.isRequested = NO;
     model.newsArray = nil;
     [self requestDataForModelWithIndex:self.currentIndex];

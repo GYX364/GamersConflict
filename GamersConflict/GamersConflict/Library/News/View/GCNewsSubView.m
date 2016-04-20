@@ -80,8 +80,8 @@ static NSString * const reUesId = @"subViewCell";
                     [self.articlesList addObject:model];
                 }
             }
-
         }
+        model.start = self.articlesList.count;
         if ([self.mj_header isRefreshing]) {
             [self.mj_header endRefreshing];
         } else if ([self.mj_footer isRefreshing]) {

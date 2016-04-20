@@ -42,7 +42,7 @@
         if (self.model.html5 != nil) {
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.model.html5]]];
         }
-    } else if ([self.model.type isEqualToString:@"video"]) {
+    } else if ([self.model.type isEqualToString:@"video"] || [self.model.type isEqualToString:@"pic"]) {
         if (self.model.url != nil) {
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.model.url]]];
         }

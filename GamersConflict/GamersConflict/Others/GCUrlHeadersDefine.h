@@ -10,24 +10,24 @@
 #define GCUrlHeadersDefine_h
 
 // 一. 推荐模块
-#define GCRecommendURL @"http://api.tuwan.com/app/?appid=7&class=cookielike&id=318263,318432,318079,318118,318066&t=1459951762&appid=7&appver=2.1"
-#define GCRecommendMoreURL @"http://api.tuwan.com/app/?appid=7&class=cookielike&id=318263,318432,318079,318118,318066&t=1459951762&appid=7&appver=2.1&start=30"
+#define GCRecommendURL [NSString stringWithFormat:@"http://api.tuwan.com/app/?appid=7&class=cookielike&id=321788,321586,321509,321011,320853&t=%.f&appid=7&appver=2.1", [[NSDate date] timeIntervalSince1970]]
+#define GCRecommendMoreURL(i) [NSString stringWithFormat:@"http://api.tuwan.com/app/?appid=7&class=cookielike&id=321788,321586,321509,321011,320853&t=%.f&appid=7&appver=2.1&start=%ld", [[NSDate date] timeIntervalSince1970], i]
 
 // 二.网游模块
-#define GCOnlineGameURL @"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E7%BD%91%E6%B8%B8&id=318072&t=1460107822&appid=7&appver=2.1"
-#define GCOnlineGameMoreURL @"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E7%BD%91%E6%B8%B8&id=318072&t=1460107822&appid=7&appver=2.1&start=20"
+#define GCOnlineGameURL [@"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E7%BD%91%E6%B8%B8" stringByAppendingString:[NSString stringWithFormat:@"&id=321639&t=%.f&appid=7&appver=2.1", [[NSDate date] timeIntervalSince1970]]]
+#define GCOnlineGameMoreURL(i) [@"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E7%BD%91%E6%B8%B8" stringByAppendingString:[NSString stringWithFormat:@"&id=321639&t=%.f&appid=7&appver=2.1&start=%ld", [[NSDate date] timeIntervalSince1970], i]]
 
 // 三.手游模块
-#define GCMobileGameURL @"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E6%89%8B%E6%B8%B8&id=&t=1460114420&appid=7&appver=2.1"
-#define GCMobileGameMoreURL @"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E6%89%8B%E6%B8%B8&id=&t=1460114420&appid=7&appver=2.1&start=20"
+#define GCMobileGameURL [@"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E7%BD%91%E6%B8%B8" stringByAppendingString:[NSString stringWithFormat:@"&id=321639&t=%.f&appid=7&appver=2.1", [[NSDate date] timeIntervalSince1970]]]
+#define GCMobileGameMoreURL(i) [@"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E7%BD%91%E6%B8%B8" stringByAppendingString:[NSString stringWithFormat:@"&id=321639&t=%.f&appid=7&appver=2.1&start=%ld", [[NSDate date] timeIntervalSince1970], i]]
 
 // 四.单机模块
-#define GCPCGameURL @"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E5%8D%95%E6%9C%BA&id=317931&t=1460114761&appid=7&appver=2.1"
-#define GCPCGameMoreURL @"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E5%8D%95%E6%9C%BA&id=317931&t=1460114761&appid=7&appver=2.1&start=20"
+#define GCPCGameURL [@"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E5%8D%95%E6%9C%BA" stringByAppendingString:[NSString stringWithFormat:@"&id=321639&t=%.f&appid=7&appver=2.1", [[NSDate date] timeIntervalSince1970]]]
+#define GCPCGameMoreURL(i) [@"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E5%8D%95%E6%9C%BA" stringByAppendingString:[NSString stringWithFormat:@"&id=321639&t=%.f&appid=7&appver=2.1&start=%ld", [[NSDate date] timeIntervalSince1970], i]]
 
 // 五.电竞模块
-#define GCESportsURL @"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E7%94%B5%E7%AB%9E&id=317719,317937&t=1460115045&appid=7&appver=2.1"
-#define GCESportsMoreURL @"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E7%94%B5%E7%AB%9E&id=317719,317937&t=1460115045&appid=7&appver=2.1&start=20"
+#define GCESportsURL [@"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E7%94%B5%E7%AB%9E" stringByAppendingString:[NSString stringWithFormat:@"&id=321639&t=%.f&appid=7&appver=2.1", [[NSDate date] timeIntervalSince1970]]]
+#define GCESportsMoreURL(i) [@"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E7%94%B5%E7%AB%9E" stringByAppendingString:[NSString stringWithFormat:@"&id=321639&t=%.f&appid=7&appver=2.1&start=%ld", [[NSDate date] timeIntervalSince1970], i]]
 
 // 六.cell
 #define GCCell(cellId) [NSString stringWithFormat:@"http://api.tuwan.com/app/?aid=%@&appid=7",cellid] 
