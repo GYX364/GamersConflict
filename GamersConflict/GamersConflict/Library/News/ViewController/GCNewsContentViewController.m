@@ -10,7 +10,8 @@
 #import "GCDatabaseManager.h"
 #import "GCUserInfoManager.h"
 #import "GCLoginViewController.h"
-@interface GCNewsContentViewController (){
+#import "UMSocial.h"
+@interface GCNewsContentViewController ()<UMSocialUIDelegate>{
     BOOL isShowing;
 }
 
@@ -46,7 +47,7 @@
     NSLog(@"%f",ScreenWidth);
     [self layoutButton];
     [self.collectionButton addTarget:self action:@selector(collectionAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [self.shareButton addTarget:self action:@selector(sharAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.shareButton addTarget:self action:@selector(shareAction:) forControlEvents:(UIControlEventTouchUpInside)];
 }
 
 - (IBAction)backToNews:(id)sender {
@@ -143,6 +144,14 @@
 
 // 分享
 - (void)shareAction:(UIButton*)sender{
+    if (![[GCUserInfoManager getUserid] isEqualToString:@" "]) {
+        [UMSocialSnsService presentSnsIconSheetView:self
+                                             appKey:@"570dbc26e0f55a08be00055f"
+                                          shareText:@"你要分享的文字"
+                                         shareImage:[UIImage imageNamed:@"icon.png"]
+                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToSina,UMShareToQQ,nil]
+                                           delegate:self];
+    }
     
 }
 

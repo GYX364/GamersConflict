@@ -8,7 +8,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GCMenuViewController">
             <connections>
                 <outlet property="loginButton" destination="ePO-Mf-AIs" id="Tg1-Qc-Yfu"/>
-                <outlet property="menuListTableView" destination="4F7-aj-iWi" id="seh-Rn-4xK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -59,23 +58,11 @@
                         <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="kpo-ib-CYv"/>
                     </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4F7-aj-iWi">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="YaT-Wj-SHE"/>
-                        <outlet property="delegate" destination="-1" id="KId-tv-ZWu"/>
-                    </connections>
-                </tableView>
             </subviews>
             <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="C93-Wu-DJE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="6ap-QS-8rw"/>
                 <constraint firstItem="ePO-Mf-AIs" firstAttribute="leading" secondItem="C93-Wu-DJE" secondAttribute="trailing" constant="10" id="GbP-hE-8yP"/>
-                <constraint firstItem="4F7-aj-iWi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="I1b-P3-8NI"/>
-                <constraint firstAttribute="trailing" secondItem="4F7-aj-iWi" secondAttribute="trailing" id="PG4-da-Ia0"/>
-                <constraint firstAttribute="bottom" secondItem="4F7-aj-iWi" secondAttribute="bottom" constant="100" id="PqP-bR-F7g"/>
-                <constraint firstItem="4F7-aj-iWi" firstAttribute="top" secondItem="C93-Wu-DJE" secondAttribute="bottom" constant="80" id="QQK-Aj-Cr4"/>
                 <constraint firstItem="C93-Wu-DJE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="TS5-fK-Ero"/>
                 <constraint firstItem="ePO-Mf-AIs" firstAttribute="centerY" secondItem="C93-Wu-DJE" secondAttribute="centerY" id="b5s-Kj-7Zq"/>
             </constraints>
@@ -83,15 +70,10 @@
                 <mask key="subviews">
                     <exclude reference="C93-Wu-DJE"/>
                     <exclude reference="ePO-Mf-AIs"/>
-                    <exclude reference="4F7-aj-iWi"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="GbP-hE-8yP"/>
                     <exclude reference="b5s-Kj-7Zq"/>
-                    <exclude reference="I1b-P3-8NI"/>
-                    <exclude reference="PG4-da-Ia0"/>
-                    <exclude reference="PqP-bR-F7g"/>
-                    <exclude reference="QQK-Aj-Cr4"/>
                     <exclude reference="6ap-QS-8rw"/>
                     <exclude reference="TS5-fK-Ero"/>
                 </mask>
@@ -100,15 +82,10 @@
                 <mask key="subviews">
                     <include reference="C93-Wu-DJE"/>
                     <include reference="ePO-Mf-AIs"/>
-                    <include reference="4F7-aj-iWi"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="GbP-hE-8yP"/>
                     <include reference="b5s-Kj-7Zq"/>
-                    <include reference="I1b-P3-8NI"/>
-                    <include reference="PG4-da-Ia0"/>
-                    <include reference="PqP-bR-F7g"/>
-                    <include reference="QQK-Aj-Cr4"/>
                     <include reference="6ap-QS-8rw"/>
                     <include reference="TS5-fK-Ero"/>
                 </mask>

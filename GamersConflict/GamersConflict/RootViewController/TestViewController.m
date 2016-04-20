@@ -11,12 +11,14 @@
 
 #define kColor arc4random()%256 / 255.0
 
-#define kCos60 0.866
-#define kSin60 0.5
+#define kCos60 0.5
+#define kSin60 0.866
 
-#define kPointX ScreenWidth / 2.0 - 50
-#define kPointY ScreenHeight / 2.0 - 50
-#define kRadius 40.0
+#define kPointX CGRectGetMidX(self.moreButton.frame)
+#define kPointY CGRectGetMidY(self.moreButton.frame)
+#define kRadius 30.0
+
+#define kWidth 50
 
 
 @interface TestViewController ()
@@ -54,49 +56,70 @@
 
 // 布局button
 - (void)layoutButton{
-    self.moreButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth / 2.0 - 50, ScreenHeight / 2.0 - 50, 2 * kRadius, 2 * kRadius)];
+    self.moreButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth / 2.0 - 50 - 50, ScreenHeight / 2.0 - 50, 2 * kRadius, 2 * kRadius)];
     self.moreButton.layer.masksToBounds = YES;
     self.moreButton.layer.cornerRadius = kRadius;
     self.moreButton.backgroundColor = [UIColor grayColor];
     [self.moreButton addTarget:self action:@selector(bAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [self.view addSubview:self.moreButton];
+    
 
     NSLog(@"%f,%f",ScreenWidth,ScreenHeight);
-    self.button1 = [[UIButton alloc]initWithFrame:CGRectMake(kPointX - 2 * kRadius * kCos60 - 20, kPointY - 2 * kRadius * kSin60 - 20, 40, 40)];
+//    self.button1 = [[UIButton alloc]initWithFrame:CGRectMake(kPointX - 2 * kRadius - 20, kPointY - 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    self.button1 = [[UIButton alloc]init];
+    [self.button1 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame), CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
     self.button1.backgroundColor = [UIColor grayColor];
-    self.button1.layer.cornerRadius = 20.0;
+    self.button1.layer.cornerRadius = kWidth / 2.0;
     [self.view addSubview:self.button1];
+    ;
+//    self.button2 = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMidX(self.moreButton.frame) - 20, kPointY - 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    self.button2 = [[UIButton alloc]init];
+    [self.button2 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame), CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
+    self.button2.backgroundColor = [UIColor grayColor];
+    self.button2.layer.cornerRadius = kWidth / 2;
+    [self.view addSubview:self.button2];
     
-//    self.button2 = [UIButton alloc]initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+//    self.button3 = [[UIButton alloc]initWithFrame:CGRectMake(kPointX + 4 * kRadius * kCos60 - 20, kPointY - 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    self.button3 = [[UIButton alloc]init];
+    [self.button3 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame), CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
+    self.button3.backgroundColor = [UIColor grayColor];
+    self.button3.layer.cornerRadius = kWidth / 2;
+    [self.view addSubview:self.button3];
     
+//    self.button4 = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.button3.frame), kPointY + 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    self.button4 = [[UIButton alloc]init];
+    [self.button4 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame), CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
+    self.button4.backgroundColor = [UIColor grayColor];
+    self.button4.layer.cornerRadius = kWidth / 2.0;
+    [self.view addSubview:self.button4];
+
+//    self.button5 = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.button2.frame), kPointY + 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    self.button5 = [[UIButton alloc]init];
+    [self.button5 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame), CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
+    self.button5.backgroundColor = [UIColor grayColor];
+    self.button5.layer.cornerRadius = kWidth / 2.0;
+    [self.view addSubview:self.button5];
+    
+//    self.button6 = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.button1.frame), kPointY + 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    self.button6 = [[UIButton alloc]init];
+    [self.button6 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame), CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
+    self.button6.backgroundColor = [UIColor grayColor];
+    self.button6.layer.cornerRadius = kWidth / 2;
+    [self.view addSubview:self.button6];
+    [self.view addSubview:self.moreButton];
 }
 
 
 - (void)open{
-    [UIView animateKeyframesWithDuration:1 delay:0.2 options:(0   ) animations:^{
-        // 逐个添加关键帧
-//        [UIView addKeyframeWithRelativeStartTime:0.0 relativeDuration:0.25 animations:^{
-//           CGPoint point1 = CGPointMake(100, 75);
-////            self.button1.frame.origin = point1;
-//            self.button1.frame = CGRectMake(100, 75, 40, 40);
-//            
-//        }];
-//        [UIView addKeyframeWithRelativeStartTime:0.3 relativeDuration:0.25 animations:^{
-//            CGPoint point2 = CGPointMake(125, 100);
-////            self.button2.frame.origin = point2;
-//            self.button2.frame = CGRectMake(125, 100, 40, 40);
-//            
-//        }];
-//        [UIView addKeyframeWithRelativeStartTime:0.6 relativeDuration:0.25 animations:^{
-//            self.button3.frame = CGRectMake(100, 125, 40, 40);
-//        }];
-        [self.view1 setAlpha:1];
-        [self.button1 setFrame:CGRectMake(40, 100, 60, 60)];
-        [self.button2 setFrame:CGRectMake(100, 160, 60, 60)];
-        [self.button3 setFrame:CGRectMake(160, 100, 60, 60)];
-    } completion:^(BOOL finished) {
-        
-    }];
+   [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.3 initialSpringVelocity:5 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
+       [self.button1 setTransform:CGAffineTransformMakeTranslation(-(4 * kRadius * kCos60 ) , - (4 * kRadius * kSin60 ))];
+       [self.button2 setTransform:CGAffineTransformMakeTranslation(0, - (4 * kRadius * kSin60))];
+        [self.button3 setTransform:CGAffineTransformMakeTranslation((4 * kRadius * kCos60 ), - (4 * kRadius * kSin60 ))];
+       [self.button4 setTransform:CGAffineTransformMakeTranslation((4 * kRadius * kCos60 ),(4 * kRadius * kSin60 ))];
+       [self.button5 setTransform:CGAffineTransformMakeTranslation(0 , (4 * kRadius * kSin60 ))];
+       [self.button6 setTransform:CGAffineTransformMakeTranslation(-(4 * kRadius * kCos60 ),(4 * kRadius * kSin60 ))];
+   } completion:^(BOOL finished) {
+       
+   }];
 }
 
 - (void)didReceiveMemoryWarning {

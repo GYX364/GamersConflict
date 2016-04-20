@@ -31,13 +31,9 @@
         self.database = [[FMDatabase alloc]initWithPath:path];
         BOOL isOpen = [self.database open];
         if (isOpen != NO) {
-            NSLog(@"Open SQLite success");
-            // 创建收藏 表
-//            [self createCollectionTable];
-            // 创建喜爱类型 表
-//            [self createTypeTable];
+
         }else{
-            NSLog(@"Open SQLite failed");
+            
             
         }
     }
@@ -53,9 +49,9 @@
     NSString *sql = @"create table if not exists collection (cellid text primary key,userid text,cellModel BLOB);";
     BOOL isCreate = [self.database executeUpdate:sql];
     if (isCreate != NO) {
-        NSLog(@"create collectionTable suaccess");
+        
     }else{
-        NSLog(@"create collectionTable failed");
+        
     }
 }
 
@@ -63,9 +59,9 @@
     NSString *sql = @"create table if not exists type (userid text, mod text);";
     BOOL isCreate = [self.database executeUpdate:sql];
     if (isCreate != NO) {
-        NSLog(@"create type success");
+
     }else{
-        NSLog(@"create type failed");
+
         
     }
 }

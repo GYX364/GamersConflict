@@ -16,11 +16,36 @@
 
 #import "GCLoginViewController.h"
 
-@interface GCMenuViewController ()<UITableViewDelegate,UITableViewDataSource>
+#define kColor arc4random()%256 / 255.0
+
+#define kCos60 0.5
+#define kSin60 0.866
+
+#define kPointX CGRectGetMidX(self.moreButton.frame)
+#define kPointY CGRectGetMidY(self.moreButton.frame)
+#define kRadius 30.0
+
+#define kWidth 50
+
+@interface GCMenuViewController ()<UITableViewDelegate,UITableViewDataSource>{
+    BOOL isOpen;
+}
 @property (weak, nonatomic) IBOutlet UITableView *menuListTableView;
 
 // 菜单内容数组
-@property (nonnull, strong)NSMutableArray *menuListArray;
+@property (nonatomic, strong)NSMutableArray *menuListArray;
+
+// 中间 按钮View
+@property (nonatomic, strong)UIView *menuView;
+// 分类button
+@property (nonatomic, strong)UIButton *moreButton;
+@property (nonatomic, strong)UIButton *button1;
+@property (nonatomic, strong)UIButton *button2;
+@property (nonatomic, strong)UIButton *button3;
+@property (nonatomic, strong)UIButton *button4;
+@property (nonatomic, strong)UIButton *button5;
+@property (nonatomic, strong)UIButton *button6;
+
 @end
 
 @implementation GCMenuViewController
@@ -43,9 +68,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.menuView = [[UIView alloc]initWithFrame:CGRectMake(10, 100, 320, 570)];
+    [self.view addSubview:self.menuView];
+    [self layoutButton];
     self.menuListArray = [[NSMutableArray alloc]initWithObjects:@"第一个",@"第二个", nil];
     [self.menuListTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-
+    isOpen = NO;
+    
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)loginAction:(id)sender {
@@ -79,38 +108,120 @@
 //    [rootVC.navigationController pushViewController:loginVC animated:YES];
     
 }
-#pragma mark -- TableViewDelegate方法
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+
+
+- (void)layoutButton{
+    self.moreButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth / 2.0 - 50 - 50, ScreenHeight / 2.0 - 50, 2 * kRadius, 2 * kRadius)];
+    self.moreButton.layer.masksToBounds = YES;
+    self.moreButton.layer.cornerRadius = kRadius;
+    self.moreButton.backgroundColor = [UIColor redColor];
+    [self.moreButton addTarget:self action:@selector(bAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    
+    NSLog(@"%f,%f",ScreenWidth,ScreenHeight);
+    //    self.button1 = [[UIButton alloc]initWithFrame:CGRectMake(kPointX - 2 * kRadius - 20, kPointY - 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    self.button1 = [[UIButton alloc]init];
+    [self.button1 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
+    self.button1.backgroundColor = [UIColor grayColor];
+    self.button1.layer.cornerRadius = kWidth / 2.0;
+    [self.button1 addTarget:self action:@selector(backRoot:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.menuView addSubview:self.button1];
+    ;
+    //    self.button2 = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMidX(self.moreButton.frame) - 20, kPointY - 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    self.button2 = [[UIButton alloc]init];
+    [self.button2 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
+    self.button2.backgroundColor = [UIColor grayColor];
+    self.button2.layer.cornerRadius = kWidth / 2;
+    [self.menuView addSubview:self.button2];
+    
+    //    self.button3 = [[UIButton alloc]initWithFrame:CGRectMake(kPointX + 4 * kRadius * kCos60 - 20, kPointY - 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    self.button3 = [[UIButton alloc]init];
+    [self.button3 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
+    self.button3.backgroundColor = [UIColor grayColor];
+    self.button3.layer.cornerRadius = kWidth / 2;
+    [self.menuView addSubview:self.button3];
+    
+    //    self.button4 = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.button3.frame), kPointY + 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    self.button4 = [[UIButton alloc]init];
+    [self.button4 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
+    self.button4.backgroundColor = [UIColor grayColor];
+    self.button4.layer.cornerRadius = kWidth / 2.0;
+    [self.menuView addSubview:self.button4];
+    
+    //    self.button5 = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.button2.frame), kPointY + 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    self.button5 = [[UIButton alloc]init];
+    [self.button5 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
+    self.button5.backgroundColor = [UIColor grayColor];
+    self.button5.layer.cornerRadius = kWidth / 2.0;
+    [self.menuView addSubview:self.button5];
+    
+    //    self.button6 = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.button1.frame), kPointY + 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    self.button6 = [[UIButton alloc]init];
+    [self.button6 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
+    self.button6.backgroundColor = [UIColor grayColor];
+    self.button6.layer.cornerRadius = kWidth / 2;
+    [self.menuView addSubview:self.button6];
+    [self.menuView addSubview:self.moreButton];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.menuListArray.count;
+- (void)bAction:(UIButton *)sender{
+    [self.moreButton setEnabled:NO];
+    if (isOpen) {
+        [self close];
+    }else{
+        [self open];
+    }
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = self.menuListArray[indexPath.row];
-    return cell;
+- (void)open{
+    [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.3 initialSpringVelocity:5 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
+
+        self.button1.transform = CGAffineTransformTranslate(self.button1.transform, -(4 * kRadius * kCos60 ), - (4 * kRadius * kSin60 ));
+        NSLog(@"%@",NSStringFromCGRect(self.button1.frame));
+
+        self.button2.transform = CGAffineTransformTranslate(self.button2.transform, 0, - (4 * kRadius * kSin60));
+        self.button3.transform = CGAffineTransformTranslate(self.button3.transform, (4 * kRadius * kCos60), -(4 * kRadius * kSin60));
+        self.button4.transform = CGAffineTransformTranslate(self.button4.transform, (4 * kRadius * kCos60 ),(4 * kRadius * kSin60 ));
+        self.button5.transform = CGAffineTransformTranslate(self.button5.transform, 0 , (4 * kRadius * kSin60 ));
+        self.button6.transform = CGAffineTransformTranslate(self.button6.transform, -(4 * kRadius * kCos60 ),(4 * kRadius * kSin60 ));
+    } completion:^(BOOL finished) {
+        isOpen = YES;
+        [self.moreButton setEnabled:YES];
+    }];
 }
 
+- (void)close{
+    [UIView animateWithDuration:0.3 animations:^{
+//        [self.button1 setTransform:CGAffineTransformRotate(self.button1.transform, 2 * M_PI)];
+//         [self.button2 setTransform:CGAffineTransformRotate(self.button2.transform, 2 * M_PI)];
+//         [self.button3 setTransform:CGAffineTransformRotate(self.button3.transform, 2 * M_PI)];
+//         [self.button4 setTransform:CGAffineTransformRotate(self.button4.transform, 2 * M_PI)];
+//         [self.button5 setTransform:CGAffineTransformRotate(self.button5.transform, 2 * M_PI)];
+//         [self.button6 setTransform:CGAffineTransformRotate(self.button6.transform, 2 * M_PI)];
+        
+        // button 回收
+        self.button1.transform = CGAffineTransformTranslate(self.button1.transform, (4 * kRadius * kCos60 ),  (4 * kRadius * kSin60 ));
+        self.button2.transform = CGAffineTransformTranslate(self.button2.transform, 0, (4*kRadius * kSin60));
+        self.button3.transform = CGAffineTransformTranslate(self.button3.transform, - ( 4 * kRadius * kCos60), (4 * kRadius * kSin60));
+        self.button4.transform = CGAffineTransformTranslate(self.button4.transform, - (4 * kRadius * kCos60), - (4 * kRadius * kSin60));
+        self.button5.transform = CGAffineTransformTranslate(self.button5.transform, 0, - (4 * kRadius * kSin60));
+        self.button6.transform = CGAffineTransformTranslate(self.button6.transform, (4 * kRadius * kCos60), -(4 * kRadius * kSin60));
+    } completion:^(BOOL finished) {
+        isOpen = NO;
+        [self.moreButton setEnabled:YES];
+    }];
+}
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    // 获取GCRootViewController 通过GCDelegate
+- (void)backRoot:(UIButton*)sender{
+//     获取GCRootViewController 通过GCDelegate
     UIViewController *rootVC  = ((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
-    if (indexPath.row == 0) {
-        TestViewController *tVC = [[TestViewController alloc]init];
-        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:tVC];
-//        [rootVC changeRootView:nav];
-        [(GCRootViewController*)([((UINavigationController *)rootVC).viewControllers firstObject]) changeRootView:nav];
-        
-        
-    } else if (indexPath.row == 1) {
-        GCNewsViewController *newsVC = [[GCNewsViewController alloc] init];
-        UINavigationController *newsNC = [[UINavigationController alloc] initWithRootViewController:newsVC];
-//        [rootVC changeRootView:newsNC];
-        [(GCRootViewController*)([((UINavigationController *)rootVC).viewControllers firstObject]) changeRootView:newsNC];
-    }}
+    GCNewsViewController *newsVC = [[GCNewsViewController alloc] init];
+    UINavigationController *newsNC = [[UINavigationController alloc] initWithRootViewController:newsVC];
+    //        [rootVC changeRootView:newsNC];
+    [(GCRootViewController*)([((UINavigationController *)rootVC).viewControllers firstObject]) changeRootView:newsNC];
+    NSLog(@"1");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
