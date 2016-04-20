@@ -99,7 +99,8 @@
     if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
         [_menuController.loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
     }else{
-        [_menuController.loginButton setTitle:@"退出登录" forState:(UIControlStateNormal)]; [GCUserInfoManager cancelUserid];
+        [_menuController.loginButton setTitle:@"退出登录" forState:(UIControlStateNormal)];
+//        [GCUserInfoManager cancelUserid];
     }
     
 }

@@ -96,13 +96,14 @@
 
 // cell 表操作
 - (void)insertCellWithModel:(GCNewsSubModel *)model userid:(NSString *)userid cellId:(NSString *)cellid{
-//    NSString *insert = @"insert into collection (cellid,userid,cellModel) values (?,?,?);";
     NSMutableData *data = [NSMutableData data];
     NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
     [archiver encodeObject:model forKey:@"cellModel"];
     [archiver finishEncoding];
-    [self.database executeUpdateWithFormat:@"nsert into collection (cellid,userid,cellModel) values (%@,%@,%@);",cellid,userid,data];
-//    self.database executeUpdate:<#(NSString *)#> withArgumentsInArray:<#(NSArray *)#>
+    FMResultSet *set = [self.database executeQuery:@"insert into collection (cellid,userid,cellModel) values(?,?,?)" withArgumentsInArray:@[cellid,userid,data]];
+    [set next];
+    
+
 }
 
 - (void)deleteCellModelWithCellId:(NSString *)cellID{

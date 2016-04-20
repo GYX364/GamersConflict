@@ -137,7 +137,7 @@
 //        存储
         NSLog(@"%@",[GCUserInfoManager getUserid]);
       GCDatabaseManager *mananger = [GCDatabaseManager defaultManager];
-//        [mananger insertCellWithModel:<#(GCNewsSubModel *)#> userid:[GCUserInfoManager getUserid] cellId:<#(NSString *)#>];
+        [mananger insertCellWithModel:self.model userid:[GCUserInfoManager getUserid] cellId:[NSString stringWithFormat:@"%@",self.model.aid]];
     }
 }
 

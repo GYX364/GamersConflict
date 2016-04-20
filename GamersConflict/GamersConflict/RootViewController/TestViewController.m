@@ -8,13 +8,29 @@
 
 #import "TestViewController.h"
 #import "GCCircularButton.h"
+
+#define kColor arc4random()%256 / 255.0
+
+#define kCos60 0.866
+#define kSin60 0.5
+
+#define kPointX ScreenWidth / 2.0 - 50
+#define kPointY ScreenHeight / 2.0 - 50
+#define kRadius 40.0
+
+
 @interface TestViewController ()
 //@property (nonatomic, strong)GCCircularButton *button1;
 //@property (nonatomic, strong)GCCircularButton *button2;
 //@property (nonatomic, strong)GCCircularButton *button3;
+@property (nonatomic, strong)UIButton *moreButton;
 @property (nonatomic, strong)UIButton *button1;
 @property (nonatomic, strong)UIButton *button2;
 @property (nonatomic, strong)UIButton *button3;
+@property (nonatomic, strong)UIButton *button4;
+@property (nonatomic, strong)UIButton *button5;
+@property (nonatomic, strong)UIButton *button6;
+
 @property (nonatomic, strong)UIView *view1;
 @end
 
@@ -22,36 +38,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    GCCircularButton *button = [[GCCircularButton alloc]initWithRadius:60.0 origin:CGPointMake(100, 100)];
-    button.backgroundColor = [UIColor blackColor];
-    
-    [button addTarget:self action:@selector(bAction:) forControlEvents:(UIControlEventTouchUpInside)];
-//    self.button1 = [[GCCircularButton alloc]initWithRadius:40 origin:CGPointMake(100, 100)];
-//    self.button2 = [[GCCircularButton alloc]initWithRadius:40 origin:CGPointMake(100, 100)];
-//    self.button3 = [[GCCircularButton alloc]initWithRadius:40 origin:CGPointMake(100, 100)];
-    self.view1 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-    [self.view1 setAlpha:0];
-    [self.view addSubview:self.view1];
-    self.button1 = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 60, 60)];
-    self.button2 = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 60, 60)];
-    self.button3 = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 60, 60)];
-    self.button1.backgroundColor = [UIColor grayColor];
-    self.button2.backgroundColor = [UIColor cyanColor];
-    self.button3.backgroundColor = [UIColor redColor];
-    [self.view addSubview:button];
-    [self.view1 addSubview:self.button1];
-    [self.view1 addSubview:self.button2];
-    [self.view1 addSubview:self.button3];
+   
+    // 布局button
+    [self layoutButton];
     
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)bAction:(UIButton *)sender{
-    self.view.backgroundColor = [UIColor colorWithRed:arc4random()%256 / 255.0 green:arc4random()%256/255.0 blue:arc4random()%256/ 255.0 alpha:1];
+    self.view.backgroundColor = [UIColor colorWithRed:kColor green:kColor blue:kColor alpha:1];
 //    [UIColor colorWithRed:arc4random() % 256 / 255.0 green:arc4random()%256 / 255.0 blue:arc4random()%256/255.0 alpha:1];
     [self open];
     
 }
+
+// 布局button
+- (void)layoutButton{
+    self.moreButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth / 2.0 - 50, ScreenHeight / 2.0 - 50, 2 * kRadius, 2 * kRadius)];
+    self.moreButton.layer.masksToBounds = YES;
+    self.moreButton.layer.cornerRadius = kRadius;
+    self.moreButton.backgroundColor = [UIColor grayColor];
+    [self.moreButton addTarget:self action:@selector(bAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.view addSubview:self.moreButton];
+
+    NSLog(@"%f,%f",ScreenWidth,ScreenHeight);
+    self.button1 = [[UIButton alloc]initWithFrame:CGRectMake(kPointX - 2 * kRadius * kCos60 - 20, kPointY - 2 * kRadius * kSin60 - 20, 40, 40)];
+    self.button1.backgroundColor = [UIColor grayColor];
+    self.button1.layer.cornerRadius = 20.0;
+    [self.view addSubview:self.button1];
+    
+//    self.button2 = [UIButton alloc]initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+    
+}
+
 
 - (void)open{
     [UIView animateKeyframesWithDuration:1 delay:0.2 options:(0   ) animations:^{

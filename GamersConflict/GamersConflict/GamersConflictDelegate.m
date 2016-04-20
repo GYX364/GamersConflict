@@ -33,8 +33,8 @@
     
 }
 
-
-- (void)applicationWillTerminate:(UIApplication *)application{
-    [GCUserInfoManager cancelUserid];
-}
+//
+//- (void)applicationWillTerminate:(UIApplication *)application{
+//    [GCUserInfoManager cancelUserid];
+//}
 @end
