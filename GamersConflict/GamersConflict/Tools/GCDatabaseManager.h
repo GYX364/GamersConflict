@@ -45,5 +45,8 @@
 // 查询cellMode 根据UserId
 - (NSArray *)selectCellModelWithUserId:(NSString *)userid;
 
+// 查询cellModel 根据cellID
+- (BOOL)selectCellWithCellId:(NSString *)cellId;
+
 
 @end

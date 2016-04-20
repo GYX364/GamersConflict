@@ -11,8 +11,10 @@
 #import "GCUserInfoManager.h"
 #import "GCLoginViewController.h"
 #import "UMSocial.h"
+#import "GCDatabaseManager.h"
 @interface GCNewsContentViewController ()<UMSocialUIDelegate>{
     BOOL isShowing;
+    BOOL have;
 }
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -26,19 +28,24 @@
 
 // 分享按钮
 @property (nonatomic, strong)UIButton *shareButton;
+
+@property (nonatomic, strong)GCDatabaseManager *manager;
 @end
 
 @implementation GCNewsContentViewController
 
 - (void)viewWillAppear:(BOOL)animated{
-    // 布局button
+    //
     
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    have = NO;
+    // 获取数据库对象
+    self.manager = [GCDatabaseManager defaultManager];
+    // 展示
     if ([self.model.type isEqualToString:@"all"]) {
         if (self.model.html5 != nil) {
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.model.html5]]];
@@ -48,10 +55,19 @@
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.model.url]]];
         }
     }
-
+    // 布局button 添加button 事件
     [self layoutButton];
+    
     [self.collectionButton addTarget:self action:@selector(collectionAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.shareButton addTarget:self action:@selector(shareAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    // 如果用户登录,判断该页面是否被收藏
+    if (![[GCUserInfoManager getUserid] isEqualToString:@" "]) {
+        if ([self.manager selectCellWithCellId:[NSString stringWithFormat:@"%@",self.model.aid]]) {
+            [self.collectionButton setTitle:@"取消收藏" forState:(UIControlStateNormal)];
+            have = YES;
+        }
+        
+    }
 }
 
 - (IBAction)backToNews:(id)sender {
@@ -130,19 +146,32 @@
 
 #pragma mark -- 收藏,分享按钮
 - (void)collectionAction:(UIButton*)sender{
-    NSLog(@"1");
+    
  // 判断用户是否登录 ,登录则收藏, 存储到 collection表中
     if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
         // 跳到登录页面
         GCLoginViewController *loginVC = [[GCLoginViewController alloc]init];
         [self presentViewController:loginVC animated:YES completion:^{
-            NSLog(@"%@",[GCUserInfoManager getUserid]);
+            
         }];
     }else{
+        // 判断用户是否已经收藏,如果收藏则删除
+        if (have) {
+            [self.manager deleteCellModelWithCellId:[NSString stringWithFormat:@"%@",self.model.aid]];
+            [self.collectionButton setTitle:@"收藏" forState:(UIControlStateNormal)];
+            have = NO;
+//            NSLog(@"%@",self.model.aid);
+        }else{
+            GCDatabaseManager *mananger = [GCDatabaseManager defaultManager];
+            [mananger insertCellWithModel:self.model userid:[GCUserInfoManager getUserid] cellId:[NSString stringWithFormat:@"%@",self.model.aid]];
+            [self.collectionButton setTitle:@"取消收藏" forState:(UIControlStateNormal)];
+//            NSLog(@"%@",self.model.aid);
+            have = YES;
+        }
 //        存储
-        NSLog(@"%@",[GCUserInfoManager getUserid]);
-      GCDatabaseManager *mananger = [GCDatabaseManager defaultManager];
-        [mananger insertCellWithModel:self.model userid:[GCUserInfoManager getUserid] cellId:[NSString stringWithFormat:@"%@",self.model.aid]];
+        
+
+     
     }
 }
 
