@@ -78,7 +78,7 @@
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)loginAction:(id)sender {
-    NSLog(@"1");
+    
     if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
         // 跳转登陆页面
         GCRootViewController *rootVC  = (GCRootViewController *)((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
@@ -105,7 +105,7 @@
         
     }
    
-//    [rootVC.navigationController pushViewController:loginVC animated:YES];
+
     
 }
 
@@ -117,9 +117,6 @@
     self.moreButton.backgroundColor = [UIColor redColor];
     [self.moreButton addTarget:self action:@selector(bAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    
-    NSLog(@"%f,%f",ScreenWidth,ScreenHeight);
-    //    self.button1 = [[UIButton alloc]initWithFrame:CGRectMake(kPointX - 2 * kRadius - 20, kPointY - 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
     self.button1 = [[UIButton alloc]init];
     [self.button1 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
     self.button1.backgroundColor = [UIColor grayColor];
@@ -127,35 +124,34 @@
     [self.button1 addTarget:self action:@selector(backRoot:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.menuView addSubview:self.button1];
     ;
-    //    self.button2 = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMidX(self.moreButton.frame) - 20, kPointY - 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+   
     self.button2 = [[UIButton alloc]init];
     [self.button2 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
     self.button2.backgroundColor = [UIColor grayColor];
     self.button2.layer.cornerRadius = kWidth / 2;
     [self.menuView addSubview:self.button2];
     
-    //    self.button3 = [[UIButton alloc]initWithFrame:CGRectMake(kPointX + 4 * kRadius * kCos60 - 20, kPointY - 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    
     self.button3 = [[UIButton alloc]init];
     [self.button3 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
     self.button3.backgroundColor = [UIColor grayColor];
     self.button3.layer.cornerRadius = kWidth / 2;
     [self.menuView addSubview:self.button3];
     
-    //    self.button4 = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.button3.frame), kPointY + 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    
     self.button4 = [[UIButton alloc]init];
     [self.button4 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
     self.button4.backgroundColor = [UIColor grayColor];
     self.button4.layer.cornerRadius = kWidth / 2.0;
     [self.menuView addSubview:self.button4];
     
-    //    self.button5 = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.button2.frame), kPointY + 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
+    
     self.button5 = [[UIButton alloc]init];
     [self.button5 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
     self.button5.backgroundColor = [UIColor grayColor];
     self.button5.layer.cornerRadius = kWidth / 2.0;
     [self.menuView addSubview:self.button5];
     
-    //    self.button6 = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.button1.frame), kPointY + 4 * kRadius * kSin60 - 20, kWidth, kWidth)];
     self.button6 = [[UIButton alloc]init];
     [self.button6 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
     self.button6.backgroundColor = [UIColor grayColor];
@@ -177,8 +173,6 @@
     [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.3 initialSpringVelocity:5 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
 
         self.button1.transform = CGAffineTransformTranslate(self.button1.transform, -(4 * kRadius * kCos60 ), - (4 * kRadius * kSin60 ));
-        NSLog(@"%@",NSStringFromCGRect(self.button1.frame));
-
         self.button2.transform = CGAffineTransformTranslate(self.button2.transform, 0, - (4 * kRadius * kSin60));
         self.button3.transform = CGAffineTransformTranslate(self.button3.transform, (4 * kRadius * kCos60), -(4 * kRadius * kSin60));
         self.button4.transform = CGAffineTransformTranslate(self.button4.transform, (4 * kRadius * kCos60 ),(4 * kRadius * kSin60 ));
@@ -217,9 +211,9 @@
     UIViewController *rootVC  = ((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
     GCNewsViewController *newsVC = [[GCNewsViewController alloc] init];
     UINavigationController *newsNC = [[UINavigationController alloc] initWithRootViewController:newsVC];
-    //        [rootVC changeRootView:newsNC];
+    
     [(GCRootViewController*)([((UINavigationController *)rootVC).viewControllers firstObject]) changeRootView:newsNC];
-    NSLog(@"1");
+    
 }
 
 - (void)didReceiveMemoryWarning {
