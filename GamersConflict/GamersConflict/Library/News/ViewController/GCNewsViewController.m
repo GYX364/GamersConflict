@@ -48,19 +48,15 @@
         [self.view.subviews performSelector:@selector(removeFromSuperview)];
     }
     
-//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenHeight * 5 / 4, ScreenHeight)];
-//    imageView.image = [UIImage imageNamed:@"1"];
-//    [self.view addSubview:imageView];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenHeight * 1024 / 733, ScreenHeight)];
+    NSLog(@"%@", NSStringFromCGRect(imageView.frame));
+    imageView.image = [UIImage imageNamed:@"2"];
+    imageView.alpha = 0.8;
+    [self.view addSubview:imageView];
     self.view.backgroundColor = [UIColor grayColor];
     
     GCClassView *classView = [[GCClassView alloc] initWithFrame:CGRectMake(0, ScreenHeight - StatusBarHeight - 80, ScreenWidth, 120) classes:self.classes];
     [self.view addSubview:classView];
-    
-    
-//    GCClassSuperView *classSuperView = [[[NSBundle mainBundle] loadNibNamed:@"GCClassSuperView" owner:nil options:nil] firstObject];
-//    classSuperView.frame = CGRectMake(0, ScreenHeight - StatusBarHeight - 80, ScreenWidth, 120);
-//    [classSuperView setClasses:self.classes];
-//    [self.view addSubview:classSuperView];
     
     GCNewsSuperView *superView = [[GCNewsSuperView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - 80) classes:self.classes];
     superView.backgroundColor = [UIColor clearColor];

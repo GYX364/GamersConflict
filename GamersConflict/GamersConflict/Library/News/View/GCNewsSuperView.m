@@ -9,6 +9,7 @@
 #import "GCNewsSuperView.h"
 #import "GCNewsSubView.h"
 #import "GCNewsModel.h"
+#import "GCnewsViewController.h"
 
 #import <AFNetworking.h>
 
@@ -47,7 +48,7 @@
             self.netManager = [AFHTTPSessionManager manager];
             self.netManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"application/x-json",@"text/html", nil];
             [self settingScrollView];
-            [self addSubview];
+            [self addSubview]; 
         }
     }
     return self;
@@ -81,6 +82,9 @@
         }];
         [self requestDataWithIndex:classIndex];
     }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
