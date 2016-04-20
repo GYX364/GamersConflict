@@ -18,6 +18,8 @@
 @property (nonatomic, strong) NSString *pubdate;
 @property (nonatomic, strong) NSString *source;
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSString *murl;
+@property (nonatomic, strong) NSString *type;
 
 @end

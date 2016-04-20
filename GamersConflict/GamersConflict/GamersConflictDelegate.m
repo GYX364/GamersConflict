@@ -16,6 +16,7 @@
 #import "UMSocialWechatHandler.h"
 #import "UMSocialSinaSSOHandler.h"
 #import "UMSocialQQHandler.h"
+
 @implementation GamersConflictDelegate
 - (void)applicationDidFinishLaunching:(UIApplication *)application{
     GCNewsViewController *newsVC = [[GCNewsViewController alloc] init];

@@ -48,6 +48,7 @@
 - (instancetype)initWithFrame:(CGRect)frame classes:(NSArray *)classes {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor clearColor];
         [self addSubviewWithClasses:classes];
     }
     return self;
@@ -58,7 +59,6 @@
         self.currentIndex = viewIndex;
         [UIView animateWithDuration:0.5 animations:^{
             self.classesView.contentOffset = CGPointMake(viewIndex * kCellWidth, 0);
-            self.superview.backgroundColor = [UIColor colorWithRed:arc4random() % 256 / 256.0 green:arc4random() % 256 / 256.0  blue:arc4random() % 256 / 256.0  alpha:1];
         }];
         [self setClassWithIndex:self.currentIndex forScrollView:self.classesView];
     }
@@ -70,14 +70,7 @@
         self.classesCount = classes.count;
         for (NSInteger i = 0; i < classes.count; i ++) {
             GCClassSubView *subView = [[GCClassSubView alloc] initWithFrame:CGRectMake(kScreenWidth / 2 - kCellWidth / 2 + kCellWidth * i + kCellInset, 60, kCellWidth - kCellInset * 2, kCellHeight) classIcon:nil];
-            subView.backgroundColor = [UIColor grayColor];
-            [self.classesView addSubview:subView];
-        }
-    } else {
-        for (NSInteger i = 0; i < 29; i ++) {
-            self.classesCount = 29;
-            GCClassSubView *subView = [[GCClassSubView alloc] initWithFrame:CGRectMake(kScreenWidth / 2 - kCellWidth / 2 + kCellWidth * i + kCellInset, 60, kCellWidth - kCellInset * 2, kCellHeight) classIcon:nil];
-            subView.backgroundColor = [UIColor grayColor];
+            subView.backgroundColor = [UIColor blackColor];
             [self.classesView addSubview:subView];
         }
     }

@@ -8,6 +8,8 @@
 
 #import "GCRegisterViewController.h"
 #import <AFNetworking.h>
+
+
 @interface GCRegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameText;
 @property (weak, nonatomic) IBOutlet UITextField *passwordText;

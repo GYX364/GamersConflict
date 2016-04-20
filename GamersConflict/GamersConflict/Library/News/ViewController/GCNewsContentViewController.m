@@ -39,12 +39,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    if (self.model.html5 != nil) {
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.model.html5]]];
+    if ([self.model.type isEqualToString:@"all"]) {
+        if (self.model.html5 != nil) {
+            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.model.html5]]];
+        }
+    } else if ([self.model.type isEqualToString:@"video"] || [self.model.type isEqualToString:@"pic"]) {
+        if (self.model.url != nil) {
+            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.model.url]]];
+        }
     }
-   
-    NSLog(@"%@",NSStringFromCGRect(self.view.frame));
-    NSLog(@"%f",ScreenWidth);
+
     [self layoutButton];
     [self.collectionButton addTarget:self action:@selector(collectionAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.shareButton addTarget:self action:@selector(shareAction:) forControlEvents:(UIControlEventTouchUpInside)];
