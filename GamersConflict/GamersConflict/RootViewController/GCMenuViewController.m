@@ -52,7 +52,7 @@
     NSLog(@"1");
     if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
         // 跳转登陆页面
-        GCRootViewController *rootVC  = ((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
+        GCRootViewController *rootVC  = (GCRootViewController *)((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
         GCLoginViewController *loginVC = [[GCLoginViewController alloc]init];
         
         
