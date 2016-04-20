@@ -103,8 +103,14 @@
 }
 
 - (void)deleteCellModelWithCellId:(NSString *)cellID{
-    NSString *delete = [NSString stringWithFormat:@"delete * from collection where cellid = %@",cellID];
-    [self.database executeUpdate:delete];
+    NSString *delete = [NSString stringWithFormat:@"delete  from collection where cellid = %@",cellID];
+   BOOL re =  [self.database executeUpdate:delete];
+    
+//    if (re) {
+//        NSLog(@"delete success");
+//    }else{
+//        NSLog(@"delete faild");
+//    }
 }
 
 - (NSArray *)selectCellModelWithUserId:(NSString *)userid{
@@ -120,5 +126,15 @@
         [array addObject:model];
     }
     return  array;
+}
+
+- (BOOL)selectCellWithCellId:(NSString *)cellId{
+    NSMutableArray *arr = [NSMutableArray array];
+    NSString *select = [NSString stringWithFormat:@"select * from collection where cellid = %@",cellId];
+    FMResultSet *result = [self.database executeQuery:select];
+    while ([result next]) {
+        return YES;
+    }
+    return NO;
 }
 @end
