@@ -11,6 +11,8 @@
 #import "GCNewsViewController.h"
 #import "GCDatabaseManager.h"
 #import "GCUserInfoManager.h"
+#import "UMSocial.h"
+
 @implementation GamersConflictDelegate
 - (void)applicationDidFinishLaunching:(UIApplication *)application{
     GCNewsViewController *newsVC = [[GCNewsViewController alloc] init];
@@ -31,6 +33,7 @@
     [manager createCollectionTable];
     [manager createTypeTable];
     
+    [UMSocialData setAppKey:@"570dbc26e0f55a08be00055f"];
 }
 
 //

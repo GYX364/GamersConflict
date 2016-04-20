@@ -66,6 +66,7 @@
 - (void)addSubview {
     for (NSInteger i = 0; i < self.articlesList.count; i ++) {
         GCNewsSubView *subView = [[[NSBundle mainBundle] loadNibNamed:@"GCNewsSubView" owner:nil options:nil] firstObject];
+        subView.backgroundColor = [UIColor clearColor];
         subView.frame = CGRectMake(ScreenWidth * i + 5, 20, ScreenWidth - 10, ScreenHeight - 20 - 80 - 5);
         subView.refreshDelegate = self;
 //        GCNewsSubView *subView = [[GCNewsSubView alloc] initWithFrame:CGRectMake(ScreenWidth * i + 5, 44, ScreenWidth - 10, ScreenHeight - 64 - 80 - 5)];
@@ -119,7 +120,7 @@
                     GCNewsSubView *subView = self.subviews[self.currentIndex];
                     [subView setDataWithModel:model];
                 }
-                //                NSLog(@"%@", responseObject);
+//                                NSLog(@"%@", responseObject);
             } failure:nil];
             model.isRequested = YES;
         }

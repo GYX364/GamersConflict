@@ -70,6 +70,7 @@ static NSString * const reUesId = @"subViewCell";
 
 - (void)setDataWithModel:(GCNewsModel *)model {
     if (model.newsArray.count != 0) {
+        [self.articlesList removeAllObjects];
         for (NSDictionary *dic in model.newsArray) {
             NSArray *list = dic[@"data"][@"list"];
             if (list.count != 0) {
