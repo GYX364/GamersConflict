@@ -23,7 +23,6 @@
 		06EC9A281CC0DAD5001DD75F /* GCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A271CC0DAD5001DD75F /* GCBaseViewController.m */; };
 		06EC9A321CC0DB5E001DD75F /* GCCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A301CC0DB5E001DD75F /* GCCollectionViewController.m */; };
 		06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A311CC0DB5E001DD75F /* GCCollectionViewController.xib */; };
-		06EC9A401CC0DC1E001DD75F /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A3F1CC0DC1E001DD75F /* 1.png */; };
 		06EC9A441CC0E272001DD75F /* GCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A421CC0E272001DD75F /* GCRootViewController.m */; };
 		06EC9A451CC0E272001DD75F /* GCRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A431CC0E272001DD75F /* GCRootViewController.xib */; };
 		06EC9A491CC0E280001DD75F /* GCMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC9A471CC0E280001DD75F /* GCMenuViewController.m */; };
@@ -60,6 +59,7 @@
 		AA52B5A01CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5901CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png */; };
 		AA52B5A11CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5911CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png */; };
 		AA52B5A21CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5921CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png */; };
+		AA52B5E31CC7681A007884D9 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5E21CC7681A007884D9 /* 1.png */; };
 		AA5CCAF81CC1EB1E00FF79AB /* GCNewsSubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CCAF71CC1EB1E00FF79AB /* GCNewsSubModel.m */; };
 		AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5CCAF91CC20B4B00FF79AB /* GCNewsSubView.xib */; };
 		AA5CCAFD1CC2265900FF79AB /* GCNewsSubViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CCAFC1CC2265900FF79AB /* GCNewsSubViewCell.m */; };
@@ -122,7 +122,6 @@
 		06EC9A2F1CC0DB5E001DD75F /* GCCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCCollectionViewController.h; sourceTree = "<group>"; };
 		06EC9A301CC0DB5E001DD75F /* GCCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCCollectionViewController.m; sourceTree = "<group>"; };
 		06EC9A311CC0DB5E001DD75F /* GCCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCCollectionViewController.xib; sourceTree = "<group>"; };
-		06EC9A3F1CC0DC1E001DD75F /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		06EC9A411CC0E272001DD75F /* GCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCRootViewController.h; sourceTree = "<group>"; };
 		06EC9A421CC0E272001DD75F /* GCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRootViewController.m; sourceTree = "<group>"; };
 		06EC9A431CC0E272001DD75F /* GCRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCRootViewController.xib; sourceTree = "<group>"; };
@@ -176,6 +175,7 @@
 		AA52B5901CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuCenterButton@2x.png"; sourceTree = "<group>"; };
 		AA52B5911CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuCenterButtonBackground.png; sourceTree = "<group>"; };
 		AA52B5921CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuCenterButtonBackground@2x.png"; sourceTree = "<group>"; };
+		AA52B5E21CC7681A007884D9 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		AA5CCAF61CC1EB1E00FF79AB /* GCNewsSubModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsSubModel.h; sourceTree = "<group>"; };
 		AA5CCAF71CC1EB1E00FF79AB /* GCNewsSubModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSubModel.m; sourceTree = "<group>"; };
 		AA5CCAF91CC20B4B00FF79AB /* GCNewsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsSubView.xib; sourceTree = "<group>"; };
@@ -423,6 +423,7 @@
 		06EC9A131CC0D7FE001DD75F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA52B5E21CC7681A007884D9 /* 1.png */,
 				AA52B5831CC5F48B007884D9 /* KYICircleMenuButton01.png */,
 				AA52B5841CC5F48B007884D9 /* KYICircleMenuButton01@2x.png */,
 				AA52B5851CC5F48B007884D9 /* KYICircleMenuButton02.png */,
@@ -439,7 +440,6 @@
 				AA52B5901CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png */,
 				AA52B5911CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png */,
 				AA52B5921CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png */,
-				06EC9A3F1CC0DC1E001DD75F /* 1.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -694,6 +694,7 @@
 				AA52B59B1CC5F48B007884D9 /* KYICircleMenuButton05.png in Resources */,
 				AA52B5A11CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png in Resources */,
 				AA52B5931CC5F48B007884D9 /* KYICircleMenuButton01.png in Resources */,
+				AA52B5E31CC7681A007884D9 /* 1.png in Resources */,
 				06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */,
 				AA52B59C1CC5F48B007884D9 /* KYICircleMenuButton05@2x.png in Resources */,
 				AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */,
@@ -702,7 +703,6 @@
 				AA52B5A01CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png in Resources */,
 				AA52B5981CC5F48B007884D9 /* KYICircleMenuButton03@2x.png in Resources */,
 				06EC9A6D1CC0FE52001DD75F /* GCLoginViewController.xib in Resources */,
-				06EC9A401CC0DC1E001DD75F /* 1.png in Resources */,
 				AA3AF5221CC503F9000BDD04 /* GCNewsContentViewController.xib in Resources */,
 				AA52B5951CC5F48B007884D9 /* KYICircleMenuButton02.png in Resources */,
 				AA52B5941CC5F48B007884D9 /* KYICircleMenuButton01@2x.png in Resources */,

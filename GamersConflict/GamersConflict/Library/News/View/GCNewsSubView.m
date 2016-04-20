@@ -51,6 +51,7 @@ static NSString * const reUesId = @"subViewCell";
     self.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
         [self loadMoreData];
     }];
+    self.backgroundColor = [UIColor whiteColor];
 }
 
 - (NSMutableArray *)articlesList {

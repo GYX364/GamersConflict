@@ -47,9 +47,7 @@
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.model.url]]];
         }
     }
-   
-    NSLog(@"%@",NSStringFromCGRect(self.view.frame));
-    NSLog(@"%f",ScreenWidth);
+
     [self layoutButton];
     [self.collectionButton addTarget:self action:@selector(collectionAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.shareButton addTarget:self action:@selector(shareAction:) forControlEvents:(UIControlEventTouchUpInside)];
