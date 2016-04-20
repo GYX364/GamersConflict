@@ -10,10 +10,11 @@
 
 @implementation GCNewsModel
 
-- (NSMutableDictionary *)newsDictioary {
-    if (_newsDictioary == nil) {
-        _newsDictioary = [NSMutableDictionary dictionary];
+- (NSMutableArray *)newsArray {
+    if (_newsArray == nil) {
+        _newsArray = [NSMutableArray array];
     }
-    return _newsDictioary;
+    return _newsArray;
 }
+
 @end

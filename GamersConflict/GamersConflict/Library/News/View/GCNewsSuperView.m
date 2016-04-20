@@ -103,18 +103,26 @@
 
 - (void)requestDataForModelWithIndex:(NSInteger)index {
     GCNewsModel *model = self.articlesList[index];
-    if (model.isRequested == NO || model.newsDictioary.allKeys.count == 0) {
+    if (model.isRequested == NO || model.newsArray.count == 0) {
+        NSString *url = nil;
+        if (model.newsArray.count == 0) {
+            url = model.classUrl;
+        } else {
+            url = model.moreUrl;
+        }
         
-        [self.netManager GET:model.classUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            id newsDic = responseObject;
-            if ([newsDic isKindOfClass:[NSDictionary class]] && newsDic != nil) {
-                model.newsDictioary = (NSMutableDictionary *)newsDic;
-                GCNewsSubView *subView = self.subviews[self.currentIndex];
-                [subView setDataWithModel:model];
-            }
-            //                NSLog(@"%@", responseObject);
-        } failure:nil];
-        model.isRequested = YES;
+        if (url != nil) {
+            [self.netManager GET:model.classUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                id newsDic = responseObject;
+                if ([newsDic isKindOfClass:[NSDictionary class]] && newsDic != nil) {
+                    [model.newsArray addObject:(NSMutableDictionary *)newsDic];
+                    GCNewsSubView *subView = self.subviews[self.currentIndex];
+                    [subView setDataWithModel:model];
+                }
+                //                NSLog(@"%@", responseObject);
+            } failure:nil];
+            model.isRequested = YES;
+        }
     }
 
 }
@@ -126,7 +134,14 @@
 - (void)refreshModel {
     GCNewsModel *model = self.articlesList[self.currentIndex];
     model.isRequested = NO;
-    model.newsDictioary = nil;
+    model.newsArray = nil;
     [self requestDataForModelWithIndex:self.currentIndex];
 }
+- (void)loadMoreModel {
+    GCNewsModel *model = self.articlesList[self.currentIndex];
+    model.isRequested = NO;
+    [self requestDataForModelWithIndex:self.currentIndex];
+}
+
+
 @end

@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *classUrl;
 @property (nonatomic, assign) BOOL isRequested;
-@property (nonatomic, strong) NSMutableDictionary *newsDictioary;
+@property (nonatomic, strong) NSMutableArray *newsArray;
+@property (nonatomic, strong) NSString *moreUrl;
 
 @end

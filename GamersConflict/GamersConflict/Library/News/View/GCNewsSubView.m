@@ -39,23 +39,18 @@ static NSString * const reUesId = @"subViewCell";
 }
 */
 
-//- (instancetype)initWithFrame:(CGRect)frame
-//{
-//    self = [super initWithFrame:frame];
-//    if (self) {
-//        self.dataSource = self;
-//        self.delegate = self;
-//        [self registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-//    }
-//    return self;
-//}
-
 - (void)awakeFromNib {
     self.dataSource = self;
     self.delegate = self;
     self.rowHeight = 300;
     self.showsVerticalScrollIndicator = NO;
     [self registerNib:[UINib nibWithNibName:kNewsSubViewCell bundle:nil] forCellReuseIdentifier:reUesId];
+    self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self refresh];
+    }];
+    self.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        [self loadMoreData];
+    }];
 }
 
 - (NSMutableArray *)articlesList {
@@ -69,36 +64,38 @@ static NSString * const reUesId = @"subViewCell";
     [self.refreshDelegate refreshModel];
 }
 
+- (void)loadMoreData {
+    [self.refreshDelegate loadMoreModel];
+}
+
 - (void)setDataWithModel:(GCNewsModel *)model {
-    if (model.newsDictioary.allKeys.count != 0) {
-//        NSLog(@"%@", model.newsDictioary[@"data"][@"list"]);
-        NSArray *list = model.newsDictioary[@"data"][@"list"];
-        if (list.count != 0) {
-            for (NSDictionary *dic in list) {
-                GCNewsSubModel *model = [[GCNewsSubModel alloc] init];
-                [model setValuesForKeysWithDictionary:dic];
-//                NSLog(@"%@", model.litpic);
-                [self.articlesList addObject:model];
+    if (model.newsArray.count != 0) {
+        for (NSDictionary *dic in model.newsArray) {
+            NSArray *list = dic[@"data"][@"list"];
+            if (list.count != 0) {
+                for (NSDictionary *dic in list) {
+                    GCNewsSubModel *model = [[GCNewsSubModel alloc] init];
+                    [model setValuesForKeysWithDictionary:dic];
+                    [self.articlesList addObject:model];
+                }
             }
-//            NSLog(@"%@", self.articlesList);
+
         }
-        [self.mj_header endRefreshing];
+        if ([self.mj_header isRefreshing]) {
+            [self.mj_header endRefreshing];
+        } else if ([self.mj_footer isRefreshing]) {
+            [self.mj_footer endRefreshing];
+        }
         [self reloadData];
-        self.contentOffset = CGPointMake(0, 0);
+        
     }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    NSLog(@"%ld", self.articlesList.count);
     return self.articlesList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
-//    }
-    
     GCNewsSubViewCell *cell = [self dequeueReusableCellWithIdentifier:reUesId forIndexPath:indexPath];
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:kNewsSubViewCell owner:nil options:nil] firstObject];

@@ -14,6 +14,8 @@
 
 - (void)refreshModel;
 
+- (void)loadMoreModel;
+
 @end
 
 @interface GCNewsSubView : UITableView

@@ -34,7 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSMutableArray *array = @[@{@"classUrl":GCRecommendURL}, @{@"classUrl":GCOnlineGameURL}, @{@"classUrl":GCMobileGameURL}, @{@"classUrl":GCPCGameURL}, @{@"classUrl":GCESportsURL}].mutableCopy;
+    NSMutableArray *array = @[@{@"classUrl":GCRecommendURL, @"moreUrl":GCRecommendMoreURL}, @{@"classUrl":GCOnlineGameURL}, @{@"classUrl":GCMobileGameURL}, @{@"classUrl":GCPCGameURL}, @{@"classUrl":GCESportsURL}].mutableCopy;
     for (NSDictionary *dic in array) {
         GCNewsModel *model = [[GCNewsModel alloc] init];
         [model setValuesForKeysWithDictionary:dic];
