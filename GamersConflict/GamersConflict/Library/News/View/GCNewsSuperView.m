@@ -11,6 +11,8 @@
 #import "GCNewsModel.h"
 #import "GCnewsViewController.h"
 
+#import "MJRefresh.h"
+
 #import <AFNetworking.h>
 
 @interface GCNewsSuperView()<UIScrollViewDelegate, refreshModel>
@@ -69,8 +71,6 @@
         GCNewsSubView *subView = [[[NSBundle mainBundle] loadNibNamed:@"GCNewsSubView" owner:nil options:nil] firstObject];
         subView.frame = CGRectMake(ScreenWidth * i + 5, 20, ScreenWidth - 10, ScreenHeight - 20 - 80 - 5);
         subView.refreshDelegate = self;
-//        GCNewsSubView *subView = [[GCNewsSubView alloc] initWithFrame:CGRectMake(ScreenWidth * i + 5, 44, ScreenWidth - 10, ScreenHeight - 64 - 80 - 5)];
-        
         [self addSubview:subView];
     }
 }
@@ -105,6 +105,13 @@
     }
 }
 
+- (void)bgvBeginAnimation {
+    UIImageView *bgv = [self.superview.subviews firstObject];
+    if ([bgv isAnimating] == NO) {
+        [bgv startAnimating];
+    }
+}
+
 - (void)requestDataForModelWithIndex:(NSInteger)index {
     GCNewsModel *model = self.articlesList[index];
     if (model.isRequested == NO || model.newsArray.count == 0) {
@@ -115,6 +122,7 @@
             url = model.moreUrl;
         }
         if (url != nil) {
+            [self bgvBeginAnimation];
             [self.netManager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 id newsDic = responseObject;
                 if ([newsDic isKindOfClass:[NSDictionary class]] && newsDic != nil) {
@@ -122,6 +130,7 @@
                     GCNewsSubView *subView = self.subviews[self.currentIndex];
                     [subView setDataWithModel:model];   
                 }
+                
             } failure:nil];
             model.isRequested = YES;
         }
@@ -135,7 +144,6 @@
 
 - (void)refreshModel {
     GCNewsModel *model = self.articlesList[self.currentIndex];
-    NSLog(@"%ld", self.currentIndex);
     model.isRequested = NO;
     model.newsArray = nil;
     [self requestDataForModelWithIndex:self.currentIndex];

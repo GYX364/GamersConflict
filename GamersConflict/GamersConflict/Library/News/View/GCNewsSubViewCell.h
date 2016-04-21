@@ -18,4 +18,6 @@
 
 - (void)setCellWithModel:(GCNewsSubModel *)model;
 
+- (void)setCellWhenSelect;
+
 @end

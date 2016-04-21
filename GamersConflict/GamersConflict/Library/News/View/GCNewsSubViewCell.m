@@ -28,7 +28,12 @@
 - (void)setCellWithModel:(GCNewsSubModel *)model {
     [self.litpicImgView sd_setImageWithURL:[NSURL URLWithString:model.litpic]];
     self.titleLabel.text = model.longtitle;
+    self.titleLabel.textColor = [UIColor blackColor];
     self.backgroundColor = [UIColor clearColor];
+}
+
+- (void)setCellWhenSelect {
+    self.titleLabel.textColor = [UIColor grayColor];
 }
 
 @end

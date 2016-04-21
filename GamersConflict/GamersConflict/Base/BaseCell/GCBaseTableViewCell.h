@@ -19,4 +19,6 @@
  */
 - (void)setDataWithModel:(GCBaseModel *)model;
 
+- (void)setCellWhenSelect;
+
 @end

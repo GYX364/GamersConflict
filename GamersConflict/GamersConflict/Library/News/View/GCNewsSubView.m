@@ -10,11 +10,15 @@
 #import "GCNewsModel.h"
 #import "GCNewsSubModel.h"
 #import "GCNewsSubViewCell.h"
+#import "GCNewsShowItem.h"
 
 #import "GCNewsContentViewController.h"
 
 #import "GamersConflictDelegate.h"
 #import "GCRootViewController.h"
+
+#import "GCBaseCellFactory.h"
+#import "GCNewsAllCell.h"
 
 #import "MJRefresh.h"
 
@@ -42,16 +46,19 @@ static NSString * const reUesId = @"subViewCell";
 - (void)awakeFromNib {
     self.dataSource = self;
     self.delegate = self;
-    self.rowHeight = 300;
+    self.rowHeight = 200;
     self.separatorColor = [UIColor blackColor];
     self.layer.borderColor = [[UIColor blackColor] CGColor];
+    self.separatorInset = UIEdgeInsetsMake(0, 5, 0, 13);
     self.showsVerticalScrollIndicator = NO;
-    [self registerNib:[UINib nibWithNibName:kNewsSubViewCell bundle:nil] forCellReuseIdentifier:reUesId];
+    [GCBaseCellFactory registerCellFortableView:self];
     self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self refresh];
+        [self bgvBeginAnimation];
     }];
     self.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
         [self loadMoreData];
+        [self bgvBeginAnimation];
     }];
 //    self.backgroundColor = [UIColor whiteColor];
     self.backgroundColor = [UIColor clearColor];
@@ -66,34 +73,65 @@ static NSString * const reUesId = @"subViewCell";
 
 - (void)refresh {
     [self.refreshDelegate refreshModel];
+    [self bgvBeginAnimation];
 }
 
 - (void)loadMoreData {
     [self.refreshDelegate loadMoreModel];
+    [self bgvBeginAnimation];
+}
+
+- (void)bgvBeginAnimation {
+    UIImageView *bgv = [self.superview.superview.subviews firstObject];
+    if ([bgv isAnimating] == NO) {
+        [bgv startAnimating];
+    }
+}
+
+- (void)bgvEndAnimation {
+    UIImageView *bgv = [self.superview.superview.subviews firstObject];
+    if ([bgv isAnimating] == YES) {
+        [bgv stopAnimating];
+    }
 }
 
 - (void)setDataWithModel:(GCNewsModel *)model {
     if (model.newsArray.count != 0) {
         [self.articlesList removeAllObjects];
+        
         for (NSDictionary *dic in model.newsArray) {
             NSArray *list = dic[@"data"][@"list"];
+            NSLog(@"%@", list);
             if (list.count != 0) {
                 for (NSDictionary *dic in list) {
                     GCNewsSubModel *model = [[GCNewsSubModel alloc] init];
                     [model setValuesForKeysWithDictionary:dic];
                     [self.articlesList addObject:model];
+                    
+                    if ([model.showtype isEqualToString:@"1"]) {
+                        NSArray *showItems = model.showitem;
+                        NSMutableArray *items = [NSMutableArray array];
+                        for (NSMutableDictionary *dic in showItems) {
+                            GCNewsShowItem *item = [[GCNewsShowItem alloc] init];
+                            [item setValuesForKeysWithDictionary:dic];
+                            [items addObject:item];
+                        }
+                        [model.showItems addObjectsFromArray:items];
+                    }
                 }
             }
         }
-        NSLog(@"%@", self.articlesList);
+        
         model.start = self.articlesList.count;
+        
         if ([self.mj_header isRefreshing]) {
             [self.mj_header endRefreshing];
         } else if ([self.mj_footer isRefreshing]) {
             [self.mj_footer endRefreshing];
         }
-        [self reloadData];
         
+        [self bgvEndAnimation];
+        [self reloadData];
     }
 }
 
@@ -102,53 +140,28 @@ static NSString * const reUesId = @"subViewCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GCNewsSubViewCell *cell = [self dequeueReusableCellWithIdentifier:reUesId forIndexPath:indexPath];
-    if (cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:kNewsSubViewCell owner:nil options:nil] firstObject];
-    }
-    if (self.articlesList.count > 0) {
-        GCNewsSubModel *model = self.articlesList[indexPath.row];
-        [cell setCellWithModel:model];
-        cell.separatorInset = UIEdgeInsetsMake(0, 8, 0, 13);
-    }
+    
+    GCNewsSubModel *model = self.articlesList[indexPath.row];
+    
+    GCBaseTableViewCell *cell = [GCBaseCellFactory cellProducedWithModel:model forTableView:tableView cellIndexPath:indexPath configred:YES];
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    GCBaseTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setCellWhenSelect];
+    
     GCNewsSubModel *model = self.articlesList[indexPath.row];
     GCNewsContentViewController *newsContentVC = [[GCNewsContentViewController alloc] init];
     newsContentVC.model = model;
     UINavigationController *rootViewController = (UINavigationController *)((GamersConflictDelegate *)[UIApplication sharedApplication].delegate).rootViewController;
     [rootViewController pushViewController:newsContentVC animated:YES];
     
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    CATransform3D rotation;
-//    rotation = CATransform3DMakeRotation( (90.0*M_PI)/180, 0.0, 0.7, 0.4);
-//    rotation.m34 = 1.0/ -600;
-//    
-//    cell.layer.shadowColor = [[UIColor blackColor]CGColor];
-//    cell.layer.shadowOffset = CGSizeMake(10, 10);
-//    cell.alpha = 0;
-//    cell.layer.transform = rotation;
-//    cell.layer.anchorPoint = CGPointMake(0, 0.5);
-//    
-//    
-//    [UIView beginAnimations:@"rotation" context:NULL];
-//    [UIView setAnimationDuration:0.8];
-//    cell.layer.transform = CATransform3DIdentity;
-//    cell.alpha = 1;
-//    cell.layer.shadowOffset = CGSizeMake(0, 0);
-//    [UIView commitAnimations];
-    
-//    GCNewsSubViewCell *newsCell = (GCNewsSubViewCell *)cell;
-//    
-//    newsCell.titleLabel.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1);
-//    
-//    [UIView animateWithDuration:1 animations:^{
-//        newsCell.titleLabel.layer.transform = CATransform3DIdentity;
-//    }];
 }
 
 @end

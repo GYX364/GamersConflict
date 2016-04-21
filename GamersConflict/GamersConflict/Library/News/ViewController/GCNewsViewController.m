@@ -49,10 +49,14 @@
     }
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(- ScreenHeight * (kBGVWHRate - 1) / 5, 0, ScreenHeight * kBGVWHRate, ScreenHeight)];
-    NSLog(@"%@", NSStringFromCGRect(imageView.frame));
     imageView.image = [UIImage imageNamed:@"2"];
     imageView.alpha = 1;
+    imageView.animationImages = @[[UIImage imageNamed:@"BGV1"], [UIImage imageNamed:@"BGV2"], [UIImage imageNamed:@"BGV3"]];
+    imageView.animationDuration = 0.6f;
+    imageView.animationRepeatCount = 0;
+    [imageView startAnimating];
     [self.view addSubview:imageView];
+    
     self.view.backgroundColor = [UIColor grayColor];
     
     GCClassView *classView = [[GCClassView alloc] initWithFrame:CGRectMake(0, ScreenHeight - StatusBarHeight - 80, ScreenWidth, 120) classes:self.classes];

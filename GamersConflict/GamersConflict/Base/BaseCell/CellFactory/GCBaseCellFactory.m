@@ -9,6 +9,11 @@
 #import "GCBaseCellFactory.h"
 #import "GCBaseTableViewCell.h"
 #import "GCBaseModel.h"
+#import "GCNewsSubModel.h"
+
+#define kAllCell @"GCNewsAllCell"
+#define kVideoCell @"GCNewsVideoCell"
+#define kPicCell @"GCNewsPicCell"
 
 @implementation GCBaseCellFactory
 
@@ -34,21 +39,31 @@
     return NO;
 }
 
-+ (GCBaseTableViewCell *)cellProducedWithModel:(GCBaseModel *)model forTableView:(UITableView *)tableView cellIndexPath:(NSIndexPath *)indexPath configred:(BOOL)configred {
-    NSString *cellBrand = [NSStringFromClass([model class]) stringByAppendingString:@"Cell"];
-    // 名称为空时返回空
++ (GCBaseTableViewCell *)cellProducedWithModel:(GCBaseModel*)model forTableView:(UITableView *)tableView cellIndexPath:(NSIndexPath *)indexPath configred:(BOOL)configred {
     if (model == nil) {
         return nil;
     }
-    // cell存在 取出cell
-    if ([NSClassFromString(cellBrand) class]) {
-        GCBaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellBrand forIndexPath:indexPath];
-        // 是否根据model对cell上控件赋值
-        if (configred) {
-            [cell setDataWithModel:model];
-        }
+    
+    GCNewsSubModel *subModel = (GCNewsSubModel *)model;
+    if ([subModel.showtype isEqualToString:@"1"]) {
+        
+        GCBaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPicCell forIndexPath:indexPath];
+        [cell setDataWithModel:subModel];
         return cell;
     }
-    return nil;
+    
+    GCBaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kAllCell forIndexPath:indexPath];
+    [cell setDataWithModel:subModel];
+    
+    return cell;
 }
+
++ (BOOL)registerCellFortableView:(UITableView *)tableview {
+    [tableview registerNib:[UINib nibWithNibName:kAllCell bundle:nil] forCellReuseIdentifier:kAllCell];
+    [tableview registerNib:[UINib nibWithNibName:kVideoCell bundle:nil] forCellReuseIdentifier:kVideoCell];
+    [tableview registerNib:[UINib nibWithNibName:kPicCell bundle:nil] forCellReuseIdentifier:kPicCell];
+    
+    return YES;
+}
+
 @end

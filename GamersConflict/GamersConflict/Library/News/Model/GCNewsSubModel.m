@@ -8,37 +8,24 @@
 
 #import "GCNewsSubModel.h"
 
-@interface GCNewsSubModel()<NSCoding>
+@interface GCNewsSubModel()
 
 @end
 
 @implementation GCNewsSubModel
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    self = [super init];
-    if (self) {
-        self.aid = [aDecoder decodeObjectForKey:@"aid"];
-        self.subModel_description = [aDecoder decodeObjectForKey:@"subModel_description"];
-        self.html5 = [aDecoder decodeObjectForKey:@"html5"];
-        self.litpic = [aDecoder decodeObjectForKey:@"litpic"];
-        self.longtitle = [aDecoder decodeObjectForKey:@"longtitle"];
-        self.pubdate = [aDecoder decodeObjectForKey:@"pubdate"];
-        self.source = [aDecoder decodeObjectForKey:@"source"];
-        self.title = [aDecoder decodeObjectForKey:@"title"];
-        self.murl = [aDecoder decodeObjectForKey:@"murl"];
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+    if ([key isEqualToString:@"description"]) {
+        self.subModel_description = value;
     }
-    return self;
 }
 
-- (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.aid forKey:@"aid"];
-    [aCoder encodeObject:self.subModel_description forKey:@"subModel_description"];
-    [aCoder encodeObject:self.html5 forKey:@"html5"];
-    [aCoder encodeObject:self.litpic forKey:@"litpic"];
-    [aCoder encodeObject:self.longtitle forKey:@"longtitle"];
-    [aCoder encodeObject:self.pubdate forKey:@"pubdate"];
-    [aCoder encodeObject:self.source forKey:@"source"];
-    [aCoder encodeObject:self.title forKey:@"title"];
-    [aCoder encodeObject:self.murl forKey:@"murl"];
+- (NSMutableArray *)showItems {
+    if (_showItems == nil) {
+        _showItems = [NSMutableArray array];
+    }
+    return _showItems;
 }
+
+
 @end

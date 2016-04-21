@@ -11,6 +11,7 @@
 @class UITableView;
 @class GCBaseTableViewCell;
 @class GCBaseModel;
+@class GCNewsSubModel;
 
 typedef NS_ENUM(NSInteger, RegisterType) {
     RegisterTypeNib,
@@ -42,5 +43,5 @@ typedef NS_ENUM(NSInteger, RegisterType) {
  */
 + (GCBaseTableViewCell *)cellProducedWithModel:(GCBaseModel *)model forTableView:(UITableView *)tableView cellIndexPath:(NSIndexPath *)indexPath configred:(BOOL)configred;
 
-
++ (BOOL)registerCellFortableView:(UITableView *)tableview;
 @end

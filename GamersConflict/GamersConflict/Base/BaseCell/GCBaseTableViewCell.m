@@ -22,7 +22,22 @@
 }
 
 - (void)setDataWithModel:(GCBaseModel *)model {
+    for (id control in self.subviews) {
+        if ([control isKindOfClass:[UILabel class]]) {
+            [(UILabel *)control setTextColor:[UIColor blackColor]];
+            [(UILabel *)control setFont:[UIFont boldSystemFontOfSize:2]];
+        }
+    }
     
+    self.backgroundColor = [UIColor clearColor];
+}
+
+- (void)setCellWhenSelect {
+    for (id control in self.subviews) {
+        if ([control isKindOfClass:[UILabel class]]) {
+            [(UILabel *)control setTextColor:[UIColor grayColor]];
+        }
+    }
 }
 
 @end
