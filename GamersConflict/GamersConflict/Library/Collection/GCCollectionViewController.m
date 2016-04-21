@@ -7,11 +7,16 @@
 //
 
 #import "GCCollectionViewController.h"
+#import "GCDatabaseManager.h"
+#import "GCUserInfoManager.h"
+#import "GCNewsSubModel.h"
 // cell View  预留
 //#import "CellView.h"
 @interface GCCollectionViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *collectionTableView;
 
+// 数据库对象
+@property (nonatomic, strong)GCDatabaseManager *manager;
 @end
 
 @implementation GCCollectionViewController
@@ -20,6 +25,15 @@
         _collectionArray = [NSMutableArray array];
     }
     return _collectionArray;
+}
+
+// 视图将要出现时加载数据
+- (void)viewWillAppear:(BOOL)animated{
+    // 查询数据库
+    self.manager = [GCDatabaseManager defaultManager];
+    NSArray *arr = [self.manager selectCellModelWithUserId:[GCUserInfoManager getUserid]];
+    self.collectionArray = [arr mutableCopy];
+    
 }
 
 - (void)viewDidLoad {
@@ -41,9 +55,10 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    GCBaseModel *model = self.collectionArray[indexPath.row];
+    GCNewsSubModel *model = self.collectionArray[indexPath.row];
 // 预留 通过model给cell赋值 显示在 collectionTableView上
-//    cell.textLabel.text = model.title;
+    cell.textLabel.text = model.title;
+    
     
     return cell;
 }

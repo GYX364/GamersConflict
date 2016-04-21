@@ -11,7 +11,7 @@
 #import "GCRegisterViewController.h"
 #import "GCRegisterViewController.h"
 #import "GCUserInfoManager.h"
-
+#import "GCMenuViewController.h"
 // 用于开启状态栏动画
 //#import "AFNetworkActivityIndicatorManager.h"
 // 状态栏小菊花
@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userNameText;
 @property (weak, nonatomic) IBOutlet UITextField *passwordText;
 @property (weak, nonatomic) IBOutlet UIImageView *topImageView;
+@property (nonatomic, strong)UILabel *alertLabel;
 
 // AFNetWorkingHTTP请求对象
 @property (nonatomic, strong)AFHTTPSessionManager *session;
@@ -34,12 +35,17 @@
     self.session = [AFHTTPSessionManager manager];
     // 设置支持内容类型  接口返回的数据类型
     self.session.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"application/x-json",@"text/html", nil];
+    // 警告Label
+    self.alertLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth / 2 -100 , ScreenHeight / 2 , 150, 40)];
+    self.alertLabel.alpha = 0.0;
+    self.alertLabel.textAlignment = NSTextAlignmentCenter;
+     self.alertLabel.backgroundColor = [UIColor lightGrayColor];
+    
 }
 
 
 - (IBAction)loginAction:(id)sender {
     // 请求  登陆
-//    loginmode=username&password=6251728&platform=mobile&t=login&userName=gyx364
     // 创建POST请求Body
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setValue:@"username" forKey:@"loginmode"];
@@ -47,24 +53,34 @@
     [dic setValue:@"moblile" forKey:@"platform"];
     [dic setValue:@"login" forKey:@"t"];
     [dic setValue:self.userNameText.text forKey:@"userName"];
-    [self.session POST:GCLogin parameters:dic success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if ([[responseObject objectForKey:@"code"] intValue] == 0) {
-            NSLog(@"%@",responseObject);
-            // 通过UserDefaults 保存用户ID等信息
-            [GCUserInfoManager conserveUserid:[[responseObject objectForKey:@"data"] objectForKey:@"userid"]];
-            [GCUserInfoManager conserveUsername:[[responseObject objectForKey:@"data"] objectForKey:@"username"]];
-            // 完成登录.返回上一页面
-            [self dismissViewControllerAnimated:YES completion:^{
-                
-            }];
+    [self.view addSubview:self.alertLabel];
+    // 判断nameText和passWord是否为空
+    if ([self.userNameText.text isEqualToString:@""] || [self.passwordText.text isEqualToString:@""]) {
+        [self showAlertLabelWithMessage:@"输入框不能为空"];
+    }else{
+        [self.session POST:GCLogin parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            if ([[responseObject objectForKey:@"code"] intValue] == 0) {
+                // 通过UserDefaults 保存用户ID等信息
+                [GCUserInfoManager conserveUserid:[[responseObject objectForKey:@"data"] objectForKey:@"userid"]];
+                [GCUserInfoManager conserveUsername:[[responseObject objectForKey:@"data"] objectForKey:@"username"]];
+                // 完成登录.返回上一页面
+                [self dismissViewControllerAnimated:YES completion:^{
+                    
+                }];
+            }else{
+                // 输入框不为空. 弹出具体错误信息
+                [self showAlertLabelWithMessage:[responseObject objectForKey:@"msg"]];
+            }
             
-        }else{
-            NSLog(@"登陆失败:%@",[responseObject objectForKey:@"msg"]);
-        }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"登陆失败:%@",error);
-    }];
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"登陆失败:%@",error);
+        }];
+    }
+    
+    
+    
+    
+   
 }
 
 - (IBAction)registerAction:(id)sender {
@@ -95,6 +111,17 @@
     [self.passwordText resignFirstResponder];
 }
 
+
+- (void)showAlertLabelWithMessage:(NSString *)message{
+    self.alertLabel.text = message;
+    self.alertLabel.alpha = 1.0;
+    [UIView animateWithDuration:2.0 animations:^{
+        self.alertLabel.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        
+    }];
+
+}
 /*
 #pragma mark - Navigation
 

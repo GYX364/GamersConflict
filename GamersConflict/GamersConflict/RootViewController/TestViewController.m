@@ -7,7 +7,7 @@
 //
 
 #import "TestViewController.h"
-#import "GCCircularButton.h"
+
 
 #define kColor arc4random()%256 / 255.0
 
@@ -22,9 +22,7 @@
 
 
 @interface TestViewController ()
-//@property (nonatomic, strong)GCCircularButton *button1;
-//@property (nonatomic, strong)GCCircularButton *button2;
-//@property (nonatomic, strong)GCCircularButton *button3;
+
 @property (nonatomic, strong)UIButton *moreButton;
 @property (nonatomic, strong)UIButton *button1;
 @property (nonatomic, strong)UIButton *button2;

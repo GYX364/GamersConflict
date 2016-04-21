@@ -30,8 +30,6 @@
     self.window.rootViewController = rootNC;
     
     self.window.backgroundColor = [UIColor whiteColor];
-//    NSString *cellid = @"315360";
-//    NSLog(@"%@", GCCell(cellid));
     // 链接数据库.创建表
     GCDatabaseManager *manager = [GCDatabaseManager defaultManager];
     [manager createCollectionTable];

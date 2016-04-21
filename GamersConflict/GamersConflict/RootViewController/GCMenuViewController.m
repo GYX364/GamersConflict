@@ -13,8 +13,12 @@
 #import "GCNewsViewController.h"
 #import "GCUserInfoManager.h"
 #import "KYCircleMenu.h"
+#import "GCCollectionViewController.h"
 
 #import "GCLoginViewController.h"
+
+#import "GCClearCache.h"
+#import <UMSocial.h>
 
 #define kColor arc4random()%256 / 255.0
 
@@ -27,9 +31,21 @@
 
 #define kWidth 50
 
-@interface GCMenuViewController ()<UITableViewDelegate,UITableViewDataSource>{
+#define kOffsetLeftX (-(4 * kRadius * kCos60 ))
+#define kOffsetRightX (4 * kRadius * kCos60 )
+#define kOffsetX (4 * kRadius * kCos60)
+#define kOffsetZero 0
+#define kOffsetUpY (- (4 * kRadius * kSin60))
+#define kOffsetDownY (4 * kRadius * kSin60)
+#define kOffsetY (4 * kRadius * kSin60)
+
+@interface GCMenuViewController ()<UITableViewDelegate,UITableViewDataSource,UMSocialUIDelegate>{
     BOOL isOpen;
 }
+
+// RootViewController
+@property (nonatomic, strong)GCRootViewController *rootVC;
+
 @property (weak, nonatomic) IBOutlet UITableView *menuListTableView;
 
 // 菜单内容数组
@@ -40,7 +56,7 @@
 // 分类button
 @property (nonatomic, strong)UIButton *moreButton;
 @property (nonatomic, strong)UIButton *button1;
-@property (nonatomic, strong)UIButton *button2;
+
 @property (nonatomic, strong)UIButton *button3;
 @property (nonatomic, strong)UIButton *button4;
 @property (nonatomic, strong)UIButton *button5;
@@ -60,103 +76,61 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
-        [self.loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
+//        [self.loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
+        self.button2.backgroundColor = [UIColor lightGrayColor];
     }else{
-        [self.loginButton setTitle:@"退出登录" forState:(UIControlStateNormal)];
+//        [self.loginButton setTitle:@"退出登录" forState:(UIControlStateNormal)];
+        self.button2.backgroundColor = [UIColor clearColor];
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.menuView = [[UIView alloc]initWithFrame:CGRectMake(10, 100, 320, 570)];
+    self.menuView = [[UIView alloc]initWithFrame:CGRectMake(10, 10, ScreenWidth, ScreenHeight)];
     [self.view addSubview:self.menuView];
     [self layoutButton];
     self.menuListArray = [[NSMutableArray alloc]initWithObjects:@"第一个",@"第二个", nil];
     [self.menuListTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     isOpen = NO;
-    
+    self.rootVC  = (GCRootViewController*)((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
     // Do any additional setup after loading the view from its nib.
 }
-- (IBAction)loginAction:(id)sender {
-    
-    if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
-        // 跳转登陆页面
-        GCRootViewController *rootVC  = (GCRootViewController *)((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
-        GCLoginViewController *loginVC = [[GCLoginViewController alloc]init];
-        
-        
-        [rootVC presentViewController:loginVC animated:YES completion:nil];
-    }else{
-        // 退出登录
-        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"退出登录" message:@"您确定要退出登录吗" preferredStyle:(UIAlertControllerStyleAlert)];
-        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-            // 确定退出, 删除Userid
-             [GCUserInfoManager cancelUserid];
-            // 改变button 显示
-            [self.loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
-        }];
-        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
-            //
-        }];
-        [alertVC addAction:action1];
-        [alertVC addAction:action2];
-        [self showViewController:alertVC sender:nil];
-       
-        
-    }
-   
 
-    
-}
 
 
 - (void)layoutButton{
     self.moreButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth / 2.0 - 50 - 50, ScreenHeight / 2.0 - 50, 2 * kRadius, 2 * kRadius)];
-    self.moreButton.layer.masksToBounds = YES;
+//    self.moreButton.layer.masksToBounds = YES;
     self.moreButton.layer.cornerRadius = kRadius;
-    self.moreButton.backgroundColor = [UIColor redColor];
+    [self.moreButton setBackgroundImage:[UIImage imageNamed:@"extend.tif"] forState:(UIControlStateNormal)];
     [self.moreButton addTarget:self action:@selector(bAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    self.button1 = [[UIButton alloc]init];
-    [self.button1 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
-    self.button1.backgroundColor = [UIColor grayColor];
-    self.button1.layer.cornerRadius = kWidth / 2.0;
+    self.button1 = [self createButton];
+      [self.button1 setBackgroundImage:[UIImage imageNamed:@"home.tif"] forState:(UIControlStateNormal)];
     [self.button1 addTarget:self action:@selector(backRoot:) forControlEvents:(UIControlEventTouchUpInside)];
-    [self.menuView addSubview:self.button1];
-    ;
    
-    self.button2 = [[UIButton alloc]init];
-    [self.button2 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
-    self.button2.backgroundColor = [UIColor grayColor];
-    self.button2.layer.cornerRadius = kWidth / 2;
-    [self.menuView addSubview:self.button2];
+
     
+    self.button2 = [self createButton];
+    [self.button2 setBackgroundImage:[UIImage imageNamed:@"user.tif"] forState:(UIControlStateNormal)];
+//    self.button2.backgroundColor = [UIColor lightGrayColor];
+    [self.button2 addTarget:self action:@selector(loginAction:) forControlEvents:(UIControlEventTouchUpInside)];
+
     
-    self.button3 = [[UIButton alloc]init];
-    [self.button3 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
-    self.button3.backgroundColor = [UIColor grayColor];
-    self.button3.layer.cornerRadius = kWidth / 2;
-    [self.menuView addSubview:self.button3];
+    self.button3 = [self createButton];
+    [self.button3 setBackgroundImage:[UIImage imageNamed:@"favorite.tif"] forState:(UIControlStateNormal)];
+    [self.button3 addTarget:self action:@selector(collection:) forControlEvents:(UIControlEventTouchUpInside)];
+
+    self.button4 = [self createButton];
+
+    self.button5 = [self createButton];
+    [self.button5 setBackgroundImage:[UIImage imageNamed:@"share.tif"] forState:(UIControlStateNormal)];
+    [self.button5 addTarget:self action:@selector(share:) forControlEvents:(UIControlEventTouchUpInside)];
+
+    self.button6 = [self createButton];
+    [self.button6 setBackgroundImage:[UIImage imageNamed:@"delete.tif"] forState:(UIControlStateNormal)];
+    [self.button6 addTarget:self action:@selector(cleanCaches:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    
-    self.button4 = [[UIButton alloc]init];
-    [self.button4 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
-    self.button4.backgroundColor = [UIColor grayColor];
-    self.button4.layer.cornerRadius = kWidth / 2.0;
-    [self.menuView addSubview:self.button4];
-    
-    
-    self.button5 = [[UIButton alloc]init];
-    [self.button5 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
-    self.button5.backgroundColor = [UIColor grayColor];
-    self.button5.layer.cornerRadius = kWidth / 2.0;
-    [self.menuView addSubview:self.button5];
-    
-    self.button6 = [[UIButton alloc]init];
-    [self.button6 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
-    self.button6.backgroundColor = [UIColor grayColor];
-    self.button6.layer.cornerRadius = kWidth / 2;
-    [self.menuView addSubview:self.button6];
     [self.menuView addSubview:self.moreButton];
 }
 
@@ -172,48 +146,144 @@
 - (void)open{
     [UIView animateWithDuration:0.5 delay:0.1 usingSpringWithDamping:0.3 initialSpringVelocity:5 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
 
-        self.button1.transform = CGAffineTransformTranslate(self.button1.transform, -(4 * kRadius * kCos60 ), - (4 * kRadius * kSin60 ));
-        self.button2.transform = CGAffineTransformTranslate(self.button2.transform, 0, - (4 * kRadius * kSin60));
-        self.button3.transform = CGAffineTransformTranslate(self.button3.transform, (4 * kRadius * kCos60), -(4 * kRadius * kSin60));
-        self.button4.transform = CGAffineTransformTranslate(self.button4.transform, (4 * kRadius * kCos60 ),(4 * kRadius * kSin60 ));
-        self.button5.transform = CGAffineTransformTranslate(self.button5.transform, 0 , (4 * kRadius * kSin60 ));
-        self.button6.transform = CGAffineTransformTranslate(self.button6.transform, -(4 * kRadius * kCos60 ),(4 * kRadius * kSin60 ));
+        [self showButton:self.button1 tx:(-kOffsetX) ty:(-kOffsetY)];
+        [self showButton:self.button2 tx:kOffsetZero ty:(- (kOffsetY))];
+        [self showButton:self.button3 tx:kOffsetX ty:-kOffsetY];
+        [self showButton:self.button4 tx:kOffsetX ty:kOffsetY];
+        [self showButton:self.button5 tx:kOffsetZero ty:kOffsetY];
+        [self showButton:self.button6 tx:-kOffsetX ty:kOffsetY];
     } completion:^(BOOL finished) {
         isOpen = YES;
         [self.moreButton setEnabled:YES];
+        
     }];
 }
 
 - (void)close{
     [UIView animateWithDuration:0.3 animations:^{
-//        [self.button1 setTransform:CGAffineTransformRotate(self.button1.transform, 2 * M_PI)];
-//         [self.button2 setTransform:CGAffineTransformRotate(self.button2.transform, 2 * M_PI)];
-//         [self.button3 setTransform:CGAffineTransformRotate(self.button3.transform, 2 * M_PI)];
-//         [self.button4 setTransform:CGAffineTransformRotate(self.button4.transform, 2 * M_PI)];
-//         [self.button5 setTransform:CGAffineTransformRotate(self.button5.transform, 2 * M_PI)];
-//         [self.button6 setTransform:CGAffineTransformRotate(self.button6.transform, 2 * M_PI)];
-        
-        // button 回收
-        self.button1.transform = CGAffineTransformTranslate(self.button1.transform, (4 * kRadius * kCos60 ),  (4 * kRadius * kSin60 ));
-        self.button2.transform = CGAffineTransformTranslate(self.button2.transform, 0, (4*kRadius * kSin60));
-        self.button3.transform = CGAffineTransformTranslate(self.button3.transform, - ( 4 * kRadius * kCos60), (4 * kRadius * kSin60));
-        self.button4.transform = CGAffineTransformTranslate(self.button4.transform, - (4 * kRadius * kCos60), - (4 * kRadius * kSin60));
-        self.button5.transform = CGAffineTransformTranslate(self.button5.transform, 0, - (4 * kRadius * kSin60));
-        self.button6.transform = CGAffineTransformTranslate(self.button6.transform, (4 * kRadius * kCos60), -(4 * kRadius * kSin60));
+        [self showButton:self.button1 tx:kOffsetX ty:kOffsetY];
+        [self showButton:self.button2 tx:kOffsetZero ty:kOffsetY];
+        [self showButton:self.button3 tx:-kOffsetX ty:kOffsetY];
+        [self showButton:self.button4 tx:-kOffsetX ty:-kOffsetY];
+        [self showButton:self.button5 tx:kOffsetZero ty:-kOffsetY];
+        [self showButton:self.button6 tx:kOffsetX ty:-kOffsetY];
     } completion:^(BOOL finished) {
         isOpen = NO;
         [self.moreButton setEnabled:YES];
+        
     }];
 }
 
+#pragma mark -- 各个Button方法
 - (void)backRoot:(UIButton*)sender{
 //     获取GCRootViewController 通过GCDelegate
-    UIViewController *rootVC  = ((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
+    
     GCNewsViewController *newsVC = [[GCNewsViewController alloc] init];
     UINavigationController *newsNC = [[UINavigationController alloc] initWithRootViewController:newsVC];
     
-    [(GCRootViewController*)([((UINavigationController *)rootVC).viewControllers firstObject]) changeRootView:newsNC];
+    [(GCRootViewController*)([((UINavigationController *)self.rootVC).viewControllers firstObject]) changeRootView:newsNC];
     
+}
+
+- (void)loginAction:(UIButton *)sender{
+    if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
+        // 跳转登陆页面
+        GCLoginViewController *loginVC = [[GCLoginViewController alloc]init];
+        [self.rootVC presentViewController:loginVC animated:YES completion:nil];
+    }else{
+        // 退出登录
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"退出登录" message:@"您确定要退出登录吗" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            // 确定退出, 删除Userid
+            [GCUserInfoManager cancelUserid];
+            // 改变button 显示
+//            [self.loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
+//            self.button2 setBackgroundImage:[UIImage imageNamed:<#(nonnull NSString *)#>] forState:<#(UIControlState)#>
+            self.button2.backgroundColor = [UIColor lightGrayColor];
+        }];
+        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+            //
+        }];
+        [alertVC addAction:action1];
+        [alertVC addAction:action2];
+        [self showViewController:alertVC sender:nil];
+        
+        
+    }
+
+}
+
+- (void)collection:(UIButton*)sender{
+    // 判断是否登录
+    if (![[GCUserInfoManager getUserid] isEqualToString:@" "]) {
+        GCCollectionViewController *collectionVC = [[GCCollectionViewController alloc]init];
+        UINavigationController *collectionNC = [[UINavigationController alloc]initWithRootViewController:collectionVC];
+        [(GCRootViewController*)([((UINavigationController *)self.rootVC).viewControllers firstObject]) changeRootView:collectionNC];
+    }else{
+        GCLoginViewController *loginVC = [[GCLoginViewController alloc]init];
+        [self.rootVC presentViewController:loginVC animated:YES completion:^{
+            
+        }];
+    }
+   
+}
+
+- (void)cleanCaches:(UIButton *)sender{
+    float size = [GCClearCache folderSizeOfPath:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]];
+    NSString *message = [NSString stringWithFormat:@"缓存大小为%.2fM,确定要清理缓存吗?",size];
+    
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        [GCClearCache cleanCacheWithPath:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]];
+    }];
+    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [alertVC addAction:confirm];
+    [alertVC addAction:cancle];
+    [self presentViewController:alertVC animated:YES completion:^{
+        
+    }];
+}
+
+// 分享
+- (void)share:(UIButton *)sender{
+    if (![[GCUserInfoManager getUserid] isEqualToString:@" "]) {
+        [UMSocialSnsService presentSnsIconSheetView:self
+                                             appKey:@"570dbc26e0f55a08be00055f"
+                                          shareText:@"你要分享的文字"
+                                         shareImage:[UIImage imageNamed:@"icon.png"]
+                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToSina,UMShareToQQ,nil]
+                                           delegate:self];
+    }else{
+        GCLoginViewController *loginVC = [[GCLoginViewController alloc]init];
+        [self.rootVC  presentViewController:loginVC animated:YES completion:^{
+            
+        }];
+    }
+}
+
+
+// 创建小Button
+- (UIButton *)createButton{
+//    UIButton *button = [[UIButton alloc] initWithFrame:setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) , CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)] ];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) , CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
+    button.layer.cornerRadius = kWidth / 2.0;
+//        button.layer.masksToBounds = YES;
+    button.alpha = 0.0;
+    [self.menuView addSubview:button];
+    return button;
+}
+
+- (void)showButton:(UIButton*)button tx:(CGFloat)tx ty:(CGFloat)ty{
+//    self.button1.transform = CGAffineTransformTranslate(self.button1.transform, -(4 * kRadius * kCos60 ), - (4 * kRadius * kSin60 ));
+    button.transform = CGAffineTransformTranslate(button.transform, tx, ty);
+    if (isOpen) {
+        button.alpha = 0.0;
+    }else{
+    button.alpha = 1;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
