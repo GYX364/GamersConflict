@@ -13,6 +13,7 @@
 #import "GCNewsViewController.h"
 #import "GCUserInfoManager.h"
 #import "KYCircleMenu.h"
+#import "GCCollectionViewController.h"
 
 #import "GCLoginViewController.h"
 
@@ -30,6 +31,10 @@
 @interface GCMenuViewController ()<UITableViewDelegate,UITableViewDataSource>{
     BOOL isOpen;
 }
+
+// RootViewController
+@property (nonatomic, strong)GCRootViewController *rootVC;
+
 @property (weak, nonatomic) IBOutlet UITableView *menuListTableView;
 
 // 菜单内容数组
@@ -74,7 +79,7 @@
     self.menuListArray = [[NSMutableArray alloc]initWithObjects:@"第一个",@"第二个", nil];
     [self.menuListTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     isOpen = NO;
-    
+    self.rootVC  = ((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)loginAction:(id)sender {
@@ -114,47 +119,55 @@
     self.moreButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth / 2.0 - 50 - 50, ScreenHeight / 2.0 - 50, 2 * kRadius, 2 * kRadius)];
     self.moreButton.layer.masksToBounds = YES;
     self.moreButton.layer.cornerRadius = kRadius;
-    self.moreButton.backgroundColor = [UIColor redColor];
+    self.moreButton.backgroundColor = [UIColor lightGrayColor];
+    [self.moreButton setBackgroundImage:[UIImage imageNamed:@"extend.tif"] forState:(UIControlStateNormal)];
     [self.moreButton addTarget:self action:@selector(bAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
     self.button1 = [[UIButton alloc]init];
     [self.button1 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
-    self.button1.backgroundColor = [UIColor grayColor];
+    
+    [self.button1 setBackgroundImage:[UIImage imageNamed:@"home.tif"] forState:(UIControlStateNormal)];
+//    self.button1.backgroundColor = [UIColor grayColor];
     self.button1.layer.cornerRadius = kWidth / 2.0;
+//    self.button1.layer.masksToBounds = YES;
     [self.button1 addTarget:self action:@selector(backRoot:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.menuView addSubview:self.button1];
     ;
    
     self.button2 = [[UIButton alloc]init];
     [self.button2 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
-    self.button2.backgroundColor = [UIColor grayColor];
+//    self.button2.backgroundColor = [UIColor grayColor];
     self.button2.layer.cornerRadius = kWidth / 2;
+    [self.button2 setBackgroundImage:[UIImage imageNamed:@"favorite.tif"] forState:(UIControlStateNormal)];
+    [self.button2 addTarget:self action:@selector(collection:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.menuView addSubview:self.button2];
     
     
     self.button3 = [[UIButton alloc]init];
     [self.button3 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
-    self.button3.backgroundColor = [UIColor grayColor];
+//    self.button3.backgroundColor = [UIColor grayColor];
     self.button3.layer.cornerRadius = kWidth / 2;
     [self.menuView addSubview:self.button3];
     
     
     self.button4 = [[UIButton alloc]init];
     [self.button4 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
-    self.button4.backgroundColor = [UIColor grayColor];
+//    self.button4.backgroundColor = [UIColor grayColor];
     self.button4.layer.cornerRadius = kWidth / 2.0;
     [self.menuView addSubview:self.button4];
     
     
     self.button5 = [[UIButton alloc]init];
     [self.button5 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
-    self.button5.backgroundColor = [UIColor grayColor];
+//    self.button5.backgroundColor = [UIColor grayColor];
+    self.button5.layer.masksToBounds = YES;
+    [self.button5 setBackgroundImage:[UIImage imageNamed:@"share.tif"] forState:(UIControlStateNormal)];
     self.button5.layer.cornerRadius = kWidth / 2.0;
     [self.menuView addSubview:self.button5];
     
     self.button6 = [[UIButton alloc]init];
     [self.button6 setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) + 5, CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
-    self.button6.backgroundColor = [UIColor grayColor];
+//    self.button6.backgroundColor = [UIColor grayColor];
     self.button6.layer.cornerRadius = kWidth / 2;
     [self.menuView addSubview:self.button6];
     [self.menuView addSubview:self.moreButton];
@@ -177,6 +190,7 @@
         self.button3.transform = CGAffineTransformTranslate(self.button3.transform, (4 * kRadius * kCos60), -(4 * kRadius * kSin60));
         self.button4.transform = CGAffineTransformTranslate(self.button4.transform, (4 * kRadius * kCos60 ),(4 * kRadius * kSin60 ));
         self.button5.transform = CGAffineTransformTranslate(self.button5.transform, 0 , (4 * kRadius * kSin60 ));
+        self.button5.layer.masksToBounds = NO;
         self.button6.transform = CGAffineTransformTranslate(self.button6.transform, -(4 * kRadius * kCos60 ),(4 * kRadius * kSin60 ));
     } completion:^(BOOL finished) {
         isOpen = YES;
@@ -199,6 +213,7 @@
         self.button3.transform = CGAffineTransformTranslate(self.button3.transform, - ( 4 * kRadius * kCos60), (4 * kRadius * kSin60));
         self.button4.transform = CGAffineTransformTranslate(self.button4.transform, - (4 * kRadius * kCos60), - (4 * kRadius * kSin60));
         self.button5.transform = CGAffineTransformTranslate(self.button5.transform, 0, - (4 * kRadius * kSin60));
+        self.button5.layer.masksToBounds = YES;
         self.button6.transform = CGAffineTransformTranslate(self.button6.transform, (4 * kRadius * kCos60), -(4 * kRadius * kSin60));
     } completion:^(BOOL finished) {
         isOpen = NO;
@@ -206,14 +221,30 @@
     }];
 }
 
+#pragma mark -- 各个Button方法
 - (void)backRoot:(UIButton*)sender{
 //     获取GCRootViewController 通过GCDelegate
-    UIViewController *rootVC  = ((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
+    
     GCNewsViewController *newsVC = [[GCNewsViewController alloc] init];
     UINavigationController *newsNC = [[UINavigationController alloc] initWithRootViewController:newsVC];
     
-    [(GCRootViewController*)([((UINavigationController *)rootVC).viewControllers firstObject]) changeRootView:newsNC];
+    [(GCRootViewController*)([((UINavigationController *)self.rootVC).viewControllers firstObject]) changeRootView:newsNC];
     
+}
+
+- (void)collection:(UIButton*)sender{
+    // 判断是否登录
+    if (![[GCUserInfoManager getUserid] isEqualToString:@" "]) {
+        GCCollectionViewController *collectionVC = [[GCCollectionViewController alloc]init];
+        UINavigationController *collectionNC = [[UINavigationController alloc]initWithRootViewController:collectionVC];
+        [(GCRootViewController*)([((UINavigationController *)self.rootVC).viewControllers firstObject]) changeRootView:collectionNC];
+    }else{
+        GCLoginViewController *loginVC = [[GCLoginViewController alloc]init];
+        [self.rootVC presentViewController:loginVC animated:YES completion:^{
+            
+        }];
+    }
+   
 }
 
 - (void)didReceiveMemoryWarning {

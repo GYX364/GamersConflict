@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061468C71CC86B62000BFA26 /* camera.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468B51CC86B62000BFA26 /* camera.tif */; };
+		061468C81CC86B62000BFA26 /* delete.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468B61CC86B62000BFA26 /* delete.tif */; };
+		061468C91CC86B62000BFA26 /* email.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468B71CC86B62000BFA26 /* email.tif */; };
+		061468CA1CC86B62000BFA26 /* extend.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468B81CC86B62000BFA26 /* extend.tif */; };
+		061468CB1CC86B62000BFA26 /* favorite.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468B91CC86B62000BFA26 /* favorite.tif */; };
+		061468CC1CC86B62000BFA26 /* film.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468BA1CC86B62000BFA26 /* film.tif */; };
+		061468CD1CC86B62000BFA26 /* good.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468BB1CC86B62000BFA26 /* good.tif */; };
+		061468CF1CC86B62000BFA26 /* left.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468BD1CC86B62000BFA26 /* left.tif */; };
+		061468D01CC86B62000BFA26 /* like.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468BE1CC86B62000BFA26 /* like.tif */; };
+		061468D11CC86B62000BFA26 /* message.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468BF1CC86B62000BFA26 /* message.tif */; };
+		061468D21CC86B62000BFA26 /* pointer.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468C01CC86B62000BFA26 /* pointer.tif */; };
+		061468D31CC86B62000BFA26 /* right.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468C11CC86B62000BFA26 /* right.tif */; };
+		061468D41CC86B62000BFA26 /* search.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468C21CC86B62000BFA26 /* search.tif */; };
+		061468D51CC86B62000BFA26 /* setting.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468C31CC86B62000BFA26 /* setting.tif */; };
+		061468D61CC86B62000BFA26 /* share.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468C41CC86B62000BFA26 /* share.tif */; };
+		061468D71CC86B62000BFA26 /* user.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468C51CC86B62000BFA26 /* user.tif */; };
+		061468D81CC86B62000BFA26 /* winter.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468C61CC86B62000BFA26 /* winter.tif */; };
+		061468DC1CC874C1000BFA26 /* home.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468DB1CC874C1000BFA26 /* home.tif */; };
 		061E17351CC47B270022EBCC /* GCUserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 061E17341CC47B270022EBCC /* GCUserInfoManager.m */; };
 		061E17381CC488EC0022EBCC /* GCDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 061E17371CC488EC0022EBCC /* GCDatabaseManager.m */; };
 		061E173B1CC4FF430022EBCC /* GCCircularButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 061E173A1CC4FF430022EBCC /* GCCircularButton.m */; };
@@ -91,6 +109,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		061468B51CC86B62000BFA26 /* camera.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = camera.tif; sourceTree = "<group>"; };
+		061468B61CC86B62000BFA26 /* delete.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = delete.tif; sourceTree = "<group>"; };
+		061468B71CC86B62000BFA26 /* email.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = email.tif; sourceTree = "<group>"; };
+		061468B81CC86B62000BFA26 /* extend.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = extend.tif; sourceTree = "<group>"; };
+		061468B91CC86B62000BFA26 /* favorite.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = favorite.tif; sourceTree = "<group>"; };
+		061468BA1CC86B62000BFA26 /* film.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = film.tif; sourceTree = "<group>"; };
+		061468BB1CC86B62000BFA26 /* good.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = good.tif; sourceTree = "<group>"; };
+		061468BD1CC86B62000BFA26 /* left.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = left.tif; sourceTree = "<group>"; };
+		061468BE1CC86B62000BFA26 /* like.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = like.tif; sourceTree = "<group>"; };
+		061468BF1CC86B62000BFA26 /* message.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = message.tif; sourceTree = "<group>"; };
+		061468C01CC86B62000BFA26 /* pointer.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = pointer.tif; sourceTree = "<group>"; };
+		061468C11CC86B62000BFA26 /* right.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = right.tif; sourceTree = "<group>"; };
+		061468C21CC86B62000BFA26 /* search.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = search.tif; sourceTree = "<group>"; };
+		061468C31CC86B62000BFA26 /* setting.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = setting.tif; sourceTree = "<group>"; };
+		061468C41CC86B62000BFA26 /* share.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = share.tif; sourceTree = "<group>"; };
+		061468C51CC86B62000BFA26 /* user.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = user.tif; sourceTree = "<group>"; };
+		061468C61CC86B62000BFA26 /* winter.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = winter.tif; sourceTree = "<group>"; };
+		061468DB1CC874C1000BFA26 /* home.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = home.tif; sourceTree = "<group>"; };
 		061E17331CC47B270022EBCC /* GCUserInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCUserInfoManager.h; sourceTree = "<group>"; };
 		061E17341CC47B270022EBCC /* GCUserInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCUserInfoManager.m; sourceTree = "<group>"; };
 		061E17361CC488EC0022EBCC /* GCDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDatabaseManager.h; sourceTree = "<group>"; };
@@ -424,6 +460,24 @@
 			isa = PBXGroup;
 			children = (
 				AA52B5E21CC7681A007884D9 /* 1.png */,
+				061468B51CC86B62000BFA26 /* camera.tif */,
+				061468B61CC86B62000BFA26 /* delete.tif */,
+				061468B71CC86B62000BFA26 /* email.tif */,
+				061468B81CC86B62000BFA26 /* extend.tif */,
+				061468B91CC86B62000BFA26 /* favorite.tif */,
+				061468DB1CC874C1000BFA26 /* home.tif */,
+				061468BA1CC86B62000BFA26 /* film.tif */,
+				061468BB1CC86B62000BFA26 /* good.tif */,
+				061468BD1CC86B62000BFA26 /* left.tif */,
+				061468BE1CC86B62000BFA26 /* like.tif */,
+				061468BF1CC86B62000BFA26 /* message.tif */,
+				061468C01CC86B62000BFA26 /* pointer.tif */,
+				061468C11CC86B62000BFA26 /* right.tif */,
+				061468C21CC86B62000BFA26 /* search.tif */,
+				061468C31CC86B62000BFA26 /* setting.tif */,
+				061468C41CC86B62000BFA26 /* share.tif */,
+				061468C51CC86B62000BFA26 /* user.tif */,
+				061468C61CC86B62000BFA26 /* winter.tif */,
 				AA52B5831CC5F48B007884D9 /* KYICircleMenuButton01.png */,
 				AA52B5841CC5F48B007884D9 /* KYICircleMenuButton01@2x.png */,
 				AA52B5851CC5F48B007884D9 /* KYICircleMenuButton02.png */,
@@ -687,21 +741,38 @@
 			files = (
 				AA52B59F1CC5F48B007884D9 /* KYICircleMenuCenterButton.png in Resources */,
 				06EC9A451CC0E272001DD75F /* GCRootViewController.xib in Resources */,
+				061468C71CC86B62000BFA26 /* camera.tif in Resources */,
+				061468D11CC86B62000BFA26 /* message.tif in Resources */,
+				061468D31CC86B62000BFA26 /* right.tif in Resources */,
+				061468D41CC86B62000BFA26 /* search.tif in Resources */,
 				AA52B5A21CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png in Resources */,
+				061468D21CC86B62000BFA26 /* pointer.tif in Resources */,
+				061468D51CC86B62000BFA26 /* setting.tif in Resources */,
 				AA52B59E1CC5F48B007884D9 /* KYICircleMenuButton06@2x.png in Resources */,
 				AA906F801CC51943000CD8B9 /* style.css in Resources */,
+				061468D01CC86B62000BFA26 /* like.tif in Resources */,
 				AA5CCAFF1CC2266F00FF79AB /* GCNewsSubViewCell.xib in Resources */,
+				061468CD1CC86B62000BFA26 /* good.tif in Resources */,
+				061468D61CC86B62000BFA26 /* share.tif in Resources */,
 				AA52B59B1CC5F48B007884D9 /* KYICircleMenuButton05.png in Resources */,
 				AA52B5A11CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png in Resources */,
 				AA52B5931CC5F48B007884D9 /* KYICircleMenuButton01.png in Resources */,
+				061468DC1CC874C1000BFA26 /* home.tif in Resources */,
+				061468CF1CC86B62000BFA26 /* left.tif in Resources */,
+				061468D81CC86B62000BFA26 /* winter.tif in Resources */,
 				AA52B5E31CC7681A007884D9 /* 1.png in Resources */,
+				061468CB1CC86B62000BFA26 /* favorite.tif in Resources */,
 				06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */,
 				AA52B59C1CC5F48B007884D9 /* KYICircleMenuButton05@2x.png in Resources */,
 				AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */,
+				061468D71CC86B62000BFA26 /* user.tif in Resources */,
+				061468C81CC86B62000BFA26 /* delete.tif in Resources */,
 				06EC99E41CC0D1DC001DD75F /* LaunchScreen.storyboard in Resources */,
 				AA52B5961CC5F48B007884D9 /* KYICircleMenuButton02@2x.png in Resources */,
+				061468CA1CC86B62000BFA26 /* extend.tif in Resources */,
 				AA52B5A01CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png in Resources */,
 				AA52B5981CC5F48B007884D9 /* KYICircleMenuButton03@2x.png in Resources */,
+				061468CC1CC86B62000BFA26 /* film.tif in Resources */,
 				06EC9A6D1CC0FE52001DD75F /* GCLoginViewController.xib in Resources */,
 				AA3AF5221CC503F9000BDD04 /* GCNewsContentViewController.xib in Resources */,
 				AA52B5951CC5F48B007884D9 /* KYICircleMenuButton02.png in Resources */,
@@ -709,6 +780,7 @@
 				06EC99E11CC0D1DC001DD75F /* Assets.xcassets in Resources */,
 				AA52B59A1CC5F48B007884D9 /* KYICircleMenuButton04@2x.png in Resources */,
 				AA52B59D1CC5F48B007884D9 /* KYICircleMenuButton06.png in Resources */,
+				061468C91CC86B62000BFA26 /* email.tif in Resources */,
 				AA52B5991CC5F48B007884D9 /* KYICircleMenuButton04.png in Resources */,
 				AA52B5971CC5F48B007884D9 /* KYICircleMenuButton03.png in Resources */,
 				06EC9A621CC0EAFD001DD75F /* TestViewController.xib in Resources */,
