@@ -10,5 +10,6 @@
 @class GCRootViewController;
 @interface GCMenuViewController : GCBaseViewController
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
-
+// 登陆按钮
+@property (nonatomic, strong)UIButton *button2;
 @end

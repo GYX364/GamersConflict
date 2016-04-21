@@ -26,7 +26,7 @@
         // 路径
         NSString *documents = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
         NSString *path = [documents stringByAppendingPathComponent:@"GmaersConflict.sqlite"];
-        NSLog(@"%@",path);
+        NSLog(@"SQLITE ---- %@",path);
         // 通过FMDatabase 对象打开数据库
         self.database = [[FMDatabase alloc]initWithPath:path];
         BOOL isOpen = [self.database open];
@@ -104,13 +104,9 @@
 
 - (void)deleteCellModelWithCellId:(NSString *)cellID{
     NSString *delete = [NSString stringWithFormat:@"delete  from collection where cellid = %@",cellID];
-   BOOL re =  [self.database executeUpdate:delete];
+    [self.database executeUpdate:delete];
     
-//    if (re) {
-//        NSLog(@"delete success");
-//    }else{
-//        NSLog(@"delete faild");
-//    }
+
 }
 
 - (NSArray *)selectCellModelWithUserId:(NSString *)userid{

@@ -35,8 +35,7 @@
 @implementation GCNewsContentViewController
 
 - (void)viewWillAppear:(BOOL)animated{
-    //
-    
+    // 如果用户登录,判断该页面是否被收藏
     
 }
 
@@ -60,13 +59,12 @@
     
     [self.collectionButton addTarget:self action:@selector(collectionAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.shareButton addTarget:self action:@selector(shareAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    // 如果用户登录,判断该页面是否被收藏
     if (![[GCUserInfoManager getUserid] isEqualToString:@" "]) {
         if ([self.manager selectCellWithCellId:[NSString stringWithFormat:@"%@",self.model.aid]]) {
-            [self.collectionButton setTitle:@"取消收藏" forState:(UIControlStateNormal)];
+            //            [self.collectionButton setTitle:@"取消收藏" forState:(UIControlStateNormal)];
+            self.collectionButton.backgroundColor = [UIColor redColor];
             have = YES;
         }
-        
     }
 }
 
@@ -78,9 +76,8 @@
 - (void)layoutButton{
     
     self.moreButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 80, 15, 40, 40)];
-    [self.moreButton setTitle:@"更多" forState:(UIControlStateNormal)];
-    NSLog(@"%@",NSStringFromCGRect(self.webView.frame));
-    NSLog(@"%@",NSStringFromCGRect([UIScreen mainScreen].bounds));
+//    [self.moreButton setTitle:@"更多" forState:(UIControlStateNormal)];
+    [self.moreButton setBackgroundImage:[UIImage imageNamed:@"extend.tif"] forState:(UIControlStateNormal)];
     self.moreButton.backgroundColor = [UIColor grayColor];
     self.moreButton.layer.cornerRadius = 20.0;
     self.moreButton.layer.masksToBounds = YES;
@@ -90,7 +87,8 @@
     // 收藏按钮
     self.collectionButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 80, 15, 40, 40)];
     self.collectionButton.alpha = 0.0;
-    [self.collectionButton setTitle:@"收藏" forState:(UIControlStateNormal)];
+//    [self.collectionButton setTitle:@"收藏" forState:(UIControlStateNormal)];
+    [self.collectionButton setBackgroundImage:[UIImage imageNamed:@"favorite.tif"] forState:(UIControlStateNormal)];
     self.collectionButton.layer.masksToBounds = NO;
     self.collectionButton.layer.cornerRadius = 20.0;
     self.collectionButton.backgroundColor = [UIColor redColor];
@@ -99,7 +97,8 @@
     // 分享按钮
     self.shareButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 80, 15, 40, 40)];
     self.shareButton.alpha = 0.0;
-    [self.shareButton setTitle:@"分享" forState:(UIControlStateNormal)];
+//    [self.shareButton setTitle:@"分享" forState:(UIControlStateNormal)];
+    [self.shareButton setBackgroundImage:[UIImage imageNamed:@"share.tif"] forState:(UIControlStateNormal)];
     self.shareButton.backgroundColor = [UIColor cyanColor];
     self.shareButton.layer.masksToBounds = YES;
     self.shareButton.layer.cornerRadius = 20.0;
@@ -158,14 +157,18 @@
         // 判断用户是否已经收藏,如果收藏则删除
         if (have) {
             [self.manager deleteCellModelWithCellId:[NSString stringWithFormat:@"%@",self.model.aid]];
-            [self.collectionButton setTitle:@"收藏" forState:(UIControlStateNormal)];
+//            [self.collectionButton setTitle:@"收藏" forState:(UIControlStateNormal)];
+            self.collectionButton.backgroundColor = [UIColor grayColor];
             have = NO;
-//            NSLog(@"%@",self.model.aid);
+            NSLog(@"1");
+
         }else{
             GCDatabaseManager *mananger = [GCDatabaseManager defaultManager];
             [mananger insertCellWithModel:self.model userid:[GCUserInfoManager getUserid] cellId:[NSString stringWithFormat:@"%@",self.model.aid]];
-            [self.collectionButton setTitle:@"取消收藏" forState:(UIControlStateNormal)];
-//            NSLog(@"%@",self.model.aid);
+//            [self.collectionButton setTitle:@"取消收藏" forState:(UIControlStateNormal)];
+            self.collectionButton.backgroundColor = [UIColor redColor];
+        
+            NSLog(@"2");
             have = YES;
         }
 //        存储
@@ -184,6 +187,11 @@
                                          shareImage:[UIImage imageNamed:@"icon.png"]
                                     shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToSina,UMShareToQQ,nil]
                                            delegate:self];
+    }else{
+        GCLoginViewController *loginVC = [[GCLoginViewController alloc]init];
+        [self presentViewController:loginVC animated:YES completion:^{
+            
+        }];
     }
     
 }

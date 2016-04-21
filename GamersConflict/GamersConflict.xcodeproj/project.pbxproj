@@ -21,13 +21,15 @@
 		061468D31CC86B62000BFA26 /* right.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468C11CC86B62000BFA26 /* right.tif */; };
 		061468D41CC86B62000BFA26 /* search.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468C21CC86B62000BFA26 /* search.tif */; };
 		061468D51CC86B62000BFA26 /* setting.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468C31CC86B62000BFA26 /* setting.tif */; };
-		061468D61CC86B62000BFA26 /* share.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468C41CC86B62000BFA26 /* share.tif */; };
 		061468D71CC86B62000BFA26 /* user.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468C51CC86B62000BFA26 /* user.tif */; };
 		061468D81CC86B62000BFA26 /* winter.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468C61CC86B62000BFA26 /* winter.tif */; };
 		061468DC1CC874C1000BFA26 /* home.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468DB1CC874C1000BFA26 /* home.tif */; };
+		061468E01CC880DD000BFA26 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 061468DF1CC880DD000BFA26 /* 11.png */; };
+		061468E21CC88430000BFA26 /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = 061468E11CC88430000BFA26 /* 111.png */; };
+		061468E51CC8A4EB000BFA26 /* GCClearCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 061468E41CC8A4EB000BFA26 /* GCClearCache.m */; };
+		061468EA1CC8EDBF000BFA26 /* share.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468E91CC8EDBF000BFA26 /* share.tif */; };
 		061E17351CC47B270022EBCC /* GCUserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 061E17341CC47B270022EBCC /* GCUserInfoManager.m */; };
 		061E17381CC488EC0022EBCC /* GCDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 061E17371CC488EC0022EBCC /* GCDatabaseManager.m */; };
-		061E173B1CC4FF430022EBCC /* GCCircularButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 061E173A1CC4FF430022EBCC /* GCCircularButton.m */; };
 		06EC99D61CC0D1DC001DD75F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC99D51CC0D1DC001DD75F /* main.m */; };
 		06EC99D91CC0D1DC001DD75F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC99D81CC0D1DC001DD75F /* AppDelegate.m */; };
 		06EC99DC1CC0D1DC001DD75F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC99DB1CC0D1DC001DD75F /* ViewController.m */; };
@@ -123,16 +125,18 @@
 		061468C11CC86B62000BFA26 /* right.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = right.tif; sourceTree = "<group>"; };
 		061468C21CC86B62000BFA26 /* search.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = search.tif; sourceTree = "<group>"; };
 		061468C31CC86B62000BFA26 /* setting.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = setting.tif; sourceTree = "<group>"; };
-		061468C41CC86B62000BFA26 /* share.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = share.tif; sourceTree = "<group>"; };
 		061468C51CC86B62000BFA26 /* user.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = user.tif; sourceTree = "<group>"; };
 		061468C61CC86B62000BFA26 /* winter.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = winter.tif; sourceTree = "<group>"; };
 		061468DB1CC874C1000BFA26 /* home.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = home.tif; sourceTree = "<group>"; };
+		061468DF1CC880DD000BFA26 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
+		061468E11CC88430000BFA26 /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
+		061468E31CC8A4EB000BFA26 /* GCClearCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCClearCache.h; sourceTree = "<group>"; };
+		061468E41CC8A4EB000BFA26 /* GCClearCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCClearCache.m; sourceTree = "<group>"; };
+		061468E91CC8EDBF000BFA26 /* share.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = share.tif; sourceTree = "<group>"; };
 		061E17331CC47B270022EBCC /* GCUserInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCUserInfoManager.h; sourceTree = "<group>"; };
 		061E17341CC47B270022EBCC /* GCUserInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCUserInfoManager.m; sourceTree = "<group>"; };
 		061E17361CC488EC0022EBCC /* GCDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDatabaseManager.h; sourceTree = "<group>"; };
 		061E17371CC488EC0022EBCC /* GCDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDatabaseManager.m; sourceTree = "<group>"; };
-		061E17391CC4FF430022EBCC /* GCCircularButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCCircularButton.h; sourceTree = "<group>"; };
-		061E173A1CC4FF430022EBCC /* GCCircularButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCCircularButton.m; sourceTree = "<group>"; };
 		06EC99D11CC0D1DC001DD75F /* GamersConflict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamersConflict.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EC99D51CC0D1DC001DD75F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		06EC99D71CC0D1DC001DD75F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -459,7 +463,7 @@
 		06EC9A131CC0D7FE001DD75F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				AA52B5E21CC7681A007884D9 /* 1.png */,
+				061468DF1CC880DD000BFA26 /* 11.png */,
 				061468B51CC86B62000BFA26 /* camera.tif */,
 				061468B61CC86B62000BFA26 /* delete.tif */,
 				061468B71CC86B62000BFA26 /* email.tif */,
@@ -469,13 +473,13 @@
 				061468BA1CC86B62000BFA26 /* film.tif */,
 				061468BB1CC86B62000BFA26 /* good.tif */,
 				061468BD1CC86B62000BFA26 /* left.tif */,
+				061468E91CC8EDBF000BFA26 /* share.tif */,
 				061468BE1CC86B62000BFA26 /* like.tif */,
 				061468BF1CC86B62000BFA26 /* message.tif */,
 				061468C01CC86B62000BFA26 /* pointer.tif */,
 				061468C11CC86B62000BFA26 /* right.tif */,
 				061468C21CC86B62000BFA26 /* search.tif */,
 				061468C31CC86B62000BFA26 /* setting.tif */,
-				061468C41CC86B62000BFA26 /* share.tif */,
 				061468C51CC86B62000BFA26 /* user.tif */,
 				061468C61CC86B62000BFA26 /* winter.tif */,
 				AA8696561CC8601400D9FA99 /* 2.png */,
@@ -494,6 +498,7 @@
 				AA52B58F1CC5F48B007884D9 /* KYICircleMenuCenterButton.png */,
 				AA52B5901CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png */,
 				AA52B5911CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png */,
+				061468E11CC88430000BFA26 /* 111.png */,
 				AA52B5921CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png */,
 			);
 			path = Images;
@@ -524,8 +529,8 @@
 				061E17341CC47B270022EBCC /* GCUserInfoManager.m */,
 				061E17361CC488EC0022EBCC /* GCDatabaseManager.h */,
 				061E17371CC488EC0022EBCC /* GCDatabaseManager.m */,
-				061E17391CC4FF430022EBCC /* GCCircularButton.h */,
-				061E173A1CC4FF430022EBCC /* GCCircularButton.m */,
+				061468E31CC8A4EB000BFA26 /* GCClearCache.h */,
+				061468E41CC8A4EB000BFA26 /* GCClearCache.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -742,6 +747,7 @@
 			files = (
 				AA52B59F1CC5F48B007884D9 /* KYICircleMenuCenterButton.png in Resources */,
 				06EC9A451CC0E272001DD75F /* GCRootViewController.xib in Resources */,
+				061468EA1CC8EDBF000BFA26 /* share.tif in Resources */,
 				061468C71CC86B62000BFA26 /* camera.tif in Resources */,
 				061468D11CC86B62000BFA26 /* message.tif in Resources */,
 				061468D31CC86B62000BFA26 /* right.tif in Resources */,
@@ -754,14 +760,13 @@
 				061468D01CC86B62000BFA26 /* like.tif in Resources */,
 				AA5CCAFF1CC2266F00FF79AB /* GCNewsSubViewCell.xib in Resources */,
 				061468CD1CC86B62000BFA26 /* good.tif in Resources */,
-				061468D61CC86B62000BFA26 /* share.tif in Resources */,
 				AA52B59B1CC5F48B007884D9 /* KYICircleMenuButton05.png in Resources */,
+				061468E21CC88430000BFA26 /* 111.png in Resources */,
 				AA52B5A11CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png in Resources */,
 				AA52B5931CC5F48B007884D9 /* KYICircleMenuButton01.png in Resources */,
 				061468DC1CC874C1000BFA26 /* home.tif in Resources */,
 				061468CF1CC86B62000BFA26 /* left.tif in Resources */,
 				061468D81CC86B62000BFA26 /* winter.tif in Resources */,
-				AA52B5E31CC7681A007884D9 /* 1.png in Resources */,
 				061468CB1CC86B62000BFA26 /* favorite.tif in Resources */,
 				06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */,
 				AA52B59C1CC5F48B007884D9 /* KYICircleMenuButton05@2x.png in Resources */,
@@ -780,6 +785,7 @@
 				061468CC1CC86B62000BFA26 /* film.tif in Resources */,
 				06EC9A6D1CC0FE52001DD75F /* GCLoginViewController.xib in Resources */,
 				AA3AF5221CC503F9000BDD04 /* GCNewsContentViewController.xib in Resources */,
+				061468E01CC880DD000BFA26 /* 11.png in Resources */,
 				AA52B5951CC5F48B007884D9 /* KYICircleMenuButton02.png in Resources */,
 				AA52B5941CC5F48B007884D9 /* KYICircleMenuButton01@2x.png in Resources */,
 				06EC99E11CC0D1DC001DD75F /* Assets.xcassets in Resources */,
@@ -878,13 +884,13 @@
 				06EC99DC1CC0D1DC001DD75F /* ViewController.m in Sources */,
 				06EC9A491CC0E280001DD75F /* GCMenuViewController.m in Sources */,
 				06EC9A611CC0EAFD001DD75F /* TestViewController.m in Sources */,
+				061468E51CC8A4EB000BFA26 /* GCClearCache.m in Sources */,
 				AA3AF5211CC503F9000BDD04 /* GCNewsContentViewController.m in Sources */,
 				AABF8AD01CC0FA510005B109 /* GCNewsSubView.m in Sources */,
 				061E17381CC488EC0022EBCC /* GCDatabaseManager.m in Sources */,
 				AA906F7F1CC51943000CD8B9 /* NSString+Html.m in Sources */,
 				AA52B5821CC5F471007884D9 /* KYCircleMenu.m in Sources */,
 				06EC9A221CC0DA8B001DD75F /* GCBaseModel.m in Sources */,
-				061E173B1CC4FF430022EBCC /* GCCircularButton.m in Sources */,
 				061E17351CC47B270022EBCC /* GCUserInfoManager.m in Sources */,
 				06EC9A1F1CC0DA7E001DD75F /* GCBaseCellFactory.m in Sources */,
 				06EC9A441CC0E272001DD75F /* GCRootViewController.m in Sources */,

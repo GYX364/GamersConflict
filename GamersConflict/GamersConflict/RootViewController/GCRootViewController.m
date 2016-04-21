@@ -92,9 +92,15 @@
     }
     _menuController = menuController;
     UIView *menuView = _menuController.view;
+//    menuView.frame = CGRectMake(0, 0, ScreenWidth * 3 / 4, ScreenHeight);
     menuView.frame = self.view.bounds;
+    NSLog(@"%@",NSStringFromCGRect(self.view.bounds));
+    UIImageView *menuIV = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    [menuIV setImage:[UIImage imageNamed:@"111.png"]];
     // 放到底层
-    [self.view insertSubview:menuView atIndex:0];
+    [self.view insertSubview:menuIV atIndex:0];
+    [self.view insertSubview:menuView atIndex:1];
     // 判断是否已经登录
     if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
         [_menuController.loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
@@ -110,6 +116,7 @@
 - (void)drawerAction:(UIButton*)sender{
     
     [self showMenuView];
+//    [self showMenu];
 }
 
 // 点击手势,收回抽屉
@@ -151,6 +158,14 @@
         self.rootController.view.userInteractionEnabled = NO;
     }];
     
+}
+
+- (void)showMenu{
+    [UIView animateWithDuration:4 animations:^{
+        [[self.rootController.view.subviews objectAtIndex:2].subviews[0] setFrame:CGRectMake(0, ScreenHeight / 2, ScreenWidth, 1)];
+    } completion:^(BOOL finished) {
+        [self.view addSubview:self.menuController.view];
+    }];
 }
 
 - (void)changeRootView:(UIViewController *)viewController{
