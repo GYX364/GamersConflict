@@ -85,6 +85,9 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    UIImageView *backgroundView = [self.superview.subviews firstObject];
+    CGRect frame = backgroundView.frame;
+    backgroundView.frame = CGRectMake(- ScreenHeight * (kBGVWHRate - 1) / 5 - (ScreenHeight * kBGVWHRate - ScreenWidth) * scrollView.contentOffset.x / 5 / ScreenWidth, 0, frame.size.width, frame.size.height);
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {

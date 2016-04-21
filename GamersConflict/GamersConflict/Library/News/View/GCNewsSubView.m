@@ -43,6 +43,8 @@ static NSString * const reUesId = @"subViewCell";
     self.dataSource = self;
     self.delegate = self;
     self.rowHeight = 300;
+    self.separatorColor = [UIColor blackColor];
+    self.layer.borderColor = [[UIColor blackColor] CGColor];
     self.showsVerticalScrollIndicator = NO;
     [self registerNib:[UINib nibWithNibName:kNewsSubViewCell bundle:nil] forCellReuseIdentifier:reUesId];
     self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -107,6 +109,7 @@ static NSString * const reUesId = @"subViewCell";
     if (self.articlesList.count > 0) {
         GCNewsSubModel *model = self.articlesList[indexPath.row];
         [cell setCellWithModel:model];
+        cell.separatorInset = UIEdgeInsetsMake(0, 8, 0, 13);
     }
     return cell;
 }

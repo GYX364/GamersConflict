@@ -14,5 +14,8 @@
 #import "GCUrlHeadersDefine.h"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#define kBGVWidth 1024.0
+#define kBGVHeight 733.0
+#define kBGVWHRate (kBGVWidth / kBGVHeight)
 
 #endif /* GamersConflict_Prefix_pch */

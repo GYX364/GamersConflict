@@ -48,10 +48,10 @@
         [self.view.subviews performSelector:@selector(removeFromSuperview)];
     }
     
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenHeight * 1024 / 733, ScreenHeight)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(- ScreenHeight * (kBGVWHRate - 1) / 5, 0, ScreenHeight * kBGVWHRate, ScreenHeight)];
     NSLog(@"%@", NSStringFromCGRect(imageView.frame));
     imageView.image = [UIImage imageNamed:@"2"];
-    imageView.alpha = 0.8;
+    imageView.alpha = 1;
     [self.view addSubview:imageView];
     self.view.backgroundColor = [UIColor grayColor];
     
