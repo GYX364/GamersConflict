@@ -77,11 +77,11 @@
 		AA52B5A01CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5901CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png */; };
 		AA52B5A11CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5911CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png */; };
 		AA52B5A21CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5921CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png */; };
-		AA52B5E31CC7681A007884D9 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5E21CC7681A007884D9 /* 1.png */; };
 		AA5CCAF81CC1EB1E00FF79AB /* GCNewsSubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CCAF71CC1EB1E00FF79AB /* GCNewsSubModel.m */; };
 		AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5CCAF91CC20B4B00FF79AB /* GCNewsSubView.xib */; };
 		AA5CCAFD1CC2265900FF79AB /* GCNewsSubViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CCAFC1CC2265900FF79AB /* GCNewsSubViewCell.m */; };
 		AA5CCAFF1CC2266F00FF79AB /* GCNewsSubViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5CCAFE1CC2266F00FF79AB /* GCNewsSubViewCell.xib */; };
+		AA8696571CC8601400D9FA99 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8696561CC8601400D9FA99 /* 2.png */; };
 		AA906F7F1CC51943000CD8B9 /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = AA906F7D1CC51943000CD8B9 /* NSString+Html.m */; };
 		AA906F801CC51943000CD8B9 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = AA906F7E1CC51943000CD8B9 /* style.css */; };
 		AABF8ACD1CC0F9FA0005B109 /* GCNewsSuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = AABF8ACC1CC0F9FA0005B109 /* GCNewsSuperView.m */; };
@@ -211,13 +211,13 @@
 		AA52B5901CC5F48B007884D9 /* KYICircleMenuCenterButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuCenterButton@2x.png"; sourceTree = "<group>"; };
 		AA52B5911CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuCenterButtonBackground.png; sourceTree = "<group>"; };
 		AA52B5921CC5F48B007884D9 /* KYICircleMenuCenterButtonBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuCenterButtonBackground@2x.png"; sourceTree = "<group>"; };
-		AA52B5E21CC7681A007884D9 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		AA5CCAF61CC1EB1E00FF79AB /* GCNewsSubModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsSubModel.h; sourceTree = "<group>"; };
 		AA5CCAF71CC1EB1E00FF79AB /* GCNewsSubModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSubModel.m; sourceTree = "<group>"; };
 		AA5CCAF91CC20B4B00FF79AB /* GCNewsSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsSubView.xib; sourceTree = "<group>"; };
 		AA5CCAFB1CC2265900FF79AB /* GCNewsSubViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsSubViewCell.h; sourceTree = "<group>"; };
 		AA5CCAFC1CC2265900FF79AB /* GCNewsSubViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsSubViewCell.m; sourceTree = "<group>"; };
 		AA5CCAFE1CC2266F00FF79AB /* GCNewsSubViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsSubViewCell.xib; sourceTree = "<group>"; };
+		AA8696561CC8601400D9FA99 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		AA906F7B1CC51943000CD8B9 /* EfficientDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfficientDefine.h; sourceTree = "<group>"; };
 		AA906F7C1CC51943000CD8B9 /* NSString+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
 		AA906F7D1CC51943000CD8B9 /* NSString+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
@@ -478,6 +478,7 @@
 				061468C41CC86B62000BFA26 /* share.tif */,
 				061468C51CC86B62000BFA26 /* user.tif */,
 				061468C61CC86B62000BFA26 /* winter.tif */,
+				AA8696561CC8601400D9FA99 /* 2.png */,
 				AA52B5831CC5F48B007884D9 /* KYICircleMenuButton01.png */,
 				AA52B5841CC5F48B007884D9 /* KYICircleMenuButton01@2x.png */,
 				AA52B5851CC5F48B007884D9 /* KYICircleMenuButton02.png */,
@@ -767,6 +768,10 @@
 				AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */,
 				061468D71CC86B62000BFA26 /* user.tif in Resources */,
 				061468C81CC86B62000BFA26 /* delete.tif in Resources */,
+				06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */,
+				AA52B59C1CC5F48B007884D9 /* KYICircleMenuButton05@2x.png in Resources */,
+				AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */,
+				AA8696571CC8601400D9FA99 /* 2.png in Resources */,
 				06EC99E41CC0D1DC001DD75F /* LaunchScreen.storyboard in Resources */,
 				AA52B5961CC5F48B007884D9 /* KYICircleMenuButton02@2x.png in Resources */,
 				061468CA1CC86B62000BFA26 /* extend.tif in Resources */,
