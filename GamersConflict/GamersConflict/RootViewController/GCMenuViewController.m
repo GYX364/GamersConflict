@@ -73,25 +73,27 @@
     return _menuListArray;
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
-//        [self.loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
-        self.button2.backgroundColor = [UIColor lightGrayColor];
-    }else{
-//        [self.loginButton setTitle:@"退出登录" forState:(UIControlStateNormal)];
-        self.button2.backgroundColor = [UIColor clearColor];
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     self.menuView = [[UIView alloc]initWithFrame:CGRectMake(10, 10, ScreenWidth, ScreenHeight)];
     [self.view addSubview:self.menuView];
     [self layoutButton];
+    if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
+        //        [self.loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
+        self.button2.backgroundColor = [UIColor lightGrayColor];
+    }else{
+        //        [self.loginButton setTitle:@"退出登录" forState:(UIControlStateNormal)];
+        self.button2.backgroundColor = [UIColor clearColor];
+    }
     self.menuListArray = [[NSMutableArray alloc]initWithObjects:@"第一个",@"第二个", nil];
     [self.menuListTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     isOpen = NO;
     self.rootVC  = (GCRootViewController*)((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
+    
+    //
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -101,35 +103,35 @@
     self.moreButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth / 2.0 - 50 - 50, ScreenHeight / 2.0 - 50, 2 * kRadius, 2 * kRadius)];
 //    self.moreButton.layer.masksToBounds = YES;
     self.moreButton.layer.cornerRadius = kRadius;
-    [self.moreButton setBackgroundImage:[UIImage imageNamed:@"extend.tif"] forState:(UIControlStateNormal)];
+    [self.moreButton setBackgroundImage:[UIImage imageNamed:@"extend4.tif"] forState:(UIControlStateNormal)];
     [self.moreButton addTarget:self action:@selector(bAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
     self.button1 = [self createButton];
-      [self.button1 setBackgroundImage:[UIImage imageNamed:@"home.tif"] forState:(UIControlStateNormal)];
+      [self.button1 setBackgroundImage:[UIImage imageNamed:@"home1.tif"] forState:(UIControlStateNormal)];
     [self.button1 addTarget:self action:@selector(backRoot:) forControlEvents:(UIControlEventTouchUpInside)];
    
 
     
     self.button2 = [self createButton];
-    [self.button2 setBackgroundImage:[UIImage imageNamed:@"user.tif"] forState:(UIControlStateNormal)];
-//    self.button2.backgroundColor = [UIColor lightGrayColor];
+    [self.button2 setBackgroundImage:[UIImage imageNamed:@"user1.tif"] forState:(UIControlStateNormal)];
+
     [self.button2 addTarget:self action:@selector(loginAction:) forControlEvents:(UIControlEventTouchUpInside)];
 
     
     self.button3 = [self createButton];
-    [self.button3 setBackgroundImage:[UIImage imageNamed:@"favorite.tif"] forState:(UIControlStateNormal)];
+    [self.button3 setBackgroundImage:[UIImage imageNamed:@"favorite1.tif"] forState:(UIControlStateNormal)];
     [self.button3 addTarget:self action:@selector(collection:) forControlEvents:(UIControlEventTouchUpInside)];
 
     self.button4 = [self createButton];
-    [self.button4 setBackgroundImage:[UIImage imageNamed:@"carmera.png"] forState:(UIControlStateNormal)];
+    [self.button4 setBackgroundImage:[UIImage imageNamed:@"message1.tif"] forState:(UIControlStateNormal)];
     [self.button4 addTarget:self action:@selector(aboutUs:) forControlEvents:(UIControlEventTouchUpInside)];
 
     self.button5 = [self createButton];
-    [self.button5 setBackgroundImage:[UIImage imageNamed:@"share.tif"] forState:(UIControlStateNormal)];
+    [self.button5 setBackgroundImage:[UIImage imageNamed:@"share1.tif"] forState:(UIControlStateNormal)];
     [self.button5 addTarget:self action:@selector(share:) forControlEvents:(UIControlEventTouchUpInside)];
 
     self.button6 = [self createButton];
-    [self.button6 setBackgroundImage:[UIImage imageNamed:@"delete.tif"] forState:(UIControlStateNormal)];
+    [self.button6 setBackgroundImage:[UIImage imageNamed:@"delete2.tif"] forState:(UIControlStateNormal)];
     [self.button6 addTarget:self action:@selector(cleanCaches:) forControlEvents:(UIControlEventTouchUpInside)];
     
     [self.menuView addSubview:self.moreButton];
@@ -197,10 +199,11 @@
         UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
             // 确定退出, 删除Userid
             [GCUserInfoManager cancelUserid];
-            // 改变button 显示
-//            [self.loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
-//            self.button2 setBackgroundImage:[UIImage imageNamed:<#(nonnull NSString *)#>] forState:<#(UIControlState)#>
+
             self.button2.backgroundColor = [UIColor lightGrayColor];
+            if (isOpen) {
+                [self backRoot:sender];
+            }
         }];
         UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
             //
@@ -208,8 +211,9 @@
         [alertVC addAction:action1];
         [alertVC addAction:action2];
         [self showViewController:alertVC sender:nil];
+        // 如果此时RootVC中的V是collectionView ,则跳转回主页
         
-        
+
     }
 
 }
@@ -272,17 +276,15 @@
 
 // 创建小Button
 - (UIButton *)createButton{
-//    UIButton *button = [[UIButton alloc] initWithFrame:setFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) , CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)] ];
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.moreButton.frame) , CGRectGetMinY(self.moreButton.frame), kWidth, kWidth)];
     button.layer.cornerRadius = kWidth / 2.0;
-//        button.layer.masksToBounds = YES;
+
     button.alpha = 0.0;
     [self.menuView addSubview:button];
     return button;
 }
 
 - (void)showButton:(UIButton*)button tx:(CGFloat)tx ty:(CGFloat)ty{
-//    self.button1.transform = CGAffineTransformTranslate(self.button1.transform, -(4 * kRadius * kCos60 ), - (4 * kRadius * kSin60 ));
     button.transform = CGAffineTransformTranslate(button.transform, tx, ty);
     if (isOpen) {
         button.alpha = 0.0;

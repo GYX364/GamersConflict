@@ -30,7 +30,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    UIImageView *back = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"aess3.png"]];
+    [back setFrame:[UIScreen mainScreen].bounds];
+    [self.view insertSubview:back atIndex:0];
     // 初始化HTTP请求对象
     self.session = [AFHTTPSessionManager manager];
     // 设置支持内容类型  接口返回的数据类型

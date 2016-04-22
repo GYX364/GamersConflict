@@ -29,6 +29,9 @@
 // 分享按钮
 @property (nonatomic, strong)UIButton *shareButton;
 
+// 返回按钮
+@property (nonatomic, strong)UIButton *backButton;
+
 @property (nonatomic, strong)GCDatabaseManager *manager;
 @end
 
@@ -36,7 +39,18 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     // 如果用户登录,判断该页面是否被收藏
-    
+    if (![[GCUserInfoManager getUserid] isEqualToString:@" "]) {
+        if ([self.manager selectCellWithCellId:[NSString stringWithFormat:@"%@",self.model.aid]]) {
+            //            [self.collectionButton setTitle:@"取消收藏" forState:(UIControlStateNormal)];
+            self.collectionButton.backgroundColor = [UIColor redColor];
+            have = YES;
+        }else{
+            self.collectionButton.backgroundColor = [UIColor grayColor];
+            have = NO;
+        }
+    }else{
+        self.collectionButton.backgroundColor = [UIColor grayColor];
+    }
 }
 
 - (void)viewDidLoad {
@@ -54,6 +68,7 @@
 //            NSString *url = GCCell(self.model.aid);
 //            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:GCCell(self.model.aid)]]];
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.model.murl]]];
+ // http://api.tuwan.com/app/?aid=323986&appid=7
         }
     }
     // 布局button 添加button 事件
@@ -61,28 +76,19 @@
     
     [self.collectionButton addTarget:self action:@selector(collectionAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.shareButton addTarget:self action:@selector(shareAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    if (![[GCUserInfoManager getUserid] isEqualToString:@" "]) {
-        if ([self.manager selectCellWithCellId:[NSString stringWithFormat:@"%@",self.model.aid]]) {
-            //            [self.collectionButton setTitle:@"取消收藏" forState:(UIControlStateNormal)];
-            self.collectionButton.backgroundColor = [UIColor redColor];
-            have = YES;
-        }else{
-            self.collectionButton.backgroundColor = [UIColor grayColor];
-            have = NO;
-        }
-    }
+   
 }
 
-- (IBAction)backToNews:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
+//- (IBAction)backToNews:(id)sender {
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 
 // 布局button
 - (void)layoutButton{
     
     self.moreButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 80, 15, 40, 40)];
 //    [self.moreButton setTitle:@"更多" forState:(UIControlStateNormal)];
-    [self.moreButton setBackgroundImage:[UIImage imageNamed:@"extend.tif"] forState:(UIControlStateNormal)];
+    [self.moreButton setBackgroundImage:[UIImage imageNamed:@"extend4.tif"] forState:(UIControlStateNormal)];
     self.moreButton.backgroundColor = [UIColor grayColor];
     self.moreButton.layer.cornerRadius = 20.0;
     self.moreButton.layer.masksToBounds = YES;
@@ -93,7 +99,7 @@
     self.collectionButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 80, 15, 40, 40)];
     self.collectionButton.alpha = 0.0;
 //    [self.collectionButton setTitle:@"收藏" forState:(UIControlStateNormal)];
-    [self.collectionButton setBackgroundImage:[UIImage imageNamed:@"favorite.tif"] forState:(UIControlStateNormal)];
+    [self.collectionButton setBackgroundImage:[UIImage imageNamed:@"favorite1.tif"] forState:(UIControlStateNormal)];
     self.collectionButton.layer.masksToBounds = NO;
     self.collectionButton.layer.cornerRadius = 20.0;
     self.collectionButton.backgroundColor = [UIColor redColor];
@@ -103,16 +109,22 @@
     self.shareButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 80, 15, 40, 40)];
     self.shareButton.alpha = 0.0;
 //    [self.shareButton setTitle:@"分享" forState:(UIControlStateNormal)];
-    [self.shareButton setBackgroundImage:[UIImage imageNamed:@"share.tif"] forState:(UIControlStateNormal)];
+    [self.shareButton setBackgroundImage:[UIImage imageNamed:@"share1.tif"] forState:(UIControlStateNormal)];
 //    self.shareButton.backgroundColor = [UIColor cyanColor];
     self.shareButton.backgroundColor = [UIColor grayColor];
     self.shareButton.layer.masksToBounds = YES;
     self.shareButton.layer.cornerRadius = 20.0;
     [self.view addSubview:self.shareButton];
     [self.view bringSubviewToFront:self.moreButton];
-    [self.view bringSubviewToFront:self.collectionButton];
-    [self.view bringSubviewToFront:self.shareButton];
-//    [self.view sendSubviewToBack:self.webView];
+    
+    // 返回按钮
+    self.backButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 20, 40, 40)];
+    self.backButton.layer.cornerRadius = 20;
+//    self.backButton.backgroundColor = [UIColor grayColor];
+    [self.backButton setBackgroundImage:[UIImage imageNamed:@"left1.tif"] forState:(UIControlStateNormal)];
+    [self.backButton addTarget:self action:@selector(backAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.view addSubview:self.backButton];
+    
     
 }
 
@@ -200,6 +212,11 @@
         }];
     }
     
+}
+
+// 返回事件
+- (void)backAction:(UIButton *)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

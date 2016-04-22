@@ -10,6 +10,12 @@
 #import "GCDatabaseManager.h"
 #import "GCUserInfoManager.h"
 #import "GCNewsSubModel.h"
+#import "GCNewsAllCell.h"
+#import "GCNewsPicCell.h"
+#import "GCBaseCellFactory.h"
+#import "GCBaseTableViewCell.h"
+#import "GCNewsContentViewController.h"
+#import "GamersConflictDelegate.h"
 // cell View  预留
 //#import "CellView.h"
 @interface GCCollectionViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -38,7 +44,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [GCBaseCellFactory registerCellFortableView:self.collectionTableView];
     [self.collectionTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -57,7 +65,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     GCNewsSubModel *model = self.collectionArray[indexPath.row];
 // 预留 通过model给cell赋值 显示在 collectionTableView上
+//    GCBaseTableViewCell *cell = [GCBaseCellFactory cellProducedWithModel:model forTableView:tableView cellIndexPath:indexPath configred:YES];
     cell.textLabel.text = model.title;
+    
     
     
     return cell;
@@ -65,9 +75,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // cell 详情页面
-//    CellView *cellView = [[CellView alloc]init];
-//    self showViewController:<#(nonnull UIViewController *)#> sender:<#(nullable id)#>
+    GCNewsSubModel *model = self.collectionArray[indexPath.row];
+    GCNewsContentViewController *newsContentVC = [[GCNewsContentViewController alloc] init];
+    newsContentVC.model = model;
+    UINavigationController *rootViewController = (UINavigationController *)((GamersConflictDelegate *)[UIApplication sharedApplication].delegate).rootViewController;
+    [rootViewController pushViewController:newsContentVC animated:YES];
+    
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
