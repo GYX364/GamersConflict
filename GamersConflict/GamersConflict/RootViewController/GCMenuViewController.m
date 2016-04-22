@@ -12,7 +12,6 @@
 #import "TestViewController.h"
 #import "GCNewsViewController.h"
 #import "GCUserInfoManager.h"
-#import "KYCircleMenu.h"
 #import "GCCollectionViewController.h"
 
 #import "GCLoginViewController.h"

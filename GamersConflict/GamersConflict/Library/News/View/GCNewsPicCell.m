@@ -13,6 +13,8 @@
 
 #import <UIImageView+WebCache.h>
 
+#define kBoldFontSize 15
+
 @interface GCNewsPicCell()
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -24,12 +26,19 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewB;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewC;
 
+@property (nonatomic, assign) BOOL isSetData;
+
 @end
 
 @implementation GCNewsPicCell
 
 - (void)setDataWithModel:(GCBaseModel *)model {
     [super setDataWithModel:model];
+    
+    self.isSetData = YES;
+    
+    [self setLabelsStyle];
+
     GCNewsSubModel *subModel = (GCNewsSubModel *)model;
     
     self.titleLabel.text = subModel.title;
@@ -37,9 +46,36 @@
     self.timerLabel.text = subModel.timer;
     self.clickLabel.text = subModel.click;
     
-    [self.imageViewA sd_setImageWithURL:[NSURL URLWithString:((GCNewsShowItem *)subModel.showItems[self.imageViewA.tag]).pic] placeholderImage:nil];
-    [self.imageViewB sd_setImageWithURL:[NSURL URLWithString:((GCNewsShowItem *)subModel.showItems[self.imageViewB.tag]).pic] placeholderImage:nil];
-    [self.imageViewC sd_setImageWithURL:[NSURL URLWithString:((GCNewsShowItem *)subModel.showItems[self.imageViewC.tag]).pic] placeholderImage:nil];
+    if (subModel.showitem.count == 0) return;
+    
+    [self.imageViewA sd_setImageWithURL:[NSURL URLWithString:((GCNewsShowItem *)subModel.showItems[self.imageViewA.tag]).pic] placeholderImage:[UIImage imageNamed:@"placePic"]];
+    [self.imageViewB sd_setImageWithURL:[NSURL URLWithString:((GCNewsShowItem *)subModel.showItems[self.imageViewB.tag]).pic] placeholderImage:[UIImage imageNamed:@"placePic"]];
+    [self.imageViewC sd_setImageWithURL:[NSURL URLWithString:((GCNewsShowItem *)subModel.showItems[self.imageViewC.tag]).pic] placeholderImage:[UIImage imageNamed:@"placePic"]];
 }
+
+- (void)setCellWhenSelect {
+    self.isSetData = NO;
+    
+    [self setLabelsStyle];
+}
+
+- (void)setLabelsStyle {
+    [self setLabelstyle:self.titleLabel];
+    [self setLabelstyle:self.writerLabel];
+    [self setLabelstyle:self.timerLabel];
+    [self setLabelstyle:self.clickLabel];
+}
+
+- (void)setLabelstyle:(UILabel *)label {
+    
+    label.font = [UIFont boldSystemFontOfSize:kBoldFontSize];
+    
+    if (self.isSetData) {
+        label.textColor = [UIColor blackColor];
+        return;
+    }
+    label.textColor = [UIColor grayColor];
+}
+
 
 @end
