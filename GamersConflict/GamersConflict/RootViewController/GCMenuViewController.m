@@ -12,7 +12,6 @@
 #import "TestViewController.h"
 #import "GCNewsViewController.h"
 #import "GCUserInfoManager.h"
-#import "KYCircleMenu.h"
 #import "GCCollectionViewController.h"
 
 #import "GCLoginViewController.h"
@@ -122,7 +121,7 @@
     [self.button3 addTarget:self action:@selector(collection:) forControlEvents:(UIControlEventTouchUpInside)];
 
     self.button4 = [self createButton];
-    [self.button4 setBackgroundImage:[UIImage imageNamed:@"about.png"] forState:(UIControlStateNormal)];
+    [self.button4 setBackgroundImage:[UIImage imageNamed:@"carmera.png"] forState:(UIControlStateNormal)];
     [self.button4 addTarget:self action:@selector(aboutUs:) forControlEvents:(UIControlEventTouchUpInside)];
 
     self.button5 = [self createButton];

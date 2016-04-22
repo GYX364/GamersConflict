@@ -23,7 +23,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xJ1-yM-bBl">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xJ1-yM-bBl">
                         <rect key="frame" x="30" y="70" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="100" id="RdU-fb-bqX"/>
@@ -129,13 +129,13 @@
                 <outlet property="commentImg" destination="uXk-mC-oOT" id="h7H-Pu-ufW"/>
                 <outlet property="commentLabel" destination="YbL-jt-t0g" id="JQK-dg-8TH"/>
                 <outlet property="litpic" destination="xJ1-yM-bBl" id="rmj-Us-ygE"/>
-                <outlet property="pubDateLabel" destination="LBx-nL-g9w" id="oiN-xN-LZg"/>
                 <outlet property="timerImg" destination="Fjo-6s-lII" id="OIH-KG-0hw"/>
+                <outlet property="timerLabel" destination="LBx-nL-g9w" id="zvr-XR-x2d"/>
                 <outlet property="titleLabel" destination="rt5-L8-VCI" id="TBR-3i-F8z"/>
                 <outlet property="writerImg" destination="uVy-h4-deT" id="sra-oD-4Xs"/>
                 <outlet property="writerLabel" destination="hbK-Vh-XOJ" id="mie-dz-BDu"/>
             </connections>
-            <point key="canvasLocation" x="495" y="325.5"/>
+            <point key="canvasLocation" x="496" y="212.5"/>
         </tableViewCell>
     </objects>
     <resources>
