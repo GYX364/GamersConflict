@@ -97,9 +97,6 @@
     
     CGPoint point = [pan translationInView:self];
     self.panTranslateX = self.panOrignX + point.x;
-    if (self.panTranslateX < 50) {
-        return;
-    }
     
     if (self.animationBegin == NO && self.panTranslateX > 50) {
         self.animationBegin = YES;
@@ -156,6 +153,9 @@
 }
 
 - (NSInteger)indexOfViewWithPointX:(float)pointX {
+    if (pointX < 50) {
+        return 0;
+    }
     return (pointX - 60) / kCellWidth;
 }
 
