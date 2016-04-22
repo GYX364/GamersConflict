@@ -25,7 +25,7 @@
 
 - (UIImageView *)iconView {
     if (_iconView == nil) {
-        _iconView = [[UIImageView alloc] initWithFrame:self.bounds];
+        _iconView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width / 8, 0, self.bounds.size.width / 4 * 3, self.bounds.size.width / 4 * 3)];
         [self addSubview:_iconView];
     }
     return _iconView;

@@ -79,6 +79,11 @@
 		AA7F3ED91CC9B97E00C178CF /* timer.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3EB71CC9B97E00C178CF /* timer.png */; };
 		AA7F3EDA1CC9B97E00C178CF /* writer 2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3EB81CC9B97E00C178CF /* writer 2.png */; };
 		AA7F3EDB1CC9B97E00C178CF /* writer.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3EB91CC9B97E00C178CF /* writer.png */; };
+		AA7F3EE21CCA34BC00C178CF /* esports.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3EDD1CCA34BC00C178CF /* esports.png */; };
+		AA7F3EE31CCA34BC00C178CF /* mobilegame.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3EDE1CCA34BC00C178CF /* mobilegame.png */; };
+		AA7F3EE41CCA34BC00C178CF /* onlinegame.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3EDF1CCA34BC00C178CF /* onlinegame.png */; };
+		AA7F3EE51CCA34BC00C178CF /* pcgame.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3EE01CCA34BC00C178CF /* pcgame.png */; };
+		AA7F3EE61CCA34BC00C178CF /* recommend.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3EE11CCA34BC00C178CF /* recommend.png */; };
 		AA8696601CC8B67300D9FA99 /* GCNewsShowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA86965F1CC8B67300D9FA99 /* GCNewsShowItem.m */; };
 		AA8696631CC8C30400D9FA99 /* GCNewsAllCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8696621CC8C30400D9FA99 /* GCNewsAllCell.m */; };
 		AA8696661CC8C31700D9FA99 /* GCNewsVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8696651CC8C31700D9FA99 /* GCNewsVideoCell.m */; };
@@ -218,6 +223,11 @@
 		AA7F3EB71CC9B97E00C178CF /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer.png; sourceTree = "<group>"; };
 		AA7F3EB81CC9B97E00C178CF /* writer 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "writer 2.png"; sourceTree = "<group>"; };
 		AA7F3EB91CC9B97E00C178CF /* writer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = writer.png; sourceTree = "<group>"; };
+		AA7F3EDD1CCA34BC00C178CF /* esports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = esports.png; sourceTree = "<group>"; };
+		AA7F3EDE1CCA34BC00C178CF /* mobilegame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mobilegame.png; sourceTree = "<group>"; };
+		AA7F3EDF1CCA34BC00C178CF /* onlinegame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onlinegame.png; sourceTree = "<group>"; };
+		AA7F3EE01CCA34BC00C178CF /* pcgame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pcgame.png; sourceTree = "<group>"; };
+		AA7F3EE11CCA34BC00C178CF /* recommend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recommend.png; sourceTree = "<group>"; };
 		AA86965E1CC8B67300D9FA99 /* GCNewsShowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsShowItem.h; sourceTree = "<group>"; };
 		AA86965F1CC8B67300D9FA99 /* GCNewsShowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNewsShowItem.m; sourceTree = "<group>"; };
 		AA8696611CC8C30400D9FA99 /* GCNewsAllCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsAllCell.h; sourceTree = "<group>"; };
@@ -593,6 +603,7 @@
 		AA7F3E941CC9B97E00C178CF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA7F3EDC1CCA34BC00C178CF /* classesIcon */,
 				AA7F3E951CC9B97E00C178CF /* appButtons */,
 				AA7F3EA81CC9B97E00C178CF /* backgroundImgs */,
 				AA7F3EAF1CC9B97E00C178CF /* cellIcons */,
@@ -652,6 +663,18 @@
 				AA7F3EB91CC9B97E00C178CF /* writer.png */,
 			);
 			path = cellIcons;
+			sourceTree = "<group>";
+		};
+		AA7F3EDC1CCA34BC00C178CF /* classesIcon */ = {
+			isa = PBXGroup;
+			children = (
+				AA7F3EDD1CCA34BC00C178CF /* esports.png */,
+				AA7F3EDE1CCA34BC00C178CF /* mobilegame.png */,
+				AA7F3EDF1CCA34BC00C178CF /* onlinegame.png */,
+				AA7F3EE01CCA34BC00C178CF /* pcgame.png */,
+				AA7F3EE11CCA34BC00C178CF /* recommend.png */,
+			);
+			path = classesIcon;
 			sourceTree = "<group>";
 		};
 		AA906F7A1CC51943000CD8B9 /* HTML */ = {
@@ -775,6 +798,7 @@
 			files = (
 				AA7F3ECE1CC9B97E00C178CF /* 2.png in Resources */,
 				06EC9A451CC0E272001DD75F /* GCRootViewController.xib in Resources */,
+				AA7F3EE41CCA34BC00C178CF /* onlinegame.png in Resources */,
 				AA906F801CC51943000CD8B9 /* style.css in Resources */,
 				AA7F3EC81CC9B97E00C178CF /* setting.tif in Resources */,
 				AA5CCAFF1CC2266F00FF79AB /* GCNewsSubViewCell.xib in Resources */,
@@ -785,6 +809,7 @@
 				AA7F3ED51CC9B97E00C178CF /* placePic.png in Resources */,
 				AA7F3ECC1CC9B97E00C178CF /* 11.png in Resources */,
 				AA7F3ED31CC9B97E00C178CF /* comment.png in Resources */,
+				AA7F3EE51CCA34BC00C178CF /* pcgame.png in Resources */,
 				AA5CCAFA1CC20B4B00FF79AB /* GCNewsSubView.xib in Resources */,
 				AA7F3ED91CC9B97E00C178CF /* timer.png in Resources */,
 				06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */,
@@ -797,6 +822,7 @@
 				AA7F3EC01CC9B97E00C178CF /* good.tif in Resources */,
 				AA7F3EBA1CC9B97E00C178CF /* camera.tif in Resources */,
 				AA7F3EBE1CC9B97E00C178CF /* favorite.tif in Resources */,
+				AA7F3EE61CCA34BC00C178CF /* recommend.png in Resources */,
 				06EC99E41CC0D1DC001DD75F /* LaunchScreen.storyboard in Resources */,
 				06EC9A6D1CC0FE52001DD75F /* GCLoginViewController.xib in Resources */,
 				AA7F3EC71CC9B97E00C178CF /* search.tif in Resources */,
@@ -813,6 +839,7 @@
 				AA7F3EC21CC9B97E00C178CF /* left.tif in Resources */,
 				AA7F3EC91CC9B97E00C178CF /* share.tif in Resources */,
 				AA7F3EC61CC9B97E00C178CF /* right.tif in Resources */,
+				AA7F3EE31CCA34BC00C178CF /* mobilegame.png in Resources */,
 				AA7F3EC41CC9B97E00C178CF /* message.tif in Resources */,
 				06EC99DF1CC0D1DC001DD75F /* Main.storyboard in Resources */,
 				AA86966F1CC8C34B00D9FA99 /* GCNewsPicCell.xib in Resources */,
@@ -823,6 +850,7 @@
 				AA7F3EBB1CC9B97E00C178CF /* delete.tif in Resources */,
 				AA7F3ED11CC9B97E00C178CF /* BGV3.png in Resources */,
 				06EC9A731CC1156E001DD75F /* GCRegisterViewController.xib in Resources */,
+				AA7F3EE21CCA34BC00C178CF /* esports.png in Resources */,
 				AA7F3EC51CC9B97E00C178CF /* pointer.tif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

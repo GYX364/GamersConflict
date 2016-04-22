@@ -18,6 +18,6 @@ typedef void(^classIndex)(NSInteger currenIndex);
 
 - (instancetype)initWithFrame:(CGRect)frame classes:(NSArray *)classes;
 
-- (void)setClassWithViewIndex:(NSInteger)viewIndex;
+- (void)setClassViewWithIndex:(NSInteger)index;
 
 @end

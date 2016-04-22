@@ -59,10 +59,10 @@
     
     self.view.backgroundColor = [UIColor grayColor];
     
-    GCClassView *classView = [[GCClassView alloc] initWithFrame:CGRectMake(0, ScreenHeight - StatusBarHeight - 80, ScreenWidth, 120) classes:self.classes];
+    GCClassView *classView = [[GCClassView alloc] initWithFrame:CGRectMake(0, ScreenHeight - 50, ScreenWidth, 120) classes:self.classes];
     [self.view addSubview:classView];
     
-    GCNewsSuperView *superView = [[GCNewsSuperView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - 80) classes:self.classes];
+    GCNewsSuperView *superView = [[GCNewsSuperView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - 50) classes:self.classes];
     superView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:superView];
     
@@ -71,7 +71,8 @@
     };
     
     superView.viewIndex = ^(NSInteger currentIndex) {
-        [classView setClassWithViewIndex:currentIndex];
+//        [classView setClassWithViewIndex:currentIndex];
+        [classView setClassViewWithIndex:currentIndex];
     };
 
 }
