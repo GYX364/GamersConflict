@@ -20,6 +20,7 @@
 // 触发抽屉按钮Button
 @property (nonatomic, strong)UIButton *drawerButton;
 
+
 @end
 
 @implementation GCRootViewController
@@ -53,10 +54,13 @@
     }
     // 抽屉按钮
     self.drawerButton = [UIButton buttonWithType:(UIButtonTypeSystem)];
-    self.drawerButton.frame =CGRectMake(10, ScreenHeight - 50, 50, 30);
+    self.drawerButton.frame =CGRectMake(10, ScreenHeight - 60, 50, 50);
+    self.drawerButton.layer.cornerRadius = 25;
     // 图片
     //    self.drawerButton.currentBackgroundImage
-    [self.drawerButton setTitle:@"抽屉" forState:(UIControlStateNormal)];
+//    [self.drawerButton setTitle:@"抽屉" forState:(UIControlStateNormal)];
+    [self.drawerButton setBackgroundImage:[UIImage imageNamed:@"extend3.tif"] forState:(UIControlStateNormal)];
+    self.drawerButton.backgroundColor = [UIColor blackColor];
     
     UIViewController *formarController = _rootController;
     _rootController = rootController;
