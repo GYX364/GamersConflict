@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0613E1A11CC9BF3D007954B8 /* GCAboutUsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0613E1A01CC9BF3D007954B8 /* GCAboutUsView.m */; };
 		061468E51CC8A4EB000BFA26 /* GCClearCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 061468E41CC8A4EB000BFA26 /* GCClearCache.m */; };
 		061E17351CC47B270022EBCC /* GCUserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 061E17341CC47B270022EBCC /* GCUserInfoManager.m */; };
 		061E17381CC488EC0022EBCC /* GCDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 061E17371CC488EC0022EBCC /* GCDatabaseManager.m */; };
@@ -47,7 +48,6 @@
 		AA5CCAFF1CC2266F00FF79AB /* GCNewsSubViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA5CCAFE1CC2266F00FF79AB /* GCNewsSubViewCell.xib */; };
 		AA7F3EBA1CC9B97E00C178CF /* camera.tif in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3E961CC9B97E00C178CF /* camera.tif */; };
 		AA7F3EBB1CC9B97E00C178CF /* delete.tif in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3E971CC9B97E00C178CF /* delete.tif */; };
-		AA7F3EBC1CC9B97E00C178CF /* email.tif in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3E981CC9B97E00C178CF /* email.tif */; };
 		AA7F3EBD1CC9B97E00C178CF /* extend.tif in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3E991CC9B97E00C178CF /* extend.tif */; };
 		AA7F3EBE1CC9B97E00C178CF /* favorite.tif in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3E9A1CC9B97E00C178CF /* favorite.tif */; };
 		AA7F3EBF1CC9B97E00C178CF /* film.tif in Resources */ = {isa = PBXBuildFile; fileRef = AA7F3E9B1CC9B97E00C178CF /* film.tif */; };
@@ -113,6 +113,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0613E19F1CC9BF3D007954B8 /* GCAboutUsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCAboutUsView.h; sourceTree = "<group>"; };
+		0613E1A01CC9BF3D007954B8 /* GCAboutUsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCAboutUsView.m; sourceTree = "<group>"; };
 		061468E31CC8A4EB000BFA26 /* GCClearCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCClearCache.h; sourceTree = "<group>"; };
 		061468E41CC8A4EB000BFA26 /* GCClearCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCClearCache.m; sourceTree = "<group>"; };
 		061E17331CC47B270022EBCC /* GCUserInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCUserInfoManager.h; sourceTree = "<group>"; };
@@ -185,7 +187,6 @@
 		AA5CCAFE1CC2266F00FF79AB /* GCNewsSubViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCNewsSubViewCell.xib; sourceTree = "<group>"; };
 		AA7F3E961CC9B97E00C178CF /* camera.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = camera.tif; sourceTree = "<group>"; };
 		AA7F3E971CC9B97E00C178CF /* delete.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = delete.tif; sourceTree = "<group>"; };
-		AA7F3E981CC9B97E00C178CF /* email.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = email.tif; sourceTree = "<group>"; };
 		AA7F3E991CC9B97E00C178CF /* extend.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = extend.tif; sourceTree = "<group>"; };
 		AA7F3E9A1CC9B97E00C178CF /* favorite.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = favorite.tif; sourceTree = "<group>"; };
 		AA7F3E9B1CC9B97E00C178CF /* film.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = film.tif; sourceTree = "<group>"; };
@@ -561,6 +562,8 @@
 		06EC9A641CC0FE06001DD75F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0613E19F1CC9BF3D007954B8 /* GCAboutUsView.h */,
+				0613E1A01CC9BF3D007954B8 /* GCAboutUsView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -602,7 +605,6 @@
 			children = (
 				AA7F3E961CC9B97E00C178CF /* camera.tif */,
 				AA7F3E971CC9B97E00C178CF /* delete.tif */,
-				AA7F3E981CC9B97E00C178CF /* email.tif */,
 				AA7F3E991CC9B97E00C178CF /* extend.tif */,
 				AA7F3E9A1CC9B97E00C178CF /* favorite.tif */,
 				AA7F3E9B1CC9B97E00C178CF /* film.tif */,
@@ -803,7 +805,6 @@
 				AA3AF5221CC503F9000BDD04 /* GCNewsContentViewController.xib in Resources */,
 				06EC99E11CC0D1DC001DD75F /* Assets.xcassets in Resources */,
 				AA7F3ED81CC9B97E00C178CF /* timer 2.png in Resources */,
-				AA7F3EBC1CC9B97E00C178CF /* email.tif in Resources */,
 				AA7F3ED71CC9B97E00C178CF /* through.png in Resources */,
 				AA7F3EDB1CC9B97E00C178CF /* writer.png in Resources */,
 				AA7F3ECD1CC9B97E00C178CF /* 111.png in Resources */,
@@ -912,6 +913,7 @@
 				06EC9A611CC0EAFD001DD75F /* TestViewController.m in Sources */,
 				061468E51CC8A4EB000BFA26 /* GCClearCache.m in Sources */,
 				AA3AF5211CC503F9000BDD04 /* GCNewsContentViewController.m in Sources */,
+				0613E1A11CC9BF3D007954B8 /* GCAboutUsView.m in Sources */,
 				AABF8AD01CC0FA510005B109 /* GCNewsSubView.m in Sources */,
 				061E17381CC488EC0022EBCC /* GCDatabaseManager.m in Sources */,
 				AA906F7F1CC51943000CD8B9 /* NSString+Html.m in Sources */,
