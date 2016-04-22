@@ -19,6 +19,8 @@
 #import "GCClearCache.h"
 #import <UMSocial.h>
 
+
+
 #define kColor arc4random()%256 / 255.0
 
 #define kCos60 0.5
@@ -282,7 +284,10 @@
 
 // 关于我们
 - (void)aboutUs:(UIButton*)sender{
-    
+    TestViewController *testVC = [[TestViewController alloc]init];
+//    UINavigationController *aboutUs = [[UINavigationController alloc]initWithRootViewController:testVC];
+//    [(GCRootViewController*)([((UINavigationController *)self.rootVC).viewControllers firstObject]) changeRootView:aboutUs];
+//    [self showViewController:testVC sender:self];
 }
 
 // 创建小Button
