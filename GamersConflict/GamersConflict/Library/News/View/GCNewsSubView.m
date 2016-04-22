@@ -49,7 +49,8 @@ static NSString * const reUesId = @"subViewCell";
     self.rowHeight = 200;
     self.separatorColor = [UIColor blackColor];
     self.layer.borderColor = [[UIColor blackColor] CGColor];
-    self.separatorInset = UIEdgeInsetsMake(0, 5, 0, 13);
+    self.separatorInset = UIEdgeInsetsMake(-2, 5, -2, 13);
+    
     self.showsVerticalScrollIndicator = NO;
     [GCBaseCellFactory registerCellFortableView:self];
     self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{

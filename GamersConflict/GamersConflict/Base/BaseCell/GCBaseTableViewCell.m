@@ -29,7 +29,8 @@
         }
     }
     
-    self.backgroundColor = [UIColor clearColor];
+//    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor colorWithRed:0.71 green:0.84 blue:0.95 alpha:0.3];
 }
 
 - (void)setCellWhenSelect {

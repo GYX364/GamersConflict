@@ -51,7 +51,9 @@
         }
     } else if ([self.model.type isEqualToString:@"video"] || [self.model.type isEqualToString:@"pic"]) {
         if (self.model.url != nil) {
-            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.model.url]]];
+//            NSString *url = GCCell(self.model.aid);
+//            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:GCCell(self.model.aid)]]];
+            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.model.murl]]];
         }
     }
     // 布局button 添加button 事件

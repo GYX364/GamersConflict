@@ -30,7 +30,7 @@
 #define GCESportsMoreURL(i) [@"http://api.tuwan.com/app/?appid=7&class=cookielike&mod=%E7%94%B5%E7%AB%9E" stringByAppendingString:[NSString stringWithFormat:@"&id=321639&t=%.f&appid=7&appver=2.1&start=%ld", [[NSDate date] timeIntervalSince1970], i]]
 
 // 六.cell
-#define GCCell(cellId) [NSString stringWithFormat:@"http://api.tuwan.com/app/?aid=%@&appid=7",cellid] 
+#define GCCell(cellId) [NSString stringWithFormat:@"http://api.tuwan.com/app/?aid=%@&appid=7",cellId] 
 
 // 七.登陆 (POST loginmode=username&password=6251728&platform=mobile&t=login&userName=gyx364)
 #define GCLogin @"http://user.tuwan.com/api/action.ashx"
