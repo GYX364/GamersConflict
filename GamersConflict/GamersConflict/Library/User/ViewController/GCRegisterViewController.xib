@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -183,20 +183,12 @@
                     <exclude reference="mW0-hT-19K"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="CTd-mw-ipL"/>
-                    <exclude reference="qNA-6p-FhR"/>
                     <exclude reference="DgH-N5-w3v"/>
                     <exclude reference="ODG-NL-WH7"/>
-                    <exclude reference="KhX-Ag-3uR"/>
-                    <exclude reference="S9c-jt-DCX"/>
-                    <exclude reference="v9r-oP-8xo"/>
-                    <exclude reference="wMr-MS-BtB"/>
                     <exclude reference="3Dn-Rv-xss"/>
                     <exclude reference="8Cg-cw-bM1"/>
                     <exclude reference="bMn-G7-F2m"/>
                     <exclude reference="pJh-Jt-LWV"/>
-                    <exclude reference="FSI-iz-Hvg"/>
-                    <exclude reference="Y5v-Vu-xrM"/>
                     <exclude reference="6MX-dj-Kuh"/>
                     <exclude reference="JRg-Rj-KbC"/>
                     <exclude reference="Qi1-Ur-XKj"/>
@@ -205,6 +197,14 @@
                     <exclude reference="dZ9-mr-1Ux"/>
                     <exclude reference="dFC-Gt-tgY"/>
                     <exclude reference="smy-NV-zNc"/>
+                    <exclude reference="KhX-Ag-3uR"/>
+                    <exclude reference="S9c-jt-DCX"/>
+                    <exclude reference="v9r-oP-8xo"/>
+                    <exclude reference="wMr-MS-BtB"/>
+                    <exclude reference="FSI-iz-Hvg"/>
+                    <exclude reference="Y5v-Vu-xrM"/>
+                    <exclude reference="CTd-mw-ipL"/>
+                    <exclude reference="qNA-6p-FhR"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -219,20 +219,12 @@
                     <include reference="mW0-hT-19K"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="CTd-mw-ipL"/>
-                    <include reference="qNA-6p-FhR"/>
                     <include reference="DgH-N5-w3v"/>
                     <include reference="ODG-NL-WH7"/>
-                    <include reference="KhX-Ag-3uR"/>
-                    <include reference="S9c-jt-DCX"/>
-                    <include reference="v9r-oP-8xo"/>
-                    <include reference="wMr-MS-BtB"/>
                     <include reference="3Dn-Rv-xss"/>
                     <include reference="8Cg-cw-bM1"/>
                     <include reference="bMn-G7-F2m"/>
                     <include reference="pJh-Jt-LWV"/>
-                    <include reference="FSI-iz-Hvg"/>
-                    <include reference="Y5v-Vu-xrM"/>
                     <include reference="6MX-dj-Kuh"/>
                     <include reference="JRg-Rj-KbC"/>
                     <include reference="Qi1-Ur-XKj"/>
@@ -241,6 +233,14 @@
                     <include reference="dZ9-mr-1Ux"/>
                     <include reference="dFC-Gt-tgY"/>
                     <include reference="smy-NV-zNc"/>
+                    <include reference="KhX-Ag-3uR"/>
+                    <include reference="S9c-jt-DCX"/>
+                    <include reference="v9r-oP-8xo"/>
+                    <include reference="wMr-MS-BtB"/>
+                    <include reference="FSI-iz-Hvg"/>
+                    <include reference="Y5v-Vu-xrM"/>
+                    <include reference="CTd-mw-ipL"/>
+                    <include reference="qNA-6p-FhR"/>
                 </mask>
             </variation>
         </view>
