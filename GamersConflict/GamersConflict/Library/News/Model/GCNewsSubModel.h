@@ -8,7 +8,7 @@
 
 #import "GCBaseModel.h"
 
-@interface GCNewsSubModel : GCBaseModel
+@interface GCNewsSubModel : GCBaseModel<NSCoding>
 
 @property (nonatomic, strong) NSString *aid;
 @property (nonatomic, strong) NSString *subModel_description;

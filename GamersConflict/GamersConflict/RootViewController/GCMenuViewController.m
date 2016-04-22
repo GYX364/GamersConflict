@@ -39,7 +39,7 @@
 #define kOffsetDownY (4 * kRadius * kSin60)
 #define kOffsetY (4 * kRadius * kSin60)
 
-@interface GCMenuViewController ()<UITableViewDelegate,UITableViewDataSource,UMSocialUIDelegate>{
+@interface GCMenuViewController ()<UMSocialUIDelegate>{
     BOOL isOpen;
 }
 
@@ -122,6 +122,8 @@
     [self.button3 addTarget:self action:@selector(collection:) forControlEvents:(UIControlEventTouchUpInside)];
 
     self.button4 = [self createButton];
+    [self.button4 setBackgroundImage:[UIImage imageNamed:@"about.png"] forState:(UIControlStateNormal)];
+    [self.button4 addTarget:self action:@selector(aboutUs:) forControlEvents:(UIControlEventTouchUpInside)];
 
     self.button5 = [self createButton];
     [self.button5 setBackgroundImage:[UIImage imageNamed:@"share.tif"] forState:(UIControlStateNormal)];
@@ -264,6 +266,10 @@
     }
 }
 
+// 关于我们
+- (void)aboutUs:(UIButton*)sender{
+    
+}
 
 // 创建小Button
 - (UIButton *)createButton{

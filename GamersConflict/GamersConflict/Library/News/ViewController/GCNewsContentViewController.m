@@ -64,6 +64,9 @@
             //            [self.collectionButton setTitle:@"取消收藏" forState:(UIControlStateNormal)];
             self.collectionButton.backgroundColor = [UIColor redColor];
             have = YES;
+        }else{
+            self.collectionButton.backgroundColor = [UIColor grayColor];
+            have = NO;
         }
     }
 }
@@ -99,7 +102,8 @@
     self.shareButton.alpha = 0.0;
 //    [self.shareButton setTitle:@"分享" forState:(UIControlStateNormal)];
     [self.shareButton setBackgroundImage:[UIImage imageNamed:@"share.tif"] forState:(UIControlStateNormal)];
-    self.shareButton.backgroundColor = [UIColor cyanColor];
+//    self.shareButton.backgroundColor = [UIColor cyanColor];
+    self.shareButton.backgroundColor = [UIColor grayColor];
     self.shareButton.layer.masksToBounds = YES;
     self.shareButton.layer.cornerRadius = 20.0;
     [self.view addSubview:self.shareButton];
@@ -117,7 +121,7 @@
             self.collectionButton.transform = CGAffineTransformMakeTranslation(-120, 0);
             self.shareButton.transform = CGAffineTransformMakeTranslation(-70, 0);
             CGAffineTransform transform;
-            transform = CGAffineTransformRotate(self.moreButton.transform, 1 * M_PI);
+            transform = CGAffineTransformRotate(self.moreButton.transform, 3 * M_PI_4);
             [self.moreButton setTransform:transform];
             self.collectionButton.alpha = 1.0;
             self.shareButton.alpha = 1.0;
@@ -130,7 +134,7 @@
             self.collectionButton.transform = CGAffineTransformMakeTranslation(120, 0);
             self.shareButton.transform = CGAffineTransformMakeTranslation(70, 0);
             CGAffineTransform transform;
-            transform = CGAffineTransformRotate(self.moreButton.transform, 1 * M_PI);
+            transform = CGAffineTransformRotate(self.moreButton.transform, 3 * M_PI_4);
             [self.moreButton setTransform:transform];
             self.collectionButton.alpha = 0.0;
             self.shareButton.alpha = 0.0;

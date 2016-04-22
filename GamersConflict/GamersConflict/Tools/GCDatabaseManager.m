@@ -125,7 +125,7 @@
 }
 
 - (BOOL)selectCellWithCellId:(NSString *)cellId{
-    NSMutableArray *arr = [NSMutableArray array];
+    
     NSString *select = [NSString stringWithFormat:@"select * from collection where cellid = %@",cellId];
     FMResultSet *result = [self.database executeQuery:select];
     while ([result next]) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0613E1A11CC9BF3D007954B8 /* GCAboutUsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0613E1A01CC9BF3D007954B8 /* GCAboutUsView.m */; };
 		061468C71CC86B62000BFA26 /* camera.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468B51CC86B62000BFA26 /* camera.tif */; };
 		061468C81CC86B62000BFA26 /* delete.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468B61CC86B62000BFA26 /* delete.tif */; };
 		061468C91CC86B62000BFA26 /* email.tif in Resources */ = {isa = PBXBuildFile; fileRef = 061468B71CC86B62000BFA26 /* email.tif */; };
@@ -70,7 +71,7 @@
 		AA52B5971CC5F48B007884D9 /* KYICircleMenuButton03.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5871CC5F48B007884D9 /* KYICircleMenuButton03.png */; };
 		AA52B5981CC5F48B007884D9 /* KYICircleMenuButton03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5881CC5F48B007884D9 /* KYICircleMenuButton03@2x.png */; };
 		AA52B5991CC5F48B007884D9 /* KYICircleMenuButton04.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B5891CC5F48B007884D9 /* KYICircleMenuButton04.png */; };
-		AA52B59A1CC5F48B007884D9 /* KYICircleMenuButton04@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B58A1CC5F48B007884D9 /* KYICircleMenuButton04@2x.png */; };
+		AA52B59A1CC5F48B007884D9 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B58A1CC5F48B007884D9 /* about.png */; };
 		AA52B59B1CC5F48B007884D9 /* KYICircleMenuButton05.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B58B1CC5F48B007884D9 /* KYICircleMenuButton05.png */; };
 		AA52B59C1CC5F48B007884D9 /* KYICircleMenuButton05@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B58C1CC5F48B007884D9 /* KYICircleMenuButton05@2x.png */; };
 		AA52B59D1CC5F48B007884D9 /* KYICircleMenuButton06.png in Resources */ = {isa = PBXBuildFile; fileRef = AA52B58D1CC5F48B007884D9 /* KYICircleMenuButton06.png */; };
@@ -129,6 +130,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0613E19F1CC9BF3D007954B8 /* GCAboutUsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCAboutUsView.h; sourceTree = "<group>"; };
+		0613E1A01CC9BF3D007954B8 /* GCAboutUsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCAboutUsView.m; sourceTree = "<group>"; };
 		061468B51CC86B62000BFA26 /* camera.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = camera.tif; sourceTree = "<group>"; };
 		061468B61CC86B62000BFA26 /* delete.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = delete.tif; sourceTree = "<group>"; };
 		061468B71CC86B62000BFA26 /* email.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = email.tif; sourceTree = "<group>"; };
@@ -224,7 +227,7 @@
 		AA52B5871CC5F48B007884D9 /* KYICircleMenuButton03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuButton03.png; sourceTree = "<group>"; };
 		AA52B5881CC5F48B007884D9 /* KYICircleMenuButton03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuButton03@2x.png"; sourceTree = "<group>"; };
 		AA52B5891CC5F48B007884D9 /* KYICircleMenuButton04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuButton04.png; sourceTree = "<group>"; };
-		AA52B58A1CC5F48B007884D9 /* KYICircleMenuButton04@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuButton04@2x.png"; sourceTree = "<group>"; };
+		AA52B58A1CC5F48B007884D9 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
 		AA52B58B1CC5F48B007884D9 /* KYICircleMenuButton05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuButton05.png; sourceTree = "<group>"; };
 		AA52B58C1CC5F48B007884D9 /* KYICircleMenuButton05@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KYICircleMenuButton05@2x.png"; sourceTree = "<group>"; };
 		AA52B58D1CC5F48B007884D9 /* KYICircleMenuButton06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KYICircleMenuButton06.png; sourceTree = "<group>"; };
@@ -541,7 +544,7 @@
 				AA52B5871CC5F48B007884D9 /* KYICircleMenuButton03.png */,
 				AA52B5881CC5F48B007884D9 /* KYICircleMenuButton03@2x.png */,
 				AA52B5891CC5F48B007884D9 /* KYICircleMenuButton04.png */,
-				AA52B58A1CC5F48B007884D9 /* KYICircleMenuButton04@2x.png */,
+				AA52B58A1CC5F48B007884D9 /* about.png */,
 				AA52B58B1CC5F48B007884D9 /* KYICircleMenuButton05.png */,
 				AA52B58C1CC5F48B007884D9 /* KYICircleMenuButton05@2x.png */,
 				AA52B58D1CC5F48B007884D9 /* KYICircleMenuButton06.png */,
@@ -651,6 +654,8 @@
 		06EC9A641CC0FE06001DD75F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0613E19F1CC9BF3D007954B8 /* GCAboutUsView.h */,
+				0613E1A01CC9BF3D007954B8 /* GCAboutUsView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -864,7 +869,7 @@
 				AA52B5951CC5F48B007884D9 /* KYICircleMenuButton02.png in Resources */,
 				AA52B5941CC5F48B007884D9 /* KYICircleMenuButton01@2x.png in Resources */,
 				06EC99E11CC0D1DC001DD75F /* Assets.xcassets in Resources */,
-				AA52B59A1CC5F48B007884D9 /* KYICircleMenuButton04@2x.png in Resources */,
+				AA52B59A1CC5F48B007884D9 /* about.png in Resources */,
 				AA52B59D1CC5F48B007884D9 /* KYICircleMenuButton06.png in Resources */,
 				061468C91CC86B62000BFA26 /* email.tif in Resources */,
 				AA52B5991CC5F48B007884D9 /* KYICircleMenuButton04.png in Resources */,
@@ -964,6 +969,7 @@
 				06EC9A611CC0EAFD001DD75F /* TestViewController.m in Sources */,
 				061468E51CC8A4EB000BFA26 /* GCClearCache.m in Sources */,
 				AA3AF5211CC503F9000BDD04 /* GCNewsContentViewController.m in Sources */,
+				0613E1A11CC9BF3D007954B8 /* GCAboutUsView.m in Sources */,
 				AABF8AD01CC0FA510005B109 /* GCNewsSubView.m in Sources */,
 				061E17381CC488EC0022EBCC /* GCDatabaseManager.m in Sources */,
 				AA906F7F1CC51943000CD8B9 /* NSString+Html.m in Sources */,
