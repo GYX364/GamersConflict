@@ -46,7 +46,7 @@ static NSString * const reUesId = @"subViewCell";
 - (void)awakeFromNib {
     self.dataSource = self;
     self.delegate = self;
-    self.rowHeight = 200;
+    self.rowHeight = 190;
     self.separatorColor = [UIColor blackColor];
     self.layer.borderColor = [[UIColor blackColor] CGColor];
     self.separatorInset = UIEdgeInsetsMake(0, 5, 0, 13);
