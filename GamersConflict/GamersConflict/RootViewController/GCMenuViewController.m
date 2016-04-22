@@ -73,6 +73,17 @@
     return _menuListArray;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    // 登陆后
+    if ([[GCUserInfoManager getUserid] isEqualToString:@" "]) {
+        //        [self.loginButton setTitle:@"登录" forState:(UIControlStateNormal)];
+        self.button2.backgroundColor = [UIColor lightGrayColor];
+    }else{
+        //        [self.loginButton setTitle:@"退出登录" forState:(UIControlStateNormal)];
+        self.button2.backgroundColor = [UIColor clearColor];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

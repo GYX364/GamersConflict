@@ -31,8 +31,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIImageView *back = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"aess3.png"]];
-    [back setFrame:[UIScreen mainScreen].bounds];
+//    [back setFrame:[UIScreen mainScreen].bounds];
+//    1079 846
+    [back setFrame:CGRectMake(0, 0, ScreenHeight / 1079 * 846, ScreenHeight)];
+    
+    
     [self.view insertSubview:back atIndex:0];
+    back.center = CGPointMake(ScreenWidth / 2, ScreenHeight / 2);
     // 初始化HTTP请求对象
     self.session = [AFHTTPSessionManager manager];
     // 设置支持内容类型  接口返回的数据类型

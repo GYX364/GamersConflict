@@ -54,7 +54,7 @@
     }
     // 抽屉按钮
     self.drawerButton = [UIButton buttonWithType:(UIButtonTypeSystem)];
-    self.drawerButton.frame =CGRectMake(10, ScreenHeight - 60, 50, 50);
+    self.drawerButton.frame =CGRectMake(10, ScreenHeight - 50, 50, 50);
     self.drawerButton.layer.cornerRadius = 25;
     // 图片
     //    self.drawerButton.currentBackgroundImage

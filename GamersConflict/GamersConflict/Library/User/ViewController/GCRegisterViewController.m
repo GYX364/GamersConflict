@@ -27,8 +27,10 @@
     // 初始化网络请求对象
     self.session = [AFHTTPSessionManager manager];
     self.session.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"application/x-json",@"text/html", nil];
-    UIImageView *back = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"yld1.png"]];
-    [back setFrame:[UIScreen mainScreen].bounds];
+    UIImageView *back = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"yld.png"]];
+//    [back setFrame:[UIScreen mainScreen].bounds];
+    [back setFrame:CGRectMake(0, 0, ScreenHeight / 871 * 647, ScreenHeight)];
+    back.center = CGPointMake(ScreenWidth / 2, ScreenHeight / 2);
     [self.view insertSubview:back atIndex:0];
 }
 

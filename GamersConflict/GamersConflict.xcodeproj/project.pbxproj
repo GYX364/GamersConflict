@@ -41,7 +41,6 @@
 		06EC9A731CC1156E001DD75F /* GCRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC9A711CC1156E001DD75F /* GCRegisterViewController.xib */; };
 		06F812921CC9F5F9002C500C /* bg.tif in Resources */ = {isa = PBXBuildFile; fileRef = 06F812711CC9F5F9002C500C /* bg.tif */; };
 		06F812931CC9F5F9002C500C /* bg2.tif in Resources */ = {isa = PBXBuildFile; fileRef = 06F812721CC9F5F9002C500C /* bg2.tif */; };
-		06F812941CC9F5F9002C500C /* camera.tif in Resources */ = {isa = PBXBuildFile; fileRef = 06F812731CC9F5F9002C500C /* camera.tif */; };
 		06F812951CC9F5F9002C500C /* delete.tif in Resources */ = {isa = PBXBuildFile; fileRef = 06F812741CC9F5F9002C500C /* delete.tif */; };
 		06F812961CC9F5F9002C500C /* delete1.tif in Resources */ = {isa = PBXBuildFile; fileRef = 06F812751CC9F5F9002C500C /* delete1.tif */; };
 		06F812971CC9F5F9002C500C /* delete2.tif in Resources */ = {isa = PBXBuildFile; fileRef = 06F812761CC9F5F9002C500C /* delete2.tif */; };
@@ -78,6 +77,7 @@
 		06F812BA1CCA23EC002C500C /* aess3.png in Resources */ = {isa = PBXBuildFile; fileRef = 06F812B91CCA23EC002C500C /* aess3.png */; };
 		06F812BC1CCA25E6002C500C /* yld1.png in Resources */ = {isa = PBXBuildFile; fileRef = 06F812BB1CCA25E6002C500C /* yld1.png */; };
 		06F812BE1CCA29A0002C500C /* yld2.png in Resources */ = {isa = PBXBuildFile; fileRef = 06F812BD1CCA29A0002C500C /* yld2.png */; };
+		06F812C01CCA4299002C500C /* yld.png in Resources */ = {isa = PBXBuildFile; fileRef = 06F812BF1CCA4299002C500C /* yld.png */; };
 		772135F56CCB8FFADF872379 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7E89B161E92C52CA08FC14 /* libPods.a */; };
 		AA3AF5211CC503F9000BDD04 /* GCNewsContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3AF51F1CC503F9000BDD04 /* GCNewsContentViewController.m */; };
 		AA3AF5221CC503F9000BDD04 /* GCNewsContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3AF5201CC503F9000BDD04 /* GCNewsContentViewController.xib */; };
@@ -240,6 +240,7 @@
 		06F812B91CCA23EC002C500C /* aess3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aess3.png; sourceTree = "<group>"; };
 		06F812BB1CCA25E6002C500C /* yld1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yld1.png; sourceTree = "<group>"; };
 		06F812BD1CCA29A0002C500C /* yld2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yld2.png; sourceTree = "<group>"; };
+		06F812BF1CCA4299002C500C /* yld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yld.png; sourceTree = "<group>"; };
 		6796ACF37EA669E6A71C51D5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9900D47BA6FCCE2BC4B98A68 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AA3AF51E1CC503F9000BDD04 /* GCNewsContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCNewsContentViewController.h; sourceTree = "<group>"; };
@@ -700,6 +701,7 @@
 		AA7F3EA81CC9B97E00C178CF /* backgroundImgs */ = {
 			isa = PBXGroup;
 			children = (
+				06F812BF1CCA4299002C500C /* yld.png */,
 				06F812BD1CCA29A0002C500C /* yld2.png */,
 				06F812BB1CCA25E6002C500C /* yld1.png */,
 				06F812B91CCA23EC002C500C /* aess3.png */,
@@ -883,6 +885,7 @@
 				06F812961CC9F5F9002C500C /* delete1.tif in Resources */,
 				06EC9A331CC0DB5E001DD75F /* GCCollectionViewController.xib in Resources */,
 				AA7F3ED51CC9B97E00C178CF /* placePic.png in Resources */,
+				06F812C01CCA4299002C500C /* yld.png in Resources */,
 				AA7F3ECC1CC9B97E00C178CF /* 11.png in Resources */,
 				06F812AD1CC9F5F9002C500C /* share.tif in Resources */,
 				AA7F3ED31CC9B97E00C178CF /* comment.png in Resources */,
@@ -897,12 +900,6 @@
 				06F8129E1CC9F5F9002C500C /* favorite.tif in Resources */,
 				06F812AA1CC9F5F9002C500C /* right.tif in Resources */,
 				AA86966B1CC8C33900D9FA99 /* GCNewsAllCell.xib in Resources */,
-				AA7F3EBF1CC9B97E00C178CF /* film.tif in Resources */,
-				AA7F3EC31CC9B97E00C178CF /* like.tif in Resources */,
-				AA7F3EBD1CC9B97E00C178CF /* extend.tif in Resources */,
-				AA7F3EC01CC9B97E00C178CF /* good.tif in Resources */,
-				AA7F3EBA1CC9B97E00C178CF /* camera.tif in Resources */,
-				AA7F3EBE1CC9B97E00C178CF /* favorite.tif in Resources */,
 				AA7F3EE61CCA34BC00C178CF /* recommend.png in Resources */,
 				06EC99E41CC0D1DC001DD75F /* LaunchScreen.storyboard in Resources */,
 				06F8129C1CC9F5F9002C500C /* extend3.tif in Resources */,
@@ -932,11 +929,7 @@
 				06F812951CC9F5F9002C500C /* delete.tif in Resources */,
 				AA7F3ECF1CC9B97E00C178CF /* BGV1.png in Resources */,
 				06EC9A621CC0EAFD001DD75F /* TestViewController.xib in Resources */,
-				AA7F3EC21CC9B97E00C178CF /* left.tif in Resources */,
-				AA7F3EC91CC9B97E00C178CF /* share.tif in Resources */,
-				AA7F3EC61CC9B97E00C178CF /* right.tif in Resources */,
 				AA7F3EE31CCA34BC00C178CF /* mobilegame.png in Resources */,
-				AA7F3EC41CC9B97E00C178CF /* message.tif in Resources */,
 				06EC99DF1CC0D1DC001DD75F /* Main.storyboard in Resources */,
 				AA86966F1CC8C34B00D9FA99 /* GCNewsPicCell.xib in Resources */,
 				AA7F3EDA1CC9B97E00C178CF /* writer 2.png in Resources */,
@@ -947,7 +940,6 @@
 				AA7F3ED11CC9B97E00C178CF /* BGV3.png in Resources */,
 				06EC9A731CC1156E001DD75F /* GCRegisterViewController.xib in Resources */,
 				AA7F3EE21CCA34BC00C178CF /* esports.png in Resources */,
-				AA7F3EC51CC9B97E00C178CF /* pointer.tif in Resources */,
 				06F812A41CC9F5F9002C500C /* home2.tif in Resources */,
 				06F812A81CC9F5F9002C500C /* message.tif in Resources */,
 			);
