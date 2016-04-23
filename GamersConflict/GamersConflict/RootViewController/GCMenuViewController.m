@@ -100,8 +100,8 @@
         //        [self.loginButton setTitle:@"退出登录" forState:(UIControlStateNormal)];
         self.button2.backgroundColor = [UIColor clearColor];
     }
-    self.menuListArray = [[NSMutableArray alloc]initWithObjects:@"第一个",@"第二个", nil];
-    [self.menuListTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    
+    
     isOpen = NO;
     self.rootVC  = (GCRootViewController*)((GamersConflictDelegate*)[UIApplication sharedApplication].delegate).rootViewController;
     
@@ -136,12 +136,12 @@
     [self.button3 addTarget:self action:@selector(collection:) forControlEvents:(UIControlEventTouchUpInside)];
 
     self.button4 = [self createButton];
-    [self.button4 setBackgroundImage:[UIImage imageNamed:@"message1.tif"] forState:(UIControlStateNormal)];
-    [self.button4 addTarget:self action:@selector(aboutUs:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.button4 setBackgroundImage:[UIImage imageNamed:@"share1.tif"] forState:(UIControlStateNormal)];
+    [self.button4 addTarget:self action:@selector(share:) forControlEvents:(UIControlEventTouchUpInside)];
 
-    self.button5 = [self createButton];
-    [self.button5 setBackgroundImage:[UIImage imageNamed:@"share1.tif"] forState:(UIControlStateNormal)];
-    [self.button5 addTarget:self action:@selector(share:) forControlEvents:(UIControlEventTouchUpInside)];
+//    self.button5 = [self createButton];
+//    [self.button5 setBackgroundImage:[UIImage imageNamed:@"share1.tif"] forState:(UIControlStateNormal)];
+//    [self.button5 addTarget:self action:@selector(share:) forControlEvents:(UIControlEventTouchUpInside)];
 
     self.button6 = [self createButton];
     [self.button6 setBackgroundImage:[UIImage imageNamed:@"delete2.tif"] forState:(UIControlStateNormal)];
@@ -284,10 +284,7 @@
 
 // 关于我们
 - (void)aboutUs:(UIButton*)sender{
-    TestViewController *testVC = [[TestViewController alloc]init];
-//    UINavigationController *aboutUs = [[UINavigationController alloc]initWithRootViewController:testVC];
-//    [(GCRootViewController*)([((UINavigationController *)self.rootVC).viewControllers firstObject]) changeRootView:aboutUs];
-//    [self showViewController:testVC sender:self];
+   
 }
 
 // 创建小Button
