@@ -11,6 +11,7 @@
 #import "GCNewsSubModel.h"
 #import "GCNewsSubViewCell.h"
 #import "GCNewsShowItem.h"
+#import "GCNewsSuperView.h"
 
 #import "GCNewsContentViewController.h"
 
@@ -30,6 +31,8 @@ static NSString * const reUesId = @"subViewCell";
 @interface GCNewsSubView()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray *articlesList;
+
+@property (nonatomic, assign) float superViewContentOffset;
 
 @end
 
@@ -132,7 +135,10 @@ static NSString * const reUesId = @"subViewCell";
         }
         
         [self bgvEndAnimation];
+        [self superViewWillAdjustContentoffset];
         [self reloadData];
+        [self superViewDidEndAdjustContentOffset];
+        
     }
 }
 
@@ -163,6 +169,16 @@ static NSString * const reUesId = @"subViewCell";
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+}
+
+- (void)superViewWillAdjustContentoffset {
+    GCNewsSuperView *superView = (GCNewsSuperView *)self.superview;
+    self.superViewContentOffset = superView.contentOffset.x;
+}
+
+- (void)superViewDidEndAdjustContentOffset {
+    GCNewsSuperView *superView = (GCNewsSuperView *)self.superview;
+    superView.contentOffset = CGPointMake(self.superViewContentOffset, 0);
 }
 
 @end

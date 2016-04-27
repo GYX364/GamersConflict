@@ -127,10 +127,9 @@
                 id newsDic = responseObject;
                 if ([newsDic isKindOfClass:[NSDictionary class]] && newsDic != nil) {
                     [model.newsArray addObject:(NSMutableDictionary *)newsDic];
-                    GCNewsSubView *subView = self.subviews[self.currentIndex];
+                    GCNewsSubView *subView = self.subviews[index];
                     [subView setDataWithModel:model];   
                 }
-                
             } failure:nil];
             model.isRequested = YES;
         }
